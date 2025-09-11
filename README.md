@@ -1,4 +1,4 @@
-# TrafficWIz
+# TrafficWiz
 Smart Traffic Analysis Project
 
 ## Overview
@@ -24,4 +24,19 @@ TrafficWIz is a group project designed to analyze traffic patterns in **Nashvill
 - Database & SQL Analyst – Zelalem 
 
 ---
+## TrafficWiz Setup installations
+
+### Backend
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+### Frontend
+cd frontend
+npm install
+npm run dev
+
+### Database
+- Import schema.sql into MySQL
+- Run seed_data.sql
 
