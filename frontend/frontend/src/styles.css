@@ -1,0 +1,10 @@
+*{box-sizing:border-box}
+html,body,#root{height:100%;margin:0;font-family:system-ui,Arial,sans-serif;background:#f8fafc}
+.layout{display:grid;grid-template-columns:220px 1fr;height:100%}
+.sidebar{background:#0f172a;color:#fff;padding:16px}
+.sidebar h2{margin:0 0 12px;font-size:20px}
+.sidebar a{display:block;color:#cbd5e1;text-decoration:none;padding:8px 10px;border-radius:8px}
+.sidebar a.active,.sidebar a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.main{padding:16px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px}
+.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;padding:10px;border-radius:8px}
