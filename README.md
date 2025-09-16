@@ -32,8 +32,9 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 
 ### Frontend
-cd frontend
+cd frontend/frontend
 npm install
+echo VITE_API_BASE_URL=http://127.0.0.1:8000 > .env
 npm run dev
 
 ### Database
