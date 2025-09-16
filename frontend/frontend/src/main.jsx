@@ -1,10 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.jsx";
-import Dashboard from "./lib/Dashboard.jsx";
-import Incidents from "./lib/Incidents.jsx";
-import Risk from "./lib/Risk.jsx";
+import App from "./App";
+import Dashboard from "./Dashboard";
+import Incidents from "./Incidents";
+import Risk from "./Risk";
 import "./styles.css";
 
 const router = createBrowserRouter([

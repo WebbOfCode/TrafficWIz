@@ -1,4 +1,5 @@
 import { Outlet, NavLink } from "react-router-dom";
+import "./styles.css";
 
 export default function App() {
   return (
@@ -11,9 +12,7 @@ export default function App() {
           <NavLink to="/risk">Risk</NavLink>
         </nav>
       </aside>
-      <main className="main">
-        <Outlet/>
-      </main>
+      <main className="main"><Outlet/></main>
     </div>
   );
 }
