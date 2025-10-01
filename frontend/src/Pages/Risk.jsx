@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { API_BASE } from "../config";
 
 function Risk() {
   const [severityStats, setSeverityStats] = useState([]);
 
   useEffect(() => {
     async function fetchSeverity() {
-      const response = await fetch("http://127.0.0.1:8000/api/incidents/by-severity");
+      const response = await fetch(`${API_BASE}/api/incidents/by-severity`); // ✅ use config.js
       const data = await response.json();
       setSeverityStats(data.by_severity || []);
     }
@@ -15,12 +16,11 @@ function Risk() {
   return (
     <div>
       <h2 className="text-3xl font-bold mb-6">Risk Analysis</h2>
-
       {severityStats.length > 0 ? (
-        <ul className="space-y-2">
+        <ul>
           {severityStats.map((s, i) => (
-            <li key={i} className="p-4 bg-white rounded-lg shadow flex justify-between">
-              <span className="font-semibold">{s.severity}</span>
+            <li key={i} className="flex justify-between p-2 bg-white shadow">
+              <span>{s.severity}</span>
               <span>{s.count} incidents</span>
             </li>
           ))}

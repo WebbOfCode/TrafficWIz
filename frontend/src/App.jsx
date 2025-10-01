@@ -11,7 +11,7 @@ function App() {
         {/* Navbar */}
         <nav className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between shadow-md">
           <div className="flex items-center space-x-3">
-            <img src="/trafficwiz-logo.png" alt="TrafficWiz" className="w-10 h-10" />
+	    <img src="/trafficwiz-logo.png" alt="TrafficWiz Logo" className="w-40 mb-6" />
             <span className="text-xl font-bold">TrafficWiz</span>
           </div>
           <div className="space-x-6">
