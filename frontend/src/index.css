@@ -1,0 +1,65 @@
+/* Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-gray-800;
+}
+
+/* Links */
+a {
+  @apply text-blue-600 hover:text-blue-800 transition-colors;
+  text-decoration: none;
+}
+
+/* Tables */
+table {
+  @apply w-full border-collapse;
+}
+
+th {
+  @apply bg-gray-200 text-left px-4 py-2 border;
+}
+
+td {
+  @apply px-4 py-2 border;
+}
+
+/* Navbar */
+nav {
+  @apply bg-gray-900 text-white shadow;
+}
+
+nav a {
+  @apply px-3 py-2 rounded-md text-sm font-medium;
+}
+
+nav a:hover {
+  @apply bg-gray-700;
+}
+
+/* Buttons */
+button, .btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-colors;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700;
+}
