@@ -1,65 +1,28 @@
-/* Tailwind base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom global styles */
+/* ==== GLOBAL STYLING ==== */
 body {
-  @apply bg-gray-50 text-gray-900 font-sans antialiased;
-  margin: 0;
-  padding: 0;
+  @apply bg-gradient-to-br from-black via-gray-900 to-violet-900 text-gray-100 font-sans min-h-screen;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  @apply font-bold text-gray-800;
+h1, h2, h3 {
+  @apply text-white font-extrabold;
 }
 
-/* Links */
 a {
-  @apply text-blue-600 hover:text-blue-800 transition-colors;
-  text-decoration: none;
+  @apply text-violet-400 hover:text-violet-300;
 }
 
-/* Tables */
 table {
-  @apply w-full border-collapse;
+  @apply border-collapse text-white;
 }
 
-th {
-  @apply bg-gray-200 text-left px-4 py-2 border;
+input, select {
+  @apply bg-gray-800 text-white border border-violet-600 rounded focus:ring-2 focus:ring-violet-500 focus:outline-none;
 }
 
-td {
-  @apply px-4 py-2 border;
-}
-
-/* Navbar */
-nav {
-  @apply bg-gray-900 text-white shadow;
-}
-
-nav a {
-  @apply px-3 py-2 rounded-md text-sm font-medium;
-}
-
-nav a:hover {
-  @apply bg-gray-700;
-}
-
-/* Buttons */
-button, .btn {
-  @apply px-4 py-2 rounded-lg font-medium transition-colors;
-}
-
-.btn-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
-}
-
-.btn-secondary {
-  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
-}
-
-.btn-danger {
-  @apply bg-red-600 text-white hover:bg-red-700;
+.card {
+  @apply bg-gray-900/70 text-white border border-violet-700 rounded-xl shadow-lg backdrop-blur-md;
 }
