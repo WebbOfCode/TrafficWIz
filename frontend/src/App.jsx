@@ -1,16 +1,37 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Home from "./Pages/Home";
 import Dashboard from "./Pages/Dashboard";
 import Incidents from "./Pages/Incidents";
 import Risk from "./Pages/Risk";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true); // start in dark mode
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div
+        className={`min-h-screen flex flex-col transition-all duration-500 ${
+          darkMode
+            ? "bbg-gradient-to-br from-black via-gray-900 to-violet-900 text-white"
+            : "bg-gradient-to-br from-gray-100 via-gray-200 to-white text-gray-900"
+        }`}
+      >
         {/* ===== NAVBAR ===== */}
-        <nav className="bg-black/90 text-white px-6 py-3 flex justify-between shadow-lg border-b border-violet-700">
-          <div className="flex items-center space-x-3">
+        <nav className="bg-black/80 text-white px-6 py-3 flex justify-between items-center shadow-lg border-b border-violet-700">
+          {/* Clickable logo */}
+          <Link
+            to="/"
+            className="flex items-center space-x-3 hover:opacity-80 transition"
+          >
             <img
               src="/trafficwiz-logo.png"
               alt="TrafficWiz Logo"
@@ -19,20 +40,33 @@ function App() {
             <h1 className="text-xl font-bold text-violet-400 tracking-wide">
               TrafficWiz
             </h1>
-          </div>
+          </Link>
 
-          <div className="space-x-6 font-medium">
-            <Link to="/" className="hover:text-violet-400">Home</Link>
-            <Link to="/dashboard" className="hover:text-violet-400">Dashboard</Link>
-            <Link to="/incidents" className="hover:text-violet-400">Incidents</Link>
-            <Link to="/risk" className="hover:text-violet-400">Risk</Link>
+          <div className="flex items-center space-x-6 font-medium">
+            <Link to="/dashboard" className="hover:text-violet-400">
+              Dashboard
+            </Link>
+            <Link to="/incidents" className="hover:text-violet-400">
+              Incidents
+            </Link>
+            <Link to="/risk" className="hover:text-violet-400">
+              Risk
+            </Link>
+
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="px-3 py-1 bg-violet-700 rounded text-sm hover:bg-violet-600 transition"
+            >
+              {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+            </button>
           </div>
         </nav>
 
-        {/* ===== CONTENT ===== */}
+        {/* ===== PAGE CONTENT ===== */}
         <main className="flex-grow p-6">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home darkMode={darkMode} />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/incidents" element={<Incidents />} />
             <Route path="/risk" element={<Risk />} />
@@ -40,8 +74,9 @@ function App() {
         </main>
 
         {/* ===== FOOTER ===== */}
-        <footer className="bg-black text-gray-400 text-center py-3 border-t border-violet-700">
-          © {new Date().getFullYear()} <span className="text-violet-400">TrafficWiz</span> — Nashville Analytics
+        <footer className="bg-black/80 text-gray-400 text-center py-3 border-t border-violet-700">
+          © {new Date().getFullYear()}{" "}
+          <span className="text-violet-400">TrafficWiz</span> — Nashville Analytics
         </footer>
       </div>
     </Router>
@@ -49,4 +84,3 @@ function App() {
 }
 
 export default App;
-

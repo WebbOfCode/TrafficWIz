@@ -30,8 +30,8 @@ def get_db_connection():
     try:
         conn = mysql.connector.connect(
             host="127.0.0.1",
-            user="trafficwiz_user",      # change if needed
-            password="StrongPass123!",   # change if needed
+            user="root",      # change if needed
+            password="Demarick54!!",   # change if needed
             database="trafficwiz"
         )
         return conn
