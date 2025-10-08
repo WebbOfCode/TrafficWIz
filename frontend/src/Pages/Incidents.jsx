@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { API_BASE } from "../config";
 
 function Incidents() {
@@ -33,9 +34,10 @@ function Incidents() {
       {filtered.length > 0 ? (
         <div className="grid gap-4">
           {filtered.map((i) => (
-            <div
+            <Link
               key={i.id}
-              className="card p-4 hover:bg-violet-900/40 transition"
+              to={`/incidents/${i.id}`}
+              className="card p-4 hover:bg-violet-900/40 transition block"
             >
               <div className="flex justify-between">
                 <span className="font-semibold">{i.location}</span>
@@ -51,8 +53,9 @@ function Incidents() {
                   {i.severity}
                 </span>
               </div>
-              <p className="text-sm text-gray-300 mt-1">{i.description}</p>
-            </div>
+              <p className="text-sm text-gray-300 mt-1 truncate">{i.description}</p>
+              <div className="text-xs text-gray-400 mt-2">Click for details →</div>
+            </Link>
           ))}
         </div>
       ) : (

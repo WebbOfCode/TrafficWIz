@@ -135,6 +135,33 @@ def create_app():
             cur.close()
             conn.close()
 
+    @app.get("/api/traffic/<int:incident_id>")
+    def traffic_incident(incident_id: int):
+        """Return a single traffic incident by id."""
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({"error": "Database connection failed"}), 500
+        try:
+            cur = conn.cursor(dictionary=True)
+            cur.execute(
+                """
+                SELECT id, date, location, severity, description
+                FROM traffic_incidents
+                WHERE id = %s
+                LIMIT 1
+            """,
+                (incident_id,)
+            )
+            row = cur.fetchone()
+            if not row:
+                return jsonify({"error": "Incident not found"}), 404
+            return jsonify({"incident": row})
+        except Error as e:
+            return jsonify({"error": str(e)}), 500
+        finally:
+            cur.close()
+            conn.close()
+
     return app
 
 # -----------------

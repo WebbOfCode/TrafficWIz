@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Dashboard from "./Pages/Dashboard";
 import Incidents from "./Pages/Incidents";
 import Risk from "./Pages/Risk";
+import IncidentDetail from "./Pages/IncidentDetail";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true); // start in dark mode
@@ -69,6 +70,7 @@ function App() {
             <Route path="/" element={<Home darkMode={darkMode} />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/incidents" element={<Incidents />} />
+              <Route path="/incidents/:id" element={<IncidentDetail />} />
             <Route path="/risk" element={<Risk />} />
           </Routes>
         </main>
