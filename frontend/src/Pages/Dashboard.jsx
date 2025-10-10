@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { API_BASE } from "../config";
 
 function Dashboard() {
   const [traffic, setTraffic] = useState([]);
@@ -8,15 +7,27 @@ function Dashboard() {
   useEffect(() => {
     async function fetchTraffic() {
       try {
-        const response = await fetch(`${API_BASE}/api/traffic`);  // ✅ use config.js
+        // ✅ Using relative URL so Vite proxy forwards it to Flask
+        const response = await fetch("/api/traffic");
+
+        // ✅ Throw error if response not OK
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status} - ${response.statusText}`);
+        }
+
+        // ✅ Parse the JSON data
         const data = await response.json();
+
+        // ✅ Update state safely even if API returns empty or malformed data
         setTraffic(data.traffic_data || []);
       } catch (err) {
         console.error("Error fetching traffic:", err);
+        setTraffic([]); // prevent stale UI
       } finally {
         setLoading(false);
       }
     }
+
     fetchTraffic();
   }, []);
 
@@ -38,16 +49,20 @@ function Dashboard() {
             <tbody>
               {traffic.map((t) => (
                 <tr key={t.id} className="hover:bg-gray-50">
-                  <td>{t.date ? new Date(t.date).toLocaleDateString() : "Unknown"}</td>
-                  <td>{t.location}</td>
-                  <td className={
-                    t.severity === "High"
-                      ? "text-red-600"
-                      : t.severity === "Medium"
-                      ? "text-yellow-600"
-                      : "text-green-600"
-                  }>
-                    {t.severity}
+                  <td>
+                    {t.date ? new Date(t.date).toLocaleDateString() : "Unknown"}
+                  </td>
+                  <td>{t.location || "Unknown"}</td>
+                  <td
+                    className={
+                      t.severity === "High"
+                        ? "text-red-600"
+                        : t.severity === "Medium"
+                        ? "text-yellow-600"
+                        : "text-green-600"
+                    }
+                  >
+                    {t.severity || "N/A"}
                   </td>
                   <td>{t.description || "No details"}</td>
                 </tr>

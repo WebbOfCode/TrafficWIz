@@ -19,7 +19,7 @@ TrafficWIz is a group project designed to analyze traffic patterns in **Nashvill
 ## Team Roles 
 - Web & Frontend – Merhawit  
 - Python ML Developer – Ben 
-- Data Integration – Demeric 
+- Data Integration – Demarick
 - Documentation & Presentation – Hayder
 - Database & SQL Analyst – Zelalem 
 
