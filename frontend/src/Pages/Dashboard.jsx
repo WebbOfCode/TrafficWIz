@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { API_BASE } from "../config";
 
 function Dashboard() {
   const [traffic, setTraffic] = useState([]);
@@ -8,15 +7,25 @@ function Dashboard() {
   useEffect(() => {
     async function fetchTraffic() {
       try {
-        const res = await fetch(`${API_BASE}/api/traffic`);
+        // ✅ Use relative URL so Vite proxy forwards to Flask backend
+        const res = await fetch("/api/traffic");
+
+        // ✅ Throw error if response not OK
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status} - ${res.statusText}`);
+        }
+
+        // ✅ Parse and safely update state
         const data = await res.json();
         setTraffic(data.traffic_data || []);
       } catch (err) {
         console.error("Error fetching traffic:", err);
+        setTraffic([]); // Prevent stale UI
       } finally {
         setLoading(false);
       }
     }
+
     fetchTraffic();
   }, []);
 
@@ -26,7 +35,9 @@ function Dashboard() {
 
   return (
     <div className="p-4 text-white">
-      <h2 className="text-3xl font-bold mb-6 text-violet-300">Dashboard Overview</h2>
+      <h2 className="text-3xl font-bold mb-6 text-violet-300">
+        Dashboard Overview
+      </h2>
 
       {/* ===== Summary Cards ===== */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -35,7 +46,9 @@ function Dashboard() {
           <p className="text-3xl font-bold text-red-400">{high}</p>
         </div>
         <div className="card border-l-4 border-yellow-400 p-4">
-          <h3 className="text-lg font-semibold text-gray-300">Medium Severity</h3>
+          <h3 className="text-lg font-semibold text-gray-300">
+            Medium Severity
+          </h3>
           <p className="text-3xl font-bold text-yellow-400">{med}</p>
         </div>
         <div className="card border-l-4 border-green-400 p-4">
@@ -55,16 +68,20 @@ function Dashboard() {
                 <th className="px-4 py-2 border border-violet-700">Date</th>
                 <th className="px-4 py-2 border border-violet-700">Location</th>
                 <th className="px-4 py-2 border border-violet-700">Severity</th>
-                <th className="px-4 py-2 border border-violet-700">Description</th>
+                <th className="px-4 py-2 border border-violet-700">
+                  Description
+                </th>
               </tr>
             </thead>
             <tbody>
               {traffic.map((t) => (
                 <tr key={t.id} className="hover:bg-violet-900/40">
                   <td className="border border-violet-800 px-3 py-2">
-                    {new Date(t.date).toLocaleDateString()}
+                    {t.date ? new Date(t.date).toLocaleDateString() : "Unknown"}
                   </td>
-                  <td className="border border-violet-800 px-3 py-2">{t.location}</td>
+                  <td className="border border-violet-800 px-3 py-2">
+                    {t.location || "Unknown"}
+                  </td>
                   <td
                     className={`border border-violet-800 px-3 py-2 font-semibold ${
                       t.severity === "High"
@@ -74,10 +91,10 @@ function Dashboard() {
                         : "text-green-400"
                     }`}
                   >
-                    {t.severity}
+                    {t.severity || "N/A"}
                   </td>
                   <td className="border border-violet-800 px-3 py-2 text-gray-300">
-                    {t.description}
+                    {t.description || "—"}
                   </td>
                 </tr>
               ))}

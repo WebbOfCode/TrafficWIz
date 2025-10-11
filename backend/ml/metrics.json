@@ -1,0 +1,11 @@
+{
+  "r2": -0.6235207445268338,
+  "mae": 303.216,
+  "n_train": 160,
+  "n_test": 40,
+  "features": [
+    "accidents",
+    "avg_speed"
+  ],
+  "target": "traffic_volume"
+}
