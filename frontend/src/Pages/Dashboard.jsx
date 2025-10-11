@@ -15,9 +15,32 @@ function Dashboard() {
           throw new Error(`HTTP ${res.status} - ${res.statusText}`);
         }
 
-        // ✅ Parse and safely update state
+  // ✅ Parse and safely update state
         const data = await res.json();
-        setTraffic(data.traffic_data || []);
+        console.debug("Dashboard fetched /api/traffic =>", data);
+
+        // Normalize different possible response shapes:
+        // - { traffic_data: [...] }
+        // - { data: [...] }
+        // - [...] (array directly)
+        let rows = [];
+        if (Array.isArray(data)) {
+          rows = data;
+        } else if (data && Array.isArray(data.traffic_data)) {
+          rows = data.traffic_data;
+        } else if (data && Array.isArray(data.data)) {
+          rows = data.data;
+        } else if (data && Array.isArray(data.incidents)) {
+          rows = data.incidents;
+        } else {
+          // fallback: attempt to find first array value in object
+          if (data && typeof data === 'object') {
+            const firstArray = Object.values(data).find(v => Array.isArray(v));
+            if (firstArray) rows = firstArray;
+          }
+        }
+
+        setTraffic(rows || []);
       } catch (err) {
         console.error("Error fetching traffic:", err);
         setTraffic([]); // Prevent stale UI
@@ -102,7 +125,13 @@ function Dashboard() {
           </table>
         </div>
       ) : (
-        <p className="text-gray-400">No data available.</p>
+        <div>
+          <p className="text-gray-400">No data available.</p>
+          <details className="mt-2 text-xs text-gray-300 bg-black/30 p-3 rounded">
+            <summary className="cursor-pointer">Debug: show fetched traffic (raw)</summary>
+            <pre className="whitespace-pre-wrap mt-2">{JSON.stringify(traffic, null, 2)}</pre>
+          </details>
+        </div>
       )}
     </div>
   );

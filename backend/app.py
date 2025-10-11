@@ -23,9 +23,10 @@ CORS(app)
 # Database configuration (update if needed)
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
-    "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", ""),
-    "database": os.getenv("DB_NAME", "trafficwiz_db")
+    "user": os.getenv("DB_USER", "trafficwiz_user"),
+    "password": os.getenv("DB_PASSWORD", "StrongPass123!"),
+    # default DB name from schema.sql is `trafficwiz`
+    "database": os.getenv("DB_NAME", "trafficwiz")
 }
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "ml", "model.pkl")
@@ -47,13 +48,32 @@ def home():
     return jsonify({"message": "TrafficWiz Backend Active", "time": datetime.now().isoformat()})
 
 
+@app.route('/api/health', methods=['GET'])
+def api_health():
+    """Return simple health and DB connectivity status."""
+    status = {"service": "ok", "db": "unknown"}
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute("SELECT 1")
+        cur.fetchone()
+        cur.close()
+        conn.close()
+        status["db"] = "ok"
+    except Exception as e:
+        traceback.print_exc()
+        status["db"] = f"error: {str(e)}"
+    return jsonify(status)
+
+
 @app.route("/incidents", methods=["GET"])
 def get_incidents():
     """Return traffic incident data from the DB."""
     try:
         conn = get_db_connection()
         cur = conn.cursor(dictionary=True)
-        cur.execute("SELECT * FROM incidents ORDER BY id DESC LIMIT 100;")
+        # read from traffic_incidents (seed scripts write here)
+        cur.execute("SELECT id, date, location, severity, description FROM traffic_incidents ORDER BY id DESC LIMIT 100;")
         data = cur.fetchall()
         cur.close()
         conn.close()
@@ -74,6 +94,116 @@ def get_risk():
         cur.close()
         conn.close()
         return jsonify(data)
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+# --- Compatibility endpoints expected by the frontend (Vite app)
+@app.route("/api/traffic", methods=["GET"])
+def api_traffic():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(dictionary=True)
+        cur.execute("SELECT id, date, description, severity, location FROM traffic_incidents ORDER BY id DESC LIMIT 100;")
+        rows = cur.fetchall()
+        # normalize severity number to string label for older frontend
+        for r in rows:
+            sev = r.get("severity")
+            if isinstance(sev, int):
+                if sev >= 4:
+                    r["severity"] = "High"
+                elif sev == 3:
+                    r["severity"] = "Medium"
+                else:
+                    r["severity"] = "Low"
+            else:
+                r["severity"] = str(sev)
+        cur.close()
+        conn.close()
+        return jsonify({"traffic_data": rows})
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/traffic/<int:incident_id>", methods=["GET"])
+def api_traffic_incident(incident_id):
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(dictionary=True)
+        cur.execute("SELECT id, date, description, severity, location FROM traffic_incidents WHERE id = %s LIMIT 1;", (incident_id,))
+        row = cur.fetchone()
+        if not row:
+            return jsonify({"error": "not found"}), 404
+        sev = row.get("severity")
+        if isinstance(sev, int):
+            row["severity"] = "High" if sev >= 4 else ("Medium" if sev == 3 else "Low")
+        cur.close()
+        conn.close()
+        return jsonify({"incident": row})
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+# Aggregation endpoints used by the frontend
+@app.route('/api/incidents/by-severity', methods=['GET'])
+def api_incidents_by_severity():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(dictionary=True)
+        cur.execute("""
+            SELECT severity, COUNT(*) AS count
+            FROM traffic_incidents
+            GROUP BY severity
+        """)
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        return jsonify({"by_severity": rows})
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/incidents/by-location', methods=['GET'])
+def api_incidents_by_location():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(dictionary=True)
+        cur.execute("""
+            SELECT location, COUNT(*) AS count
+            FROM traffic_incidents
+            GROUP BY location
+            ORDER BY count DESC
+            LIMIT 5
+        """)
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        return jsonify({"by_location": rows})
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/incidents/by-day', methods=['GET'])
+def api_incidents_by_day():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(dictionary=True)
+        cur.execute("""
+            SELECT DATE(date) AS day, COUNT(*) AS count
+            FROM traffic_incidents
+            GROUP BY day
+            ORDER BY day DESC
+            LIMIT 30
+        """)
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        return jsonify({"by_day": rows})
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500

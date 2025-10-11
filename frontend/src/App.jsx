@@ -5,6 +5,7 @@ import Dashboard from "./Pages/Dashboard";
 import Incidents from "./Pages/Incidents";
 import Risk from "./Pages/Risk";
 import IncidentDetail from "./Pages/IncidentDetail";
+import StatusBadge from "./components/StatusBadge";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true); // start in dark mode
@@ -53,6 +54,8 @@ function App() {
             <Link to="/risk" className="hover:text-violet-400">
               Risk
             </Link>
+
+            <StatusBadge />
 
             {/* Dark Mode Toggle */}
             <button
