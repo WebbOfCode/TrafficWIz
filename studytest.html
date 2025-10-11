@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DBMS Practice Exams — Interactive</title>
+<style>
+  :root{
+    --bg:#0f172a; --card:#111827; --muted:#9ca3af; --brand:#6366f1; --ok:#22c55e;
+    --warn:#f59e0b; --bad:#ef4444; --ink:#e5e7eb; --ink-strong:#fff;
+  }
+  *{ box-sizing:border-box }
+  body{
+    margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+    background: radial-gradient(1200px 600px at 10% -10%, #1f2937, transparent 60%),
+                radial-gradient(1200px 600px at 110% 10%, #312e81, transparent 60%),
+                var(--bg);
+    color:var(--ink); line-height:1.6; padding:24px;
+  }
+  .wrap{
+    max-width:1100px; margin:0 auto; background:rgba(17,24,39,.75);
+    backdrop-filter: blur(6px);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:16px; padding:24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  }
+  h1{ margin:0 0 8px; font-size: clamp(1.6rem, 2.6vw, 2.2rem); color:#fff }
+  .sub{ color:var(--muted); margin-bottom:20px }
+  .controls{
+    display:grid; gap:14px; grid-template-columns: 1fr; margin: 10px 0 20px;
+  }
+  @media(min-width:780px){
+    .controls{ grid-template-columns: 2fr 1fr 1fr 1fr; align-items:end }
+  }
+  fieldset{ border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:12px }
+  legend{ padding:0 8px; color:#c7d2fe }
+  .topic-list{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px }
+  .chip{
+    display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:10px;
+    border:1px solid rgba(255,255,255,.14); cursor:pointer; user-select:none;
+  }
+  .chip input{ accent-color: var(--brand); width:18px; height:18px }
+  label.small{ font-size:.9rem; color:#d1d5db }
+  .btn{
+    background:linear-gradient(135deg, #4f46e5, #7c3aed);
+    border:none; color:#fff; padding:12px 16px; border-radius:12px; cursor:pointer;
+    font-weight:600; box-shadow:0 8px 24px rgba(79,70,229,.35);
+  }
+  .btn.secondary{ background:#1f2937 }
+  .btn:disabled{ opacity:.5; cursor:not-allowed }
+  .row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap }
+  select, input[type="number"]{
+    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.14);
+    background:#0b1220; color:#e5e7eb;
+  }
+
+  /* Question cards */
+  .q{
+    border:1px solid rgba(255,255,255,.1); border-radius:14px; margin: 14px 0; overflow:hidden;
+    background:#0b1020;
+  }
+  .q h3{
+    margin:0; padding:14px 16px; background:linear-gradient(135deg,#1e293b,#111827);
+    color:#e5e7eb; font-size:1.05rem;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .q-body{ padding:14px 16px }
+  .opts{ display:grid; gap:10px }
+  .opt{
+    display:flex; gap:10px; padding:10px 12px; border:1px solid rgba(255,255,255,.12);
+    border-radius:10px; cursor:pointer; background:#0b1220;
+  }
+  .opt input{ margin-top:2px; accent-color: var(--brand) }
+  .opt.correct{ border-color: rgba(34,197,94,.8); background: rgba(34,197,94,.06) }
+  .opt.incorrect{ border-color: rgba(239,68,68,.8); background: rgba(239,68,68,.06) }
+  .explain{
+    margin-top:10px; border-top:1px dashed rgba(255,255,255,.16); padding-top:10px; color:#cbd5e1;
+    display:none;
+  }
+  .explain.show{ display:block }
+  .tags{ color:#c7d2fe; font-size:.85rem; opacity:.85 }
+  .muted{ color:var(--muted) }
+  .meta{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .badge{
+    display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px;
+    background:#0f172a; color:#cbd5e1; border:1px solid rgba(255,255,255,.12); font-size:.85rem;
+  }
+
+  .toolbar{
+    display:flex; gap:10px; align-items:center; justify-content:space-between; margin:10px 0 18px;
+  }
+  .score{
+    font-weight:700; color:#fff
+  }
+  .score.good{ color: var(--ok) }
+  .score.bad{ color: var(--bad) }
+
+  .footer{
+    display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; margin-top:16px;
+  }
+  .kbd{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#111827; border:1px solid rgba(255,255,255,.1); padding:2px 6px; border-radius:6px }
+
+  @media print{
+    .controls, .toolbar, .footer { display:none !important }
+    .wrap{ box-shadow:none; background:#fff; color:#000 }
+    body{ background:#fff; color:#000; padding:0 }
+    .q{ break-inside:avoid }
+    .q h3{ background:#fff; color:#000; border-color:#ddd }
+    .opt{ border-color:#ccc; background:#fff }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>DBMS Practice Exams — Interactive</h1>
+    <div class="sub">Pick topics and size, then click <strong>Generate Exam</strong>. Answer all questions and hit <strong>Grade</strong> to see your score and explanations.</div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <fieldset>
+        <legend>Topics</legend>
+        <div class="topic-list" id="topicList">
+          <!-- chips injected by JS -->
+        </div>
+      </fieldset>
+
+      <div>
+        <label class="small" for="count">Number of Questions</label>
+        <input id="count" type="number" min="3" max="50" step="1" value="12" />
+      </div>
+
+      <div>
+        <label class="small" for="mode">Reveal Style</label>
+        <select id="mode">
+          <option value="end">At the end (exam mode)</option>
+          <option value="instant">Instant after each choice</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <button class="btn" id="generateBtn" title="Ctrl/⌘+Enter">Generate Exam</button>
+        <button class="btn secondary" id="resetBtn" disabled>Reset</button>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="meta">
+        <span class="badge"><span>⏱️</span><span id="timer">00:00</span></span>
+        <span class="badge"><span>🧪</span><span id="metaCount">0 Qs</span></span>
+        <span class="badge"><span>🎯</span><span id="metaTopics">—</span></span>
+      </div>
+      <div class="row">
+        <button class="btn" id="gradeBtn" disabled>Grade</button>
+        <button class="btn secondary" id="showAllBtn" disabled>Toggle Explanations</button>
+      </div>
+    </div>
+
+    <!-- Questions -->
+    <div id="exam"></div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div id="scoreBox" class="score"></div>
+    </div>
+
+    <div class="muted" style="margin-top:10px">
+      Tips: <span class="kbd">Ctrl/⌘ + Enter</span> generates a new exam. <span class="kbd">G</span> grades. <span class="kbd">E</span> toggles explanations.
+    </div>
+  </div>
+
+<script>
+/* --------------------------
+   Question bank
+   Each question:
+   {
+     id, text, options: [{k, text}], answer: 'a',  // single-answer
+     explain, topics: ['joins','nulls',...]
+   }
+   -------------------------- */
+const BANK = [
+  // WHERE vs HAVING, Aggregates, NULLs, Joins, Subqueries, EER, DDL
+  {
+    id:'q1', topics:['where_having','aggregates'],
+    text:'Which clause is evaluated AFTER GROUP BY and can use aggregate functions to filter groups?',
+    options:[{k:'a',text:'WHERE'},{k:'b',text:'HAVING'},{k:'c',text:'FROM'},{k:'d',text:'ORDER BY'}],
+    answer:'b',
+    explain:'HAVING filters groups after aggregation; WHERE filters rows before grouping.'
+  },
+  {
+    id:'q2', topics:['keys'],
+    text:'How many primary keys can a table have in a relational database?',
+    options:[{k:'a',text:'Exactly one (may be composite)'},{k:'b',text:'At most two'},{k:'c',text:'Unlimited'},{k:'d',text:'Zero'}],
+    answer:'a',
+    explain:'A table has one primary key constraint; it can consist of multiple columns (composite).'
+  },
+  {
+    id:'q3', topics:['joins'],
+    text:'To find suppliers with NO shipments, which pattern is correct in MySQL?',
+    options:[
+      {k:'a',text:'INNER JOIN + WHERE foreign_key IS NULL'},
+      {k:'b',text:'LEFT JOIN + WHERE right_table.key IS NULL'},
+      {k:'c',text:'RIGHT JOIN + WHERE left_table.key IS NOT NULL'},
+      {k:'d',text:'FULL OUTER JOIN + WHERE key IS NULL'}
+    ],
+    answer:'b',
+    explain:'Use LEFT JOIN from suppliers to shipments, then filter where the right-side key is NULL.'
+  },
+  {
+    id:'q4', topics:['nulls','aggregates'],
+    text:'What does COUNT(column) do with NULL values?',
+    options:[
+      {k:'a',text:'Counts them as 0 and includes them'},
+      {k:'b',text:'Excludes NULLs from the count'},
+      {k:'c',text:'Counts NULLs as 1'},
+      {k:'d',text:'Always returns 0 if any NULL exists'}
+    ],
+    answer:'b',
+    explain:'COUNT(column) counts only non-NULL values; COUNT(*) counts rows including NULLs.'
+  },
+  {
+    id:'q5', topics:['nulls'],
+    text:'Which predicate correctly checks for a NULL?',
+    options:[
+      {k:'a',text:'Price = NULL'},
+      {k:'b',text:'Price <> NULL'},
+      {k:'c',text:'Price IS NULL'},
+      {k:'d',text:'Price == NULL'}
+    ],
+    answer:'c',
+    explain:'Use IS NULL / IS NOT NULL. Equality/inequality with NULL is UNKNOWN.'
+  },
+  {
+    id:'q6', topics:['aggregates','nulls'],
+    text:'Given values (200, NULL, 300, 400), what is AVG(value) in SQL?',
+    options:[
+      {k:'a',text:'225'},
+      {k:'b',text:'300'},
+      {k:'c',text:'475'},
+      {k:'d',text:'NULL'}
+    ],
+    answer:'b',
+    explain:'AVG ignores NULLs: (200+300+400)/3 = 300.'
+  },
+  {
+    id:'q7', topics:['joins'],
+    text:'MySQL does not support FULL OUTER JOIN. What is a common workaround?',
+    options:[
+      {k:'a',text:'LEFT JOIN only'},
+      {k:'b',text:'RIGHT JOIN only'},
+      {k:'c',text:'UNION of LEFT JOIN and RIGHT JOIN (with filter to avoid duplicates)'},
+      {k:'d',text:'CROSS JOIN with WHERE'}
+    ],
+    answer:'c',
+    explain:'Use LEFT JOIN UNION (RIGHT JOIN WHERE left.key IS NULL).'
+  },
+  {
+    id:'q8', topics:['like'],
+    text:'Which finds names starting with "A"?',
+    options:[
+      {k:'a',text:`WHERE name = 'A%'`},
+      {k:'b',text:`WHERE name LIKE 'A%'`},
+      {k:'c',text:`WHERE name LIKE '%A'`},
+      {k:'d',text:`WHERE name LIKE '%A%'`}
+    ],
+    answer:'b',
+    explain:`LIKE 'A%' matches strings that start with A.`
+  },
+  {
+    id:'q9', topics:['subqueries'],
+    text:'Which is best to test existence of at least one matching row from a correlated subquery?',
+    options:[
+      {k:'a',text:'IN'},
+      {k:'b',text:'EXISTS'},
+      {k:'c',text:'NOT IN'},
+      {k:'d',text:'GROUP BY'}
+    ],
+    answer:'b',
+    explain:'EXISTS stops at the first match and is efficient for existence checks.'
+  },
+  {
+    id:'q10', topics:['subqueries','nulls'],
+    text:'Why should you filter out NULLs when using NOT IN (subquery)?',
+    options:[
+      {k:'a',text:'Performance only'},
+      {k:'b',text:'Because NULL in the subquery can make the predicate UNKNOWN and return no rows'},
+      {k:'c',text:'Because NOT IN doesn’t allow DISTINCT'},
+      {k:'d',text:'No reason'}
+    ],
+    answer:'b',
+    explain:'NOT IN with a NULL in the subquery yields UNKNOWN comparisons and filters out everything.'
+  },
+  {
+    id:'q11', topics:['groupby','aggregates'],
+    text:'In standard SQL, what must hold for columns listed in SELECT when using GROUP BY?',
+    options:[
+      {k:'a',text:'All SELECT columns must be in GROUP BY or be aggregated'},
+      {k:'b',text:'SELECT may include any columns regardless of grouping'},
+      {k:'c',text:'GROUP BY must be empty'},
+      {k:'d',text:'Only numeric columns may appear'}
+    ],
+    answer:'a',
+    explain:'Every selected column must be either aggregated or listed in GROUP BY.'
+  },
+  {
+    id:'q12', topics:['ddl'],
+    text:'In MySQL 8+, how do you drop a named UNIQUE constraint (backed by an index)?',
+    options:[
+      {k:'a',text:'ALTER TABLE t DROP CONSTRAINT uk_name;'},
+      {k:'b',text:'ALTER TABLE t DROP UNIQUE uk_name;'},
+      {k:'c',text:'ALTER TABLE t DROP INDEX uk_name;'},
+      {k:'d',text:'DROP UNIQUE uk_name ON t;'}
+    ],
+    answer:'c',
+    explain:'MySQL models UNIQUE as an index; you drop it with DROP INDEX uk_name.'
+  },
+  {
+    id:'q13', topics:['architecture'],
+    text:'In the three-schema architecture, which level describes physical storage structures?',
+    options:[
+      {k:'a',text:'External'},
+      {k:'b',text:'Conceptual (logical)'},
+      {k:'c',text:'Internal (physical)'},
+      {k:'d',text:'View'}
+    ],
+    answer:'c',
+    explain:'The internal level handles files, indexes, and physical placement.'
+  },
+  {
+    id:'q14', topics:['keys','joins'],
+    text:'Choose the correct characterization of a foreign key.',
+    options:[
+      {k:'a',text:'Must be unique and not null'},
+      {k:'b',text:'References a candidate key/primary key in another table'},
+      {k:'c',text:'Implements one table’s primary storage'},
+      {k:'d',text:'Is always composite'}
+    ],
+    answer:'b',
+    explain:'A foreign key references a key (often primary) in another table; it may be nullable unless constrained.'
+  },
+  {
+    id:'q15', topics:['like'],
+    text:'Which pattern matches strings with exactly 4 characters in SQL LIKE?',
+    options:[
+      {k:'a',text:`LIKE '____'`},
+      {k:'b',text:`LIKE '%____%'`},
+      {k:'c',text:`LIKE '....'`},
+      {k:'d',text:`LIKE '[4]'`}
+    ],
+    answer:'a',
+    explain:'Each underscore _ matches exactly one character.'
+  },
+  {
+    id:'q16', topics:['nulls','where_having'],
+    text:'Which query correctly returns suppliers whose City is not Paris, including NULL-city suppliers?',
+    options:[
+      {k:'a',text:`WHERE City <> 'Paris'`},
+      {k:'b',text:`WHERE City <> 'Paris' OR City IS NULL`},
+      {k:'c',text:`WHERE City = 'Paris' OR City IS NULL`},
+      {k:'d',text:`WHERE City != NULL`}
+    ],
+    answer:'b',
+    explain:`NULL <> 'Paris' is UNKNOWN; add OR City IS NULL to include NULL-city rows.`
+  },
+  {
+    id:'q17', topics:['ddl'],
+    text:'Which statement is true about DROP TABLE in MySQL?',
+    options:[
+      {k:'a',text:'It deletes data but keeps table structure'},
+      {k:'b',text:'It removes structure and data; cannot be rolled back without special logging'},
+      {k:'c',text:'It is equivalent to DELETE FROM'},
+      {k:'d',text:'It only drops indexes'}
+    ],
+    answer:'b',
+    explain:'DROP TABLE removes the object definition and data (and usually cannot be undone).'
+  },
+  {
+    id:'q18', topics:['aggregates','order'],
+    text:'What is the correct logical order of operations for a SELECT?',
+    options:[
+      {k:'a',text:'SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY'},
+      {k:'b',text:'FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY'},
+      {k:'c',text:'FROM → SELECT → WHERE → GROUP BY → HAVING → ORDER BY'},
+      {k:'d',text:'WHERE → FROM → GROUP BY → HAVING → SELECT → ORDER BY'}
+    ],
+    answer:'b',
+    explain:'The logical order: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY.'
+  },
+  {
+    id:'q19', topics:['subqueries','division'],
+    text:'Which pattern implements “suppliers who supply ALL red parts”?',
+    options:[
+      {k:'a',text:'IN (subquery on red parts)'},
+      {k:'b',text:'EXISTS (subquery on any red part)'},
+      {k:'c',text:'NOT EXISTS (red part P such that NOT EXISTS a shipment by supplier of P)'},
+      {k:'d',text:'COUNT(*) over shipments > 0'}
+    ],
+    answer:'c',
+    explain:'Use double NOT EXISTS (relational division).'
+  },
+  {
+    id:'q20', topics:['joins'],
+    text:'INNER JOIN returns:',
+    options:[
+      {k:'a',text:'All rows from left regardless of match'},
+      {k:'b',text:'All rows from right regardless of match'},
+      {k:'c',text:'Only rows with matching keys in both tables'},
+      {k:'d',text:'Cartesian product only'}
+    ],
+    answer:'c',
+    explain:'INNER JOIN keeps only rows that satisfy the join predicate on both sides.'
+  },
+];
+
+const TOPIC_LABELS = {
+  keys: 'Keys (PK/FK)',
+  joins:'Joins',
+  where_having:'WHERE vs HAVING',
+  aggregates:'Aggregates',
+  nulls:'NULLs',
+  subqueries:'Subqueries',
+  groupby:'GROUP BY rules',
+  like:'LIKE patterns',
+  division:'Relational Division',
+  ddl:'DDL',
+  architecture:'Three-Schema Architecture',
+  order:'Query Order'
+};
+
+// Build topic chips from what’s actually in the bank
+const allTopics = Array.from(new Set(BANK.flatMap(q => q.topics))).sort();
+
+const topicList = document.getElementById('topicList');
+allTopics.forEach(t=>{
+  const label = document.createElement('label');
+  label.className = 'chip';
+  label.innerHTML = `<input type="checkbox" value="${t}" checked> ${TOPIC_LABELS[t] || t}`;
+  topicList.appendChild(label);
+});
+
+const examDiv = document.getElementById('exam');
+const metaCount = document.getElementById('metaCount');
+const metaTopics = document.getElementById('metaTopics');
+const generateBtn = document.getElementById('generateBtn');
+const resetBtn = document.getElementById('resetBtn');
+const gradeBtn = document.getElementById('gradeBtn');
+const showAllBtn = document.getElementById('showAllBtn');
+const scoreBox = document.getElementById('scoreBox');
+const modeSel = document.getElementById('mode');
+const countInput = document.getElementById('count');
+const timerEl = document.getElementById('timer');
+
+let currentExam = [];
+let startTime = null;
+let timerHandle = null;
+let showAll = false;
+
+function hhmmss(sec){
+  const m = Math.floor(sec/60).toString().padStart(2,'0');
+  const s = (sec%60).toString().padStart(2,'0');
+  return `${m}:${s}`;
+}
+function startTimer(){
+  startTime = Date.now();
+  if(timerHandle) clearInterval(timerHandle);
+  timerHandle = setInterval(()=>{
+    const elapsed = Math.floor((Date.now()-startTime)/1000);
+    timerEl.textContent = hhmmss(elapsed);
+  }, 250);
+}
+function stopTimer(){
+  if(timerHandle) clearInterval(timerHandle);
+  timerHandle = null;
+}
+
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function sample(array, n){
+  if(n >= array.length) return shuffle(array);
+  return shuffle(array).slice(0,n);
+}
+
+function buildExam(){
+  // read selected topics
+  const selected = Array.from(topicList.querySelectorAll('input[type=checkbox]:checked')).map(i=>i.value);
+  const pool = BANK.filter(q => q.topics.some(t=>selected.includes(t)));
+  const n = Math.max(3, Math.min(+countInput.value || 10, 50));
+  const items = sample(pool, Math.min(n, pool.length));
+  currentExam = items.map(q => ({...q, user:null}));
+  renderExam();
+  // UI
+  scoreBox.textContent = '';
+  metaCount.textContent = `${currentExam.length} Qs`;
+  metaTopics.textContent = selected.map(t => TOPIC_LABELS[t]||t).join(', ') || '—';
+  gradeBtn.disabled = false;
+  showAllBtn.disabled = false;
+  resetBtn.disabled = false;
+  startTimer();
+}
+
+function renderExam(){
+  examDiv.innerHTML = '';
+  const instant = (modeSel.value === 'instant');
+
+  currentExam.forEach((q, idx) => {
+    const card = document.createElement('div');
+    card.className = 'q';
+    const topicTags = q.topics.map(t=>`<span class="tags">#${TOPIC_LABELS[t]||t}</span>`).join(' • ');
+    card.innerHTML = `
+      <h3>Q${idx+1}. ${q.text}</h3>
+      <div class="q-body">
+        <div class="opts"></div>
+        <div class="explain" id="exp_${q.id}">
+          <strong>Explanation:</strong> ${q.explain}
+          <div class="muted" style="margin-top:6px">${topicTags}</div>
+        </div>
+      </div>
+    `;
+    const optsDiv = card.querySelector('.opts');
+    shuffle(q.options).forEach(opt=>{
+      const lab = document.createElement('label');
+      lab.className = 'opt';
+      lab.innerHTML = `
+        <input type="radio" name="q_${q.id}" value="${opt.k}" />
+        <div>${opt.text}</div>
+      `;
+      lab.querySelector('input').addEventListener('change', (e)=>{
+        q.user = e.target.value;
+        if(instant){
+          // mark correctness immediately
+          markQuestion(card, q);
+          toggleExplain(q.id, true);
+        }
+      });
+      optsDiv.appendChild(lab);
+    });
+    examDiv.appendChild(card);
+  });
+}
+
+function markQuestion(card, q){
+  const chosen = q.user;
+  const correct = q.answer;
+  const labels = Array.from(card.querySelectorAll('.opt'));
+  labels.forEach(l=>{
+    const val = l.querySelector('input').value;
+    l.classList.remove('correct','incorrect');
+    if(val === correct){ l.classList.add('correct'); }
+    if(chosen && val === chosen && chosen !== correct){ l.classList.add('incorrect'); }
+  });
+}
+
+function toggleExplain(qid, show){
+  const el = document.getElementById('exp_'+qid);
+  if(!el) return;
+  if(show === undefined){
+    el.classList.toggle('show');
+  }else{
+    el.classList.toggle('show', !!show);
+  }
+}
+
+function gradeExam(){
+  stopTimer();
+  const cards = Array.from(document.querySelectorAll('.q'));
+  let correct = 0;
+  currentExam.forEach((q, i)=>{
+    markQuestion(cards[i], q);
+    toggleExplain(q.id, true);
+    if(q.user === q.answer) correct++;
+  });
+  const total = currentExam.length;
+  const pct = Math.round((correct/total)*100);
+  scoreBox.textContent = `Score: ${correct}/${total} (${pct}%)`;
+  scoreBox.classList.remove('good','bad');
+  scoreBox.classList.add(pct>=80 ? 'good' : 'bad');
+}
+
+function toggleAllExplanations(){
+  showAll = !showAll;
+  currentExam.forEach(q => toggleExplain(q.id, showAll));
+}
+
+/* ---- Events ---- */
+generateBtn.addEventListener('click', buildExam);
+resetBtn.addEventListener('click', ()=>{
+  stopTimer();
+  examDiv.innerHTML = '';
+  currentExam = [];
+  scoreBox.textContent = '';
+  gradeBtn.disabled = true;
+  showAllBtn.disabled = true;
+  resetBtn.disabled = true;
+  metaCount.textContent = '0 Qs';
+  metaTopics.textContent = '—';
+  timerEl.textContent = '00:00';
+});
+gradeBtn.addEventListener('click', gradeExam);
+showAllBtn.addEventListener('click', toggleAllExplanations);
+
+document.addEventListener('keydown', (e)=>{
+  if((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ buildExam(); }
+  if(e.key.toLowerCase() === 'g' && !gradeBtn.disabled){ gradeExam(); }
+  if(e.key.toLowerCase() === 'e' && !showAllBtn.disabled){ toggleAllExplanations(); }
+});
+
+// Initialize with a default exam
+buildExam();
+</script>
+</body>
+</html>

@@ -19,23 +19,19 @@ TrafficWIz is a group project designed to analyze traffic patterns in **Nashvill
 ## Team Roles 
 - Web & Frontend – Merhawit  
 - Python ML Developer – Ben 
-- Data Integration – Demeric 
+- Data Integration – Demarick
 - Documentation & Presentation – Hayder
 - Database & SQL Analyst – Zelalem 
 
 ---
 ## TrafficWiz Setup installations
+# My Flask + Frontend App
 
-### Backend
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
+## Quick Start
 
-### Frontend
-cd frontend/frontend
-npm install
-echo VITE_API_BASE_URL=http://127.0.0.1:8000 > .env
-npm run dev
+Simply double-click `start.bat` or run from command prompt:
+```batch
+start.bat
 
 ### Database
 - Import schema.sql into MySQL

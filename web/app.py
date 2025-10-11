@@ -1,9 +1,11 @@
 import os
-from flask import Flask, jsonify request
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from dotenv import load_dotenv
 
-# Load environment variables from .env
+# -------------------------------
+# Load environment variables
+# -------------------------------
 load_dotenv()
 
 def create_app():
@@ -15,20 +17,18 @@ def create_app():
     def health():
         return jsonify({"status": "ok", "service": "TrafficWiz API"})
 
-    # Temporary demo endpoint (no DB yet)
+    # Demo endpoints (for testing or local UI)
     @app.get("/api/demo")
     def demo():
         return jsonify({"message": "This is a demo endpoint"})
 
-    # New GET endpoint
     @app.get("/api/hello")
     def hello():
         return jsonify({"message": "Hello from TrafficWiz API!"})
 
-    # New POST endpoint
     @app.post("/api/echo")
     def echo():
-        data = request.get_json()  # get JSON body from the request
+        data = request.get_json(force=True)
         return jsonify({"you_sent": data})
 
     return app
@@ -36,5 +36,5 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
-    port = int(os.getenv("PORT", 5001))  # use .env PORT or default to 5001
+    port = int(os.getenv("PORT", 5001))  # defaults to 5001
     app.run(host="0.0.0.0", port=port, debug=True)

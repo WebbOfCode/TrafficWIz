@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==== GLOBAL STYLING ==== */
+body {
+  @apply bg-gradient-to-br from-black via-gray-900 to-violet-900 text-gray-100 font-sans min-h-screen;
+}
+
+h1, h2, h3 {
+  @apply text-white font-extrabold;
+}
+
+a {
+  @apply text-violet-400 hover:text-violet-300;
+}
+
+table {
+  @apply border-collapse text-white;
+}
+
+input, select {
+  @apply bg-gray-800 text-white border border-violet-600 rounded focus:ring-2 focus:ring-violet-500 focus:outline-none;
+}
+
+.card {
+  @apply bg-gray-900/70 text-white border border-violet-700 rounded-xl shadow-lg backdrop-blur-md;
+}
