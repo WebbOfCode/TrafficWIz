@@ -1,3 +1,29 @@
+/**
+ * ============================================================
+ * TrafficWiz - Risk Analysis Page Component
+ * ============================================================
+ * Purpose: Risk visualization and ML metrics dashboard
+ * 
+ * Features:
+ * - Severity distribution pie chart (Recharts)
+ *   - Fetches aggregated data from /api/incidents/by-severity
+ *   - Color-coded by severity level (purple gradient)
+ * - Machine Learning metrics panel
+ *   - Fetches training metrics from /metrics endpoint
+ *   - Displays model performance stats (JSON format)
+ *   - Shows last training results if model.pkl exists
+ * 
+ * Data Sources:
+ * - API_BASE/api/incidents/by-severity - Severity counts
+ * - API_BASE/metrics - ML model metrics (optional)
+ * 
+ * Visualization:
+ * - Responsive pie chart with tooltips and legend
+ * - Purple color scheme matching app theme
+ * - Graceful handling when metrics unavailable
+ * ============================================================
+ */
+
 import { useEffect, useState } from "react";
 import { API_BASE } from "../config";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";

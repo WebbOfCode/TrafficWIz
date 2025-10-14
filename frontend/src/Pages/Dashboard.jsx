@@ -1,8 +1,38 @@
+/**
+ * ============================================================
+ * TrafficWiz - Dashboard Page Component
+ * ============================================================
+ * Purpose: Main dashboard view with incident summary and detailed table
+ * 
+ * Features:
+ * - Summary cards showing total incidents and severity breakdown
+ * - Sortable incident table with multiple sort options:
+ *   - Date: Recent first / Oldest first
+ *   - Severity: High to Low / Low to High
+ * - Severity filter dropdown (All / High / Medium / Low)
+ * - Debug panel showing raw API response (for development)
+ * - Response shape normalization (handles multiple backend formats)
+ * 
+ * Data Flow:
+ * - Fetches from /api/traffic (proxied by Vite dev server)
+ * - Normalizes severity values (case-insensitive, numeric mapping)
+ * - Applies filtering and sorting before rendering
+ * 
+ * State Management:
+ * - traffic: Raw incident data from API
+ * - sortBy: Current sort option (date_desc, date_asc, severity_desc, severity_asc)
+ * - severityFilter: Active severity filter ("all", "high", "medium", "low")
+ * - loading: Loading state for async data fetch
+ * ============================================================
+ */
+
 import { useEffect, useState } from "react";
 
 function Dashboard() {
   const [traffic, setTraffic] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [sortBy, setSortBy] = useState("date_desc");
+  const [severityFilter, setSeverityFilter] = useState("all");
 
   useEffect(() => {
     async function fetchTraffic() {
@@ -40,6 +70,23 @@ function Dashboard() {
           }
         }
 
+        // Normalize severity strings (case-insensitive) to canonical 'High'/'Medium'/'Low'
+        const normalizeSeverity = (s) => {
+          if (typeof s === 'string') {
+            const v = s.trim().toLowerCase();
+            if (v === 'high') return 'High';
+            if (v === 'medium') return 'Medium';
+            if (v === 'low') return 'Low';
+          }
+          if (typeof s === 'number') {
+            if (s >= 4) return 'High';
+            if (s === 3) return 'Medium';
+            return 'Low';
+          }
+          return s;
+        };
+
+        rows = (rows || []).map(r => ({ ...r, severity: normalizeSeverity(r.severity) }));
         setTraffic(rows || []);
       } catch (err) {
         console.error("Error fetching traffic:", err);
@@ -55,6 +102,38 @@ function Dashboard() {
   const high = traffic.filter((t) => t.severity === "High").length;
   const med = traffic.filter((t) => t.severity === "Medium").length;
   const low = traffic.filter((t) => t.severity === "Low").length;
+
+  // Derived filtered + sorted rows based on sortBy and severityFilter
+  const severityRank = (s) => {
+    if (!s) return 0;
+    const v = String(s).trim().toLowerCase();
+    if (v === "high") return 3;
+    if (v === "medium") return 2;
+    if (v === "low") return 1;
+    const n = Number(s);
+    if (!isNaN(n)) return n;
+    return 0;
+  };
+
+  const filtered = severityFilter === "all" ? traffic : traffic.filter(t => {
+    return String(t.severity || "").toLowerCase() === severityFilter;
+  });
+
+  const displayRows = [...filtered].sort((a, b) => {
+    if (sortBy === "date_desc") {
+      return (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0);
+    }
+    if (sortBy === "date_asc") {
+      return (new Date(a.date).getTime() || 0) - (new Date(b.date).getTime() || 0);
+    }
+    if (sortBy === "severity_desc") {
+      return severityRank(b.severity) - severityRank(a.severity);
+    }
+    if (sortBy === "severity_asc") {
+      return severityRank(a.severity) - severityRank(b.severity);
+    }
+    return 0;
+  });
 
   return (
     <div className="p-4 text-white">
@@ -80,10 +159,42 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* ===== Table ===== */}
+      {/* ===== Table and Controls ===== */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="text-sm text-gray-300">Showing {traffic.length} incidents</div>
+        <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <label className="text-sm text-gray-300">Filter severity:</label>
+              <select
+                value={severityFilter}
+                onChange={(e) => setSeverityFilter(e.target.value)}
+                className="bg-black/60 text-white border border-violet-700 rounded px-2 py-1 text-sm"
+              >
+                <option value="all">All</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <label className="text-sm text-gray-300">Sort by:</label>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="bg-black/60 text-white border border-violet-700 rounded px-2 py-1 text-sm"
+              >
+                <option value="date_desc">Date: Recent</option>
+                <option value="date_asc">Date: Oldest</option>
+                <option value="severity_desc">Severity (High → Low)</option>
+                <option value="severity_asc">Severity (Low → High)</option>
+              </select>
+            </div>
+          </div>
+      </div>
       {loading ? (
         <p className="text-gray-400">Loading traffic data...</p>
-      ) : traffic.length > 0 ? (
+      ) : displayRows.length > 0 ? (
         <div className="overflow-x-auto card">
           <table className="min-w-full border border-violet-700">
             <thead className="bg-black/40">
@@ -97,7 +208,7 @@ function Dashboard() {
               </tr>
             </thead>
             <tbody>
-              {traffic.map((t) => (
+              {displayRows.map((t) => (
                 <tr key={t.id} className="hover:bg-violet-900/40">
                   <td className="border border-violet-800 px-3 py-2">
                     {t.date ? new Date(t.date).toLocaleDateString() : "Unknown"}

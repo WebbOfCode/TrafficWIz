@@ -1,4 +1,32 @@
-# train_model.py
+"""
+============================================================
+TrafficWiz - ML Model Training Script
+============================================================
+Purpose: Train and save machine learning model for traffic predictions
+
+Features:
+- Loads training data from traffic_data.csv
+- Trains RandomForestRegressor model
+- Calculates performance metrics (R², MAE)
+- Saves trained model to model.pkl (joblib format)
+- Saves metrics to metrics.json
+
+Outputs:
+- model.pkl: Serialized model for /predict endpoint
+- metrics.json: Training metrics for /metrics endpoint
+
+Usage:
+  python train_model.py
+
+Called by:
+- POST /retrain endpoint (triggers retraining)
+- Manual execution for initial model creation
+
+Note: Requires traffic_data.csv with feature columns
+Customize features and target in this script as needed
+============================================================
+"""
+
 import json
 import joblib
 import pandas as pd

@@ -1,3 +1,32 @@
+"""
+============================================================
+TrafficWiz - Database Seeder Script
+============================================================
+Purpose: Generate and insert sample traffic incident data into MySQL
+
+Features:
+- Creates traffic_incidents table if it doesn't exist
+- Generates randomized incident data:
+  - Random dates within configurable date range
+  - Variety of locations (highways, streets, intersections)
+  - Severity levels (1-5 scale)
+  - Realistic incident descriptions
+- Configurable via command-line arguments:
+  - --n: Number of incidents to generate (default: 200)
+  - --days: Date range in days from today (default: 60)
+
+Database Configuration:
+- Reads credentials from .env file in backend folder
+- Environment variables: DB_HOST, DB_USER, DB_PASSWORD, DB_NAME
+
+Usage:
+  python seed_traffic.py --n 200 --days 60
+
+Note: Currently non-idempotent - running multiple times appends data
+Recommendation: Add --force flag or truncate logic for production
+============================================================
+"""
+
 import os, random, datetime
 from pathlib import Path
 from dotenv import load_dotenv

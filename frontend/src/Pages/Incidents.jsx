@@ -1,3 +1,27 @@
+/**
+ * ============================================================
+ * TrafficWiz - Incidents List Page Component
+ * ============================================================
+ * Purpose: Searchable list of all traffic incidents
+ * 
+ * Features:
+ * - Real-time search/filter by description or location
+ * - Clickable incident cards (navigate to detail view)
+ * - Severity badge color-coding (High/Medium/Low)
+ * - Date display with formatted timestamps
+ * - Empty state message when no incidents match search
+ * 
+ * Data Flow:
+ * - Fetches all incidents from API_BASE/api/traffic
+ * - Client-side filtering based on search query
+ * - Links to /incidents/:id for detailed view
+ * 
+ * User Interaction:
+ * - Search bar filters incidents in real-time
+ * - Click any incident card to view full details
+ * ============================================================
+ */
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { API_BASE } from "../config";

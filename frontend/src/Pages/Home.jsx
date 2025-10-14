@@ -1,27 +1,95 @@
+/**
+ * ============================================================
+ * TrafficWiz - Home Page Component
+ * ============================================================
+ * Purpose: Landing page with branding, current weather, and map preview
+ * 
+ * Features:
+ * - TrafficWiz logo and welcome message
+ * - Live weather from National Weather Service (NWS) API
+ *   - Fetches current observation from nearest station
+ *   - Falls back to hourly/regular forecast if observation unavailable
+ *   - Displays temperature (°F), condition, and city/state
+ *   - Purple translucent card styling
+ * - Mapbox static map preview (if VITE_MAPBOX_TOKEN is set)
+ *   - Shows Nashville area centered at lon:-86.78, lat:36.16
+ *   - Displays helper message if token missing
+ * - Navigation buttons to Dashboard, Incidents, and Risk pages
+ * 
+ * API Integration:
+ * - api.weather.gov/points/{lat},{lon} - Get forecast/observation URLs
+ * - api.weather.gov/stations/{id}/observations/latest - Current conditions
+ * - Mapbox Static Tiles API (optional, requires token)
+ * 
+ * Environment Variables:
+ * - VITE_MAPBOX_TOKEN (optional) - Mapbox public token for map display
+ * ============================================================
+ */
+
 import { useState, useEffect } from "react";
 
-function Home({ darkMode }) {
+function Home() {
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
-    const fetchWeather = async () => {
+    // Use NWS API for weather: get observation if possible, otherwise use forecast
+    const fetchNws = async () => {
       try {
-        const API_KEY = import.meta.env.VITE_WEATHER_API_KEY || "demo";
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=Nashville,US&appid=${API_KEY}&units=imperial`
-        );
-        const data = await response.json();
-        setWeather({
-          temp: Math.round(data.main?.temp || 72),
-          condition: data.weather?.[0]?.main || "Clear",
-          humidity: data.main?.humidity || 60,
-        });
+        const lat = 36.16;
+        const lon = -86.78;
+        const pointsUrl = `https://api.weather.gov/points/${lat},${lon}`;
+        const pRes = await fetch(pointsUrl);
+        if (!pRes.ok) throw new Error(`NWS points request failed: ${pRes.status}`);
+  const pData = await pRes.json();
+  const city = pData?.properties?.relativeLocation?.properties?.city;
+  const state = pData?.properties?.relativeLocation?.properties?.state;
+  const locationLabel = city ? (state ? `${city}, ${state}` : city) : null;
+
+        // Try observations first: get stations, then latest observation
+        const stationsUrl = pData.properties?.observationStations;
+        if (stationsUrl) {
+          try {
+            const sRes = await fetch(stationsUrl);
+            if (sRes.ok) {
+              const sData = await sRes.json();
+              const stationId = sData?.features?.[0]?.properties?.stationIdentifier;
+              const obsUrl = stationId ? `https://api.weather.gov/stations/${stationId}/observations/latest` : null;
+              if (obsUrl) {
+                const oRes = await fetch(obsUrl);
+                if (oRes.ok) {
+                  const oData = await oRes.json();
+                  const tempC = oData?.properties?.temperature?.value; // Celsius
+                  const tempF = typeof tempC === 'number' ? Math.round((tempC * 9) / 5 + 32) : null;
+                  const text = oData?.properties?.textDescription || oData?.properties?.shortPhrase || null;
+                  const detailed = oData?.properties?.textDescription || null;
+                  setWeather({ temp: tempF, condition: text || 'Observation', detailed, location: locationLabel });
+                  return; // got current observation
+                }
+              }
+            }
+          } catch (obsErr) {
+            console.warn('Observation fetch failed, falling back to forecast', obsErr);
+          }
+        }
+
+        // fallback to forecast (hourly or regular)
+        const forecastUrl = pData.properties?.forecastHourly || pData.properties?.forecast;
+        if (!forecastUrl) throw new Error('NWS forecast URL not found from points response');
+        const fRes = await fetch(forecastUrl);
+        if (!fRes.ok) throw new Error(`NWS forecast request failed: ${fRes.status}`);
+        const fData = await fRes.json();
+        const period = fData.properties?.periods?.[0];
+        if (period) {
+          setWeather({ temp: period.temperature, condition: period.shortForecast, detailed: period.detailedForecast, location: locationLabel });
+        } else {
+          setWeather({ temp: null, condition: 'No forecast', detailed: 'No forecast data available', location: locationLabel });
+        }
       } catch (err) {
-        console.error("Weather fetch failed:", err);
-        setWeather({ temp: 999, condition: "Clear", humidity: 60 });
+        console.warn('NWS weather fetch failed:', err);
+        setWeather({ temp: null, condition: 'Unavailable', detailed: 'Weather service unavailable', location: null });
       }
     };
-    fetchWeather();
+    fetchNws();
   }, []);
 
   return (
@@ -44,33 +112,36 @@ function Home({ darkMode }) {
 
       {/* Weather Widget */}
       {weather && (
-        <div
-          className={`rounded-lg p-4 mb-8 shadow-lg w-64 ${
-            darkMode ? "bg-gray-800 border border-violet-700" : "bg-white"
-          }`}
-        >
-          <h2 className="text-md font-bold mb-2 text-violet-400">Current Weather</h2>
-          <p className="text-3xl font-bold">
-            {weather.temp}°F <span className="text-lg text-gray-400">{weather.condition}</span>
+        <div className="rounded-lg p-4 mb-8 shadow-lg w-80 bg-violet-800/60 backdrop-blur-sm border border-violet-600">
+          <h2 className="text-md font-bold mb-2 text-white">Current Weather (NWS){weather.location ? ` — ${weather.location}` : ''}</h2>
+          <p className="text-3xl font-bold text-white">
+            {weather.temp !== null ? (`${weather.temp}°F`) : "—"}
+            <span className="text-lg text-violet-200 ml-2">{weather.condition}</span>
           </p>
-          <p className="text-sm text-gray-400 mt-1">Humidity: {weather.humidity}%</p>
+          {weather.detailed && (
+            <p className="text-sm text-violet-200/90 mt-2">{weather.detailed}</p>
+          )}
         </div>
       )}
 
       {/* Map Preview */}
-      <div
-        className={`rounded-lg overflow-hidden shadow-xl border ${
-          darkMode ? "border-violet-700" : "border-gray-300"
-        }`}
-      >
-        <img
-          src={`https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/-86.78,36.16,10,0/600x300?access_token=YOUR_MAPBOX_ACCESS_TOKEN`}
-          alt="Nashville Map"
-          className="rounded-lg"
-        />
-        <p className="text-sm text-gray-400 mt-2">
-          Map centered on <strong>Nashville, TN</strong>
-        </p>
+      <div className="rounded-lg overflow-hidden shadow-xl border border-gray-300">
+        {(() => {
+          const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
+          if (!MAPBOX_TOKEN) {
+            return (
+              <div className="p-8 bg-black/20 text-center text-gray-200">
+                <div className="mb-2">Mapbox token not configured.</div>
+                <div className="text-xs">Set <code className="bg-black/40 px-1">VITE_MAPBOX_TOKEN</code> in <code className="bg-black/40 px-1">frontend/.env</code> to show a map.</div>
+              </div>
+            );
+          }
+          const center = "-86.78,36.16,10,0"; // lon,lat,zoom,bearing
+          const url = `https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/${center}/600x300?access_token=${MAPBOX_TOKEN}`;
+          return <img src={url} alt="Nashville Map" className="rounded-lg" />;
+        })()}
+
+        <p className="text-sm text-gray-400 mt-2">Map centered on <strong>Nashville, TN</strong></p>
       </div>
 
       {/* Navigation Buttons */}

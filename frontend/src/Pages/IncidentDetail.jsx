@@ -1,3 +1,30 @@
+/**
+ * ============================================================
+ * TrafficWiz - Incident Detail Page Component
+ * ============================================================
+ * Purpose: Detailed view for a single traffic incident
+ * 
+ * Features:
+ * - Fetches individual incident by ID from URL parameter
+ * - Displays all available incident fields:
+ *   - ID, Date, Severity (color-coded badge)
+ *   - Location, Description, Additional details
+ * - Loading state while fetching data
+ * - Error handling for missing/invalid incidents
+ * - Back button to return to incidents list
+ * 
+ * Routing:
+ * - URL pattern: /incidents/:id
+ * - Extracts incident ID from useParams hook
+ * - Fetches from API_BASE/api/traffic/{id}
+ * 
+ * Error States:
+ * - Shows loading spinner during fetch
+ * - Displays error message if incident not found
+ * - Handles network failures gracefully
+ * ============================================================
+ */
+
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { API_BASE } from "../config";

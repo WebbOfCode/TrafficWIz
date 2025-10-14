@@ -1,4 +1,35 @@
-# backend/ml/predict_local.py
+"""
+============================================================
+TrafficWiz - Local ML Prediction CLI Tool
+============================================================
+Purpose: Command-line utility for testing ML model predictions
+
+Features:
+- Load model.pkl from local filesystem
+- Run predictions on sample data or JSON files
+- Display prediction results in terminal
+- Useful for testing/validation without running Flask server
+
+Usage Examples:
+  # Predict from JSON file
+  python predict_local.py --input sample.json
+
+  # Interactive mode
+  python predict_local.py
+
+  # Batch prediction
+  python predict_local.py --input incidents.json --output results.json
+
+Inputs:
+- Expects model.pkl in same directory
+- JSON input with feature columns matching training data
+
+Note: This is a standalone tool - Flask /predict endpoint
+      loads the model separately. Use this for development
+      and testing without starting the full backend.
+============================================================
+"""
+
 from __future__ import annotations
 
 import argparse

@@ -1,3 +1,28 @@
+REM ============================================================
+REM TrafficWiz - Development Environment Launcher
+REM ============================================================
+REM Purpose: One-command startup for backend and frontend servers
+REM
+REM What this script does:
+REM 1. Backend (Flask):
+REM    - Creates Python virtual environment (if needed)
+REM    - Installs backend dependencies from requirements.txt
+REM    - Runs database seeder (200 incidents, 60 days range)
+REM    - Starts Flask API server on port 5000
+REM 2. Frontend (Vite + React):
+REM    - Installs npm dependencies
+REM    - Starts Vite dev server on port 5173
+REM
+REM Requirements:
+REM - MySQL running and accessible
+REM - backend/.env with DB credentials configured
+REM - Python 3.x and Node.js/npm installed
+REM
+REM Usage: Double-click start.bat or run from command line
+REM
+REM Note: Seeder is non-idempotent - multiple runs append data
+REM ============================================================
+
 @echo off
 echo Starting Flask Backend and Frontend...
 echo.

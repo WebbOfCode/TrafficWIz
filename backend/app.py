@@ -1,6 +1,31 @@
 # ============================================================
-# TrafficWiz Backend – merged Role E + Role D version
-# Flask backend with MySQL + ML integration
+# TrafficWiz Backend - Main Flask Application
+# ============================================================
+# Purpose: REST API server for TrafficWiz application
+# 
+# Responsibilities:
+# - Serve traffic incident data from MySQL database
+# - Provide aggregation endpoints for dashboard and risk analysis
+# - Host ML prediction endpoints (/predict, /metrics, /retrain)
+# - Handle CORS for frontend dev server
+# - DB health checks and connectivity validation
+#
+# Key Endpoints:
+# - GET  /                           - Root health check
+# - GET  /api/health                 - DB-aware health status
+# - GET  /api/traffic                - List all incidents (paginated)
+# - GET  /api/traffic/<id>           - Single incident details
+# - GET  /api/incidents/by-severity  - Severity aggregation
+# - GET  /api/incidents/by-location  - Location aggregation  
+# - GET  /api/incidents/by-day       - Time-series aggregation
+# - POST /predict                    - ML prediction endpoint
+# - GET  /metrics                    - Return ML training metrics
+# - POST /retrain                    - Trigger model retraining
+#
+# Configuration:
+# - Uses environment variables for DB credentials (see .env)
+# - Default port: 5000
+# - CORS enabled for frontend development
 # ============================================================
 
 from flask import Flask, jsonify, request
