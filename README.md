@@ -1,20 +1,42 @@
 # TrafficWiz
-Smart Traffic Analysis Project
+Smart Traffic Analysis & Prediction System
 
 ## Overview
-TrafficWIz is a group project designed to analyze traffic patterns in **Nashville, TN** using crash, congestion, and weather data. Our system combines SQL database design with Python data processing and visualization to provide meaningful insights for improving road safety and traffic flow.
+TrafficWiz is a full-stack web application for analyzing and predicting traffic patterns in **Nashville, TN**. The system combines real-time weather data, incident tracking, machine learning predictions, and interactive visualizations to provide actionable insights for road safety and traffic management.
+
+## ⚡ Quick Start
+
+**New to TrafficWiz? Start here:**
+
+📖 **[Complete Setup Guide](SETUP.md)** - First-time installation instructions
+
+### Prerequisites
+- MySQL 8.0+ (must be installed and running)
+- Python 3.8+
+- Node.js 18+
+
+### Fast Setup (Windows)
+1. Set up MySQL database (see [SETUP.md](SETUP.md) Step 2)
+2. Configure `backend/.env` (copy from `.env.example`)
+3. Run: `start.bat`
+4. Open: http://localhost:5173
+
+---
 
 ## Features
-- Database schema for city, segments, incidents, congestion, and weather
-- SQL queries to retrieve crash and congestion patterns
-- Python scripts for data cleaning, processing, and machine learning models
-- Visualizations for traffic prediction and analysis
+- 📊 **Real-time Dashboard** - Traffic incident summary with sorting and filtering
+- 🗺️ **Live Weather Integration** - Current conditions from National Weather Service
+- 🎯 **Risk Analysis** - Visual breakdown of incident severity and patterns
+- 🤖 **Machine Learning** - Traffic prediction model with metrics display
+- 📍 **Interactive Maps** - Mapbox integration for geographic visualization
+- 🔍 **Searchable Incidents** - Filter and view detailed incident reports
 
 ## Tech Stack
-- **Database**: MySQL  
-- **Backend**: Python  
-- **Visualization**: Bokeh / Matplotlib  
-- **Documentation**: Google Slides & GitHub
+- **Frontend**: React 19, Vite, TailwindCSS, Recharts
+- **Backend**: Flask (Python), MySQL, CORS-enabled REST API
+- **ML**: scikit-learn, pandas, joblib (RandomForest model)
+- **APIs**: National Weather Service, Mapbox (optional)
+- **Database**: MySQL with automated seeding
 
 ## Team Roles 
 - Web & Frontend – Merhawit  
@@ -24,17 +46,50 @@ TrafficWIz is a group project designed to analyze traffic patterns in **Nashvill
 - Database & SQL Analyst – Zelalem 
 
 ---
-## TrafficWiz Setup installations
-# My Flask + Frontend App
+
+## Documentation
+
+📚 **[Architecture & API Docs](docs/README.md)** - Detailed technical documentation  
+🔧 **[File Headers Guide](HEADERS_ADDED.md)** - Code documentation summary  
+⚙️ **[Setup Guide](SETUP.md)** - Installation and configuration  
+
+---
+
+## Database Setup
+
+TrafficWiz uses MySQL with SQL-based seeding:
+
+```bash
+# Create database and user
+mysql -u root -p
+CREATE DATABASE trafficwiz;
+CREATE USER 'trafficwiz_user'@'localhost' IDENTIFIED BY 'StrongPass123!';
+GRANT ALL PRIVILEGES ON trafficwiz.* TO 'trafficwiz_user'@'localhost';
+EXIT;
+
+# Import schema
+mysql -u trafficwiz_user -p trafficwiz < db/schema.sql
+
+# Seed sample data (50+ Nashville incidents)
+mysql -u trafficwiz_user -p trafficwiz < db/seed_data.sql
+```
+
+**Generate more data:**
+```bash
+cd backend/ml
+python make_sample_data.py --n 200 --days 60
+mysql -u trafficwiz_user -p trafficwiz < generated_seed_data.sql
+```
+
+---
 
 ## Quick Start
 
 Simply double-click `start.bat` or run from command prompt:
 ```batch
 start.bat
+```
 
-### Database
-- Import schema.sql into MySQL
-- Run seed_data.sql
+**Make sure database is seeded first** (see Database Setup above).
 
-
+---
