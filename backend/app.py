@@ -239,16 +239,39 @@ def api_incidents_by_day():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    """Return model prediction for posted JSON input."""
+    """Predict incident severity for given road and time."""
     try:
         payload = request.get_json()
         if not os.path.exists(MODEL_PATH):
-            return jsonify({"error": "model.pkl not found"}), 404
+            return jsonify({"error": "model.pkl not found. Run train_model.py first."}), 404
 
-        model = joblib.load(MODEL_PATH)
+        model_data = joblib.load(MODEL_PATH)
+        model = model_data['model']
+        feature_names = model_data['feature_names']
+        
+        # Create dataframe with all features
         df = pd.DataFrame([payload])
+        
+        # Ensure all expected features are present
+        for col in feature_names:
+            if col not in df.columns:
+                df[col] = 0
+        
+        # Reorder columns to match training
+        df = df[feature_names]
+        
+        # Predict
         y_pred = model.predict(df)[0]
-        return jsonify({"prediction": float(y_pred)})
+        y_proba = model.predict_proba(df)[0]
+        
+        return jsonify({
+            "prediction": str(y_pred),
+            "probabilities": {
+                "Low": float(y_proba[0]) if len(y_proba) > 0 else 0,
+                "Medium": float(y_proba[1]) if len(y_proba) > 1 else 0,
+                "High": float(y_proba[2]) if len(y_proba) > 2 else 0
+            }
+        })
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
@@ -263,6 +286,42 @@ def get_metrics():
         with open(METRICS_PATH, "r", encoding="utf-8") as f:
             metrics = json.load(f)
         return jsonify(metrics)
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/road-analysis", methods=["GET"])
+def get_road_analysis():
+    """Return best/worst travel times for each road."""
+    try:
+        road_analysis_path = os.path.join(os.path.dirname(__file__), "ml", "road_analysis.json")
+        if not os.path.exists(road_analysis_path):
+            return jsonify({"error": "road_analysis.json not found. Run train_model.py first."}), 404
+        
+        with open(road_analysis_path, "r", encoding="utf-8") as f:
+            analysis = json.load(f)
+        return jsonify(analysis)
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/best-time/<path:road>", methods=["GET"])
+def get_best_time(road):
+    """Get best travel times for a specific road."""
+    try:
+        road_analysis_path = os.path.join(os.path.dirname(__file__), "ml", "road_analysis.json")
+        if not os.path.exists(road_analysis_path):
+            return jsonify({"error": "road_analysis.json not found"}), 404
+        
+        with open(road_analysis_path, "r", encoding="utf-8") as f:
+            analysis = json.load(f)
+        
+        if road not in analysis:
+            return jsonify({"error": f"Road '{road}' not found in analysis"}), 404
+        
+        return jsonify(analysis[road])
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500

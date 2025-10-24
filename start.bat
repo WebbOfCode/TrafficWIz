@@ -20,7 +20,7 @@ REM - Python 3.x and Node.js/npm installed
 REM
 REM Usage: Double-click start.bat or run from command line
 REM
-REM Note: Seeder is non-idempotent - multiple runs append data
+REM Note: Two separate command windows will open for backend and frontend
 REM ============================================================
 
 @echo off
@@ -31,7 +31,7 @@ REM Start backend in new window (create venv, install deps, seed DB, then start 
 start "Flask Backend" cmd /k "cd backend && python -m venv venv && call venv\Scripts\activate && pip install -r requirements.txt && echo Running DB seeder... && python scripts\seed_traffic.py --n 200 --days 60 && echo Starting Flask app... && python app.py"
 
 REM Wait a moment for backend to initialize
-timeout /t 5 /nobreak >nul
+timeout /t 10 /nobreak >nul
 
 REM Start frontend in new window
 start "Frontend Dev Server" cmd /k "cd frontend && npm install && npm run dev"

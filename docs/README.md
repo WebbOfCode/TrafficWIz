@@ -81,13 +81,35 @@ Other tools/config
 
 Tailwind config: tailwind.config.cjs (converted to CommonJS module.exports = {} so Node can load it).
 package.json, postcss.config.cjs, tailwind.config.cjs — frontend build/dev dependencies.
-How frontend talks to backend
+ How frontend talks to backend
 
-Two ways:
-Relative fetches (fetch("/api/traffic")) — Vite dev server proxies them to server.proxy target (so the frontend dev server forwards to the backend).
-Absolute fetches using API_BASE (e.g., fetch(${API_BASE}/api/incidents/by-severity)) — direct to backend.
-When developing via Vite you typically use relative paths and the Vite proxy (this avoids CORS in dev), but both approaches are supported.
-The config.js API_BASE is used by pages that call absolute URLs (some pages do).
+ TrafficWiz supports two main fetch patterns for talking to the Flask API:
+
+ 1. Relative Fetches (Vite Proxy)
+     - Example: fetch("/api/traffic") or fetch("/incidents")
+     - In development, Vite’s dev server (port 5173) proxies all requests under `/api` to the backend URL defined in `vite.config.js` (default `http://127.0.0.1:5000`).
+     - Avoids CORS issues since the browser sees the same origin (the Vite dev server).
+     - Proxy config is in `frontend/vite.config.js` under `server.proxy`:
+        ```js
+        proxy: {
+          '/api': 'http://127.0.0.1:5000'
+        }
+        ```
+
+ 2. Absolute Fetches (Direct API_BASE)
+     - Example: fetch(`${API_BASE}/api/incidents/by-severity`)
+     - `API_BASE` is defined in `src/config.js` (default `http://127.0.0.1:5000`).
+     - Used for code running outside of Vite proxy (e.g., production builds or special components).
+     - In production, set environment variable `VITE_API_BASE` in `.env` to point at your deployed backend.
+
+ 3. Cross-Origin Requests (Production)
+     - In a deployed setup where frontend and backend are on different domains or ports, the Flask server is configured with CORS middleware (`flask-cors`) to allow cross-origin requests from the frontend origin.
+
+ 4. When to Use Which Pattern
+     - **Development:** Prefer relative fetches + Vite proxy for zero-config local development.
+     - **Production:** Use absolute URLs via `API_BASE` (set via environment) or serve frontend assets from the same domain as the API.
+
+ Note: All pages and components in `frontend/src/Pages` (Incidents, Dashboard, Risk, etc.) use one of these two patterns to retrieve data from the backend.
 DB (folder: db)
 schema.sql
 Schema defining multiple tables (city, segment, incident, congestion, weather_hourly, views).
