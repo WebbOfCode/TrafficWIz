@@ -22,3 +22,11 @@
 
 // Backend API base URL - Flask server on port 5000
 export const API_BASE = "http://127.0.0.1:5000";
+
+// TomTom API Configuration
+export const TOMTOM_CONFIG = {
+  apiKey: "YOUR_TOMTOM_API_KEY_HERE", // Replace with your actual API key
+  baseUrl: "https://api.tomtom.com",
+  mapStyle: "main",
+  version: "1"
+};

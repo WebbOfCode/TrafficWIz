@@ -27,6 +27,7 @@ import Dashboard from "./Pages/Dashboard";
 import Incidents from "./Pages/Incidents";
 import Risk from "./Pages/Risk";
 import IncidentDetail from "./Pages/IncidentDetail";
+import TomTomTraffic from "./Pages/TomTomTraffic";
 function App() {
 
   return (
@@ -61,6 +62,9 @@ function App() {
             <Link to="/risk" className="hover:text-violet-400">
               Risk
             </Link>
+            <Link to="/tomtom" className="hover:text-violet-400">
+              Live Traffic
+            </Link>
 
               {/* controls removed (dark mode & status) */}
           </div>
@@ -74,6 +78,7 @@ function App() {
             <Route path="/incidents" element={<Incidents />} />
               <Route path="/incidents/:id" element={<IncidentDetail />} />
             <Route path="/risk" element={<Risk />} />
+            <Route path="/tomtom" element={<TomTomTraffic />} />
           </Routes>
         </main>
 

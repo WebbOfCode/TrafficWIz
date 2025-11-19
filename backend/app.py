@@ -37,6 +37,7 @@ import joblib
 import traceback
 from datetime import datetime
 import mysql.connector
+import requests
 
 # ============================================================
 # App configuration
@@ -56,6 +57,10 @@ DB_CONFIG = {
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "ml", "model.pkl")
 METRICS_PATH = os.path.join(os.path.dirname(__file__), "ml", "metrics.json")
+
+# TomTom API configuration
+TOMTOM_API_KEY = os.getenv("TOMTOM_API_KEY", "YOUR_TOMTOM_API_KEY_HERE")
+TOMTOM_BASE_URL = "https://api.tomtom.com"
 
 # ============================================================
 # Utility: connect to MySQL
@@ -283,6 +288,108 @@ def retrain_model():
             "stdout": result.stdout,
             "stderr": result.stderr
         })
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+# ============================================================
+# TomTom API Endpoints
+# ============================================================
+
+# Import TomTom service
+try:
+    from services.tomtom_service import TomTomService
+    tomtom_service = TomTomService(TOMTOM_API_KEY)
+except ImportError as e:
+    logger.warning(f"TomTom service not available: {e}")
+    tomtom_service = None
+
+@app.route("/api/tomtom/traffic-flow", methods=["GET"])
+def get_tomtom_traffic_flow():
+    """Get real-time traffic flow data for a location"""
+    if not tomtom_service:
+        return jsonify({"error": "TomTom service not available"}), 503
+    
+    try:
+        lat = float(request.args.get('lat'))
+        lon = float(request.args.get('lon'))
+        zoom = int(request.args.get('zoom', 10))
+        
+        flow_data = tomtom_service.get_traffic_flow(lat, lon, zoom)
+        return jsonify(flow_data)
+    except (TypeError, ValueError) as e:
+        return jsonify({"error": "Invalid lat/lon parameters"}), 400
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/tomtom/traffic-incidents", methods=["GET"])
+def get_tomtom_traffic_incidents():
+    """Get live traffic incidents in Nashville area"""
+    if not tomtom_service:
+        return jsonify({"error": "TomTom service not available"}), 503
+    
+    try:
+        # Default to Nashville bounding box if not provided
+        bbox = request.args.get('bbox', '-87.0,36.0,-86.5,36.4')
+        category_filter = request.args.get('categories')
+        
+        if category_filter:
+            category_filter = [int(x.strip()) for x in category_filter.split(',')]
+        
+        incidents = tomtom_service.get_traffic_incidents(bbox, category_filter)
+        return jsonify({"incidents": incidents, "count": len(incidents)})
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/tomtom/route", methods=["POST"])
+def calculate_tomtom_route():
+    """Calculate optimal route using TomTom routing API"""
+    if not tomtom_service:
+        return jsonify({"error": "TomTom service not available"}), 503
+    
+    try:
+        data = request.get_json()
+        start = (data['start']['lat'], data['start']['lon'])
+        end = (data['end']['lat'], data['end']['lon'])
+        avoid_traffic = data.get('avoid_traffic', True)
+        
+        route_data = tomtom_service.calculate_route(start, end, avoid_traffic)
+        return jsonify(route_data)
+    except KeyError as e:
+        return jsonify({"error": f"Missing required field: {e}"}), 400
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/tomtom/geocode", methods=["GET"])
+def tomtom_geocode():
+    """Geocode an address using TomTom search API"""
+    if not tomtom_service:
+        return jsonify({"error": "TomTom service not available"}), 503
+    
+    try:
+        address = request.args.get('address')
+        if not address:
+            return jsonify({"error": "Address parameter required"}), 400
+        
+        results = tomtom_service.geocode_address(address)
+        return jsonify({"results": results, "count": len(results)})
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/tomtom/nashville-overview", methods=["GET"])
+def get_nashville_traffic_overview():
+    """Get comprehensive traffic overview for Nashville"""
+    if not tomtom_service:
+        return jsonify({"error": "TomTom service not available"}), 503
+    
+    try:
+        overview = tomtom_service.get_nashville_traffic_overview()
+        return jsonify(overview)
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
