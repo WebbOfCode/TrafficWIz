@@ -23,11 +23,12 @@
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
+import HomeTest from "./Pages/HomeTest";
 import Dashboard from "./Pages/Dashboard";
 import Incidents from "./Pages/Incidents";
 import Risk from "./Pages/Risk";
 import IncidentDetail from "./Pages/IncidentDetail";
-import TomTomTraffic from "./Pages/TomTomTraffic";
+import HereTraffic from "./Pages/HereTraffic";
 function App() {
 
   return (
@@ -62,7 +63,7 @@ function App() {
             <Link to="/risk" className="hover:text-violet-400">
               Risk
             </Link>
-            <Link to="/tomtom" className="hover:text-violet-400">
+            <Link to="/traffic" className="hover:text-violet-400">
               Live Traffic
             </Link>
 
@@ -73,12 +74,12 @@ function App() {
         {/* ===== PAGE CONTENT ===== */}
         <main className="flex-grow p-6">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomeTest />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/incidents" element={<Incidents />} />
               <Route path="/incidents/:id" element={<IncidentDetail />} />
             <Route path="/risk" element={<Risk />} />
-            <Route path="/tomtom" element={<TomTomTraffic />} />
+            <Route path="/traffic" element={<HereTraffic />} />
           </Routes>
         </main>
 

@@ -107,7 +107,7 @@ const TomTomMap = ({
         container: mapRef.current,
         center: [center[1], center[0]], // TomTom uses [lng, lat]
         zoom: zoom,
-        style: 'tomtom://vector/1/basic-main'
+        style: 'https://api.tomtom.com/maps-sdk-for-web/6.x/styles/basic.main.json'
       });
 
       mapInstanceRef.current = map;
@@ -149,31 +149,14 @@ const TomTomMap = ({
           // Create marker element
           const markerElement = document.createElement('div');
           markerElement.className = 'incident-marker';
-          markerElement.innerHTML = `
-            <div style="
-              background-color: ${getSeverityColor(incident.severity)};
-              border-radius: 50%;
-              width: 12px;
-              height: 12px;
-              border: 2px solid white;
-              box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            "></div>
-          `;
+          markerElement.innerHTML = `<div style="background-color: ${getSeverityColor(incident.severity)}; border-radius: 50%; width: 12px; height: 12px; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>`;
 
           // Add marker to map
           new window.tt.Marker({ element: markerElement })
             .setLngLat([coords[0], coords[1]])
             .setPopup(
               new window.tt.Popup({ offset: 25 })
-                .setHTML(`
-                  <div>
-                    <h4 style="margin: 0 0 8px 0; color: #333;">${incident.description}</h4>
-                    <p style="margin: 0; font-size: 12px; color: #666;">
-                      Severity: ${incident.severity}<br>
-                      ${incident.road_numbers?.join(', ') || 'Unknown road'}
-                    </p>
-                  </div>
-                `)
+                .setHTML(`<div><h4 style="margin: 0 0 8px 0; color: #333;">${incident.description}</h4><p style="margin: 0; font-size: 12px; color: #666;">Severity: ${incident.severity}<br>${incident.road_numbers?.join(', ') || 'Unknown road'}</p></div>`)
             )
             .addTo(map);
         }

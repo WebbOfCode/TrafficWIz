@@ -8,4 +8,33 @@ export const getHealth = () => fetch('/api/health').then(j);
 export const getTraffic = () => fetch('/api/traffic').then(j);
 export const getBySeverity = () => fetch('/api/incidents/by-severity').then(j);
 export const getByLocation = () => fetch('/api/incidents/by-location').then(j);
-export const getByDay = () => fetch('/api/incidents/by-day').then(j);\n\n// TomTom API functions\nexport const getTomTomTrafficFlow = (lat, lon, zoom = 10) => \n  fetch(`/api/tomtom/traffic-flow?lat=${lat}&lon=${lon}&zoom=${zoom}`).then(j);\n\nexport const getTomTomIncidents = (bbox = '-87.0,36.0,-86.5,36.4', categories = null) => {\n  const url = categories \n    ? `/api/tomtom/traffic-incidents?bbox=${bbox}&categories=${categories}`\n    : `/api/tomtom/traffic-incidents?bbox=${bbox}`;\n  return fetch(url).then(j);\n};\n\nexport const calculateTomTomRoute = (start, end, avoidTraffic = true) => \n  fetch('/api/tomtom/route', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify({ start, end, avoid_traffic: avoidTraffic })\n  }).then(j);\n\nexport const geocodeTomTom = (address) => \n  fetch(`/api/tomtom/geocode?address=${encodeURIComponent(address)}`).then(j);\n\nexport const getNashvilleTrafficOverview = () => \n  fetch('/api/tomtom/nashville-overview').then(j);\n\nexport const getTomTomStatus = () => \n  fetch('/api/tomtom/status').then(j);
+export const getByDay = () => fetch('/api/incidents/by-day').then(j);
+
+// HERE Maps API functions
+export const getHereTrafficFlow = (lat, lng, radius = 5000) => 
+  fetch(`/api/here/traffic-flow?lat=${lat}&lon=${lng}&radius=${radius}`).then(j);
+
+export const getHereIncidents = ({ bbox, lat, lng, radius = 10000 }) => {
+  if (bbox) {
+    return fetch(`/api/here/traffic-incidents?bbox=${bbox}`).then(j);
+  } else if (lat && lng) {
+    return fetch(`/api/here/traffic-incidents?lat=${lat}&lon=${lng}&radius=${radius}`).then(j);
+  }
+  return fetch('/api/here/traffic-incidents?bbox=-87.0,36.0,-86.5,36.4').then(j);
+};
+
+export const calculateHereRoute = (start, end, departureTime = null) => 
+  fetch('/api/here/route', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ start, end, departure_time: departureTime })
+  }).then(j);
+
+export const geocodeHere = (address) => 
+  fetch(`/api/here/geocode?address=${encodeURIComponent(address)}`).then(j);
+
+export const getNashvilleTrafficOverview = () => 
+  fetch('/api/here/nashville-overview').then(j);
+
+export const getHereStatus = () => 
+  fetch('/api/here/status').then(j);

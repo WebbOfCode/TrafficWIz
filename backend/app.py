@@ -58,9 +58,9 @@ DB_CONFIG = {
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "ml", "model.pkl")
 METRICS_PATH = os.path.join(os.path.dirname(__file__), "ml", "metrics.json")
 
-# TomTom API configuration
-TOMTOM_API_KEY = os.getenv("TOMTOM_API_KEY", "YOUR_TOMTOM_API_KEY_HERE")
-TOMTOM_BASE_URL = "https://api.tomtom.com"
+# HERE Maps API configuration
+HERE_API_KEY = os.getenv("HERE_API_KEY", "_Y8zyahHf6R_i8_nlICiLjVeIQAySkuVSBpmm5LDaUU")
+HERE_BASE_URL = "https://api.here.com"
 
 # ============================================================
 # Utility: connect to MySQL
@@ -294,29 +294,29 @@ def retrain_model():
 
 
 # ============================================================
-# TomTom API Endpoints
+# HERE Maps API Endpoints
 # ============================================================
 
-# Import TomTom service
+# Import HERE service
 try:
-    from services.tomtom_service import TomTomService
-    tomtom_service = TomTomService(TOMTOM_API_KEY)
+    from services.here_service import HereService
+    here_service = HereService(HERE_API_KEY)
 except ImportError as e:
-    logger.warning(f"TomTom service not available: {e}")
-    tomtom_service = None
+    print(f"HERE service not available: {e}")
+    here_service = None
 
-@app.route("/api/tomtom/traffic-flow", methods=["GET"])
-def get_tomtom_traffic_flow():
+@app.route("/api/here/traffic-flow", methods=["GET"])
+def get_here_traffic_flow():
     """Get real-time traffic flow data for a location"""
-    if not tomtom_service:
-        return jsonify({"error": "TomTom service not available"}), 503
+    if not here_service:
+        return jsonify({"error": "HERE service not available"}), 503
     
     try:
         lat = float(request.args.get('lat'))
         lon = float(request.args.get('lon'))
-        zoom = int(request.args.get('zoom', 10))
+        radius = int(request.args.get('radius', 5000))
         
-        flow_data = tomtom_service.get_traffic_flow(lat, lon, zoom)
+        flow_data = here_service.get_traffic_flow(lat, lon, radius)
         return jsonify(flow_data)
     except (TypeError, ValueError) as e:
         return jsonify({"error": "Invalid lat/lon parameters"}), 400
@@ -324,39 +324,42 @@ def get_tomtom_traffic_flow():
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/tomtom/traffic-incidents", methods=["GET"])
-def get_tomtom_traffic_incidents():
+@app.route("/api/here/traffic-incidents", methods=["GET"])
+def get_here_traffic_incidents():
     """Get live traffic incidents in Nashville area"""
-    if not tomtom_service:
-        return jsonify({"error": "TomTom service not available"}), 503
+    if not here_service:
+        return jsonify({"error": "HERE service not available"}), 503
     
     try:
         # Default to Nashville bounding box if not provided
         bbox = request.args.get('bbox', '-87.0,36.0,-86.5,36.4')
-        category_filter = request.args.get('categories')
+        lat = request.args.get('lat')
+        lon = request.args.get('lon')
+        radius = int(request.args.get('radius', 10000))
         
-        if category_filter:
-            category_filter = [int(x.strip()) for x in category_filter.split(',')]
+        if lat and lon:
+            incidents_data = here_service.get_traffic_incidents(lat=float(lat), lon=float(lon), radius=radius)
+        else:
+            incidents_data = here_service.get_traffic_incidents(bbox=bbox)
         
-        incidents = tomtom_service.get_traffic_incidents(bbox, category_filter)
-        return jsonify({"incidents": incidents, "count": len(incidents)})
+        return jsonify({"incidents": incidents_data.get('incidents', []), "count": len(incidents_data.get('incidents', []))})
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/tomtom/route", methods=["POST"])
-def calculate_tomtom_route():
-    """Calculate optimal route using TomTom routing API"""
-    if not tomtom_service:
-        return jsonify({"error": "TomTom service not available"}), 503
+@app.route("/api/here/route", methods=["POST"])
+def calculate_here_route():
+    """Calculate optimal route using HERE routing API"""
+    if not here_service:
+        return jsonify({"error": "HERE service not available"}), 503
     
     try:
         data = request.get_json()
-        start = (data['start']['lat'], data['start']['lon'])
-        end = (data['end']['lat'], data['end']['lon'])
-        avoid_traffic = data.get('avoid_traffic', True)
+        origin = f"{data['start']['lat']},{data['start']['lon']}"
+        destination = f"{data['end']['lat']},{data['end']['lon']}"
+        departure_time = data.get('departure_time')
         
-        route_data = tomtom_service.calculate_route(start, end, avoid_traffic)
+        route_data = here_service.calculate_route(origin, destination, departure_time)
         return jsonify(route_data)
     except KeyError as e:
         return jsonify({"error": f"Missing required field: {e}"}), 400
@@ -364,32 +367,70 @@ def calculate_tomtom_route():
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/tomtom/geocode", methods=["GET"])
-def tomtom_geocode():
-    """Geocode an address using TomTom search API"""
-    if not tomtom_service:
-        return jsonify({"error": "TomTom service not available"}), 503
+@app.route("/api/here/geocode", methods=["GET"])
+def here_geocode():
+    """Geocode an address using HERE geocoding API"""
+    if not here_service:
+        return jsonify({"error": "HERE service not available"}), 503
     
     try:
         address = request.args.get('address')
         if not address:
             return jsonify({"error": "Address parameter required"}), 400
         
-        results = tomtom_service.geocode_address(address)
+        geocode_data = here_service.geocode_address(address)
+        results = geocode_data.get('results', [])
         return jsonify({"results": results, "count": len(results)})
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/tomtom/nashville-overview", methods=["GET"])
+@app.route("/api/here/nashville-overview", methods=["GET"])
 def get_nashville_traffic_overview():
     """Get comprehensive traffic overview for Nashville"""
-    if not tomtom_service:
-        return jsonify({"error": "TomTom service not available"}), 503
+    if not here_service:
+        return jsonify({"error": "HERE service not available"}), 503
     
     try:
-        overview = tomtom_service.get_nashville_traffic_overview()
+        overview = here_service.get_nashville_traffic_overview()
         return jsonify(overview)
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/here/ml/risk-assessment", methods=["GET"])
+def get_here_ml_risk():
+    """Get ML-based incident risk assessment using live HERE data"""
+    if not here_service:
+        return jsonify({"error": "HERE service not available"}), 503
+    
+    try:
+        from ml.here_ml_integration import HereMLIntegration
+        
+        integrator = HereMLIntegration(HERE_API_KEY)
+        risk_assessment = integrator.get_incident_likelihood()
+        
+        return jsonify(risk_assessment)
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/here/ml/prediction-features", methods=["GET"])
+def get_here_prediction_features():
+    """Get current traffic features formatted for ML predictions"""
+    if not here_service:
+        return jsonify({"error": "HERE service not available"}), 503
+    
+    try:
+        from ml.here_ml_integration import HereMLIntegration
+        
+        integrator = HereMLIntegration(HERE_API_KEY)
+        features = integrator.fetch_current_traffic_features()
+        
+        if features:
+            return jsonify(features)
+        else:
+            return jsonify({"error": "Could not fetch traffic features"}), 500
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
