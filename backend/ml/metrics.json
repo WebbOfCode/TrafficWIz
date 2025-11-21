@@ -1,8 +1,8 @@
 {
   "model_type": "RandomForestClassifier",
-  "accuracy": 0.5076628352490421,
-  "n_train": 2088,
-  "n_test": 522,
+  "accuracy": 0.4756944444444444,
+  "n_train": 1149,
+  "n_test": 288,
   "features": [
     "hour",
     "day_of_week",
@@ -11,51 +11,51 @@
   ],
   "target": "severity",
   "classes": [
-    "Medium",
     "Low",
+    "Medium",
     "High"
   ],
   "top_features": [
     {
       "name": "hour",
-      "importance": 0.24302857796361085
+      "importance": 0.14991289343100586
+    },
+    {
+      "name": "road_36.1627",
+      "importance": 0.10860043949638705
     },
     {
       "name": "day_of_week",
-      "importance": 0.15180072885493964
+      "importance": 0.08878676400721734
     },
     {
       "name": "is_rush_hour",
-      "importance": 0.04381664453923736
+      "importance": 0.026924943204876515
     },
     {
       "name": "is_weekend",
-      "importance": 0.04376029593570933
+      "importance": 0.025556266519543618
     },
     {
-      "name": "road_West End Ave near Demonbreun",
-      "importance": 0.02590996528025692
+      "name": "road_Murfreesboro Pike @ Exit 52",
+      "importance": 0.020582007361993924
     },
     {
-      "name": "road_I-440 near Broadway",
-      "importance": 0.023701341925569327
+      "name": "road_I-65 near 21st Ave S",
+      "importance": 0.018004000747160676
     },
     {
-      "name": "road_Broadway near Demonbreun",
-      "importance": 0.016108184609261507
+      "name": "road_Woodmont Blvd @ Charlotte Ave",
+      "importance": 0.01638197442325341
     },
     {
-      "name": "road_Woodmont Blvd @ Wedgewood",
-      "importance": 0.01469372026300259
+      "name": "road_Ellington Pkwy near 21st Ave S",
+      "importance": 0.014611946213928013
     },
     {
-      "name": "road_21st Ave S near 21st Ave S",
-      "importance": 0.014646257377233724
-    },
-    {
-      "name": "road_Briley Pkwy near Broadway",
-      "importance": 0.0122886515144811
+      "name": "road_I-440 @ Exit 209",
+      "importance": 0.014524491208817365
     }
   ],
-  "trained_at": "2025-10-14T13:29:48.067707"
+  "trained_at": "2025-11-21T02:31:07.486696"
 }

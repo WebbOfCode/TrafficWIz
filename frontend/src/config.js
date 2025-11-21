@@ -25,6 +25,6 @@ export const API_BASE = "http://127.0.0.1:5000";
 
 // HERE Maps API Configuration
 export const HERE_CONFIG = {
-  apiKey: "_Y8zyahHf6R_i8_nlICiLjVeIQAySkuVSBpmm5LDaUU",
-  baseUrl: "https://api.here.com"
+  apiKey: "_Y8zyahHf6R_i8_nllC1LjVeIQAySkuVSBpmm5LDaUU",
+  baseUrl: "https://data.traffic.hereapi.com"
 };

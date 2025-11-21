@@ -24,28 +24,47 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { API_BASE } from "../config";
+import { getTraffic } from "../api";
 
 function Incidents() {
   const [traffic, setTraffic] = useState([]);
   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchTraffic() {
-      const res = await fetch(`${API_BASE}/api/traffic`);
-      const data = await res.json();
-      setTraffic(data.traffic_data || []);
+      try {
+        // Fetch traffic incidents from database (populated by HERE API)
+        const data = await getTraffic();
+        
+        setTraffic(data || []);
+      } catch (err) {
+        console.error('Error fetching incidents:', err);
+      } finally {
+        setLoading(false);
+      }
     }
     fetchTraffic();
+    
+    // Auto-refresh every 2 minutes
+    const interval = setInterval(fetchTraffic, 120000);
+    return () => clearInterval(interval);
   }, []);
 
   const filtered = traffic.filter((i) =>
-    i.location.toLowerCase().includes(query.toLowerCase())
+    (i.location?.toLowerCase() || '').includes(query.toLowerCase()) ||
+    (i.description?.toLowerCase() || '').includes(query.toLowerCase()) ||
+    (i.type?.toLowerCase() || '').includes(query.toLowerCase())
   );
 
   return (
     <div className="p-4 text-white">
-      <h2 className="text-3xl font-bold mb-4 text-violet-300">All Incidents</h2>
+      <div className="mb-4">
+        <h2 className="text-3xl font-bold text-violet-300">All Incidents</h2>
+        <p className="text-sm text-gray-400 mt-1">
+          Traffic incident data from Nashville database • {traffic.length} incidents
+        </p>
+      </div>
 
       <input
         type="text"

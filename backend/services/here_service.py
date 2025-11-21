@@ -3,6 +3,7 @@ HERE Maps API Service
 Provides traffic flow, incidents, routing, and geocoding functionality
 """
 import requests
+import time
 from typing import Dict, List, Optional, Any
 
 class HereService:
@@ -16,7 +17,12 @@ class HereService:
             api_key: HERE API key
         """
         self.api_key = api_key
-        self.base_url = "https://api.here.com"
+        self.base_url = "https://data.traffic.hereapi.com"
+        # Configure requests session with retries
+        self.session = requests.Session()
+        adapter = requests.adapters.HTTPAdapter(max_retries=3)
+        self.session.mount('https://', adapter)
+        self.session.mount('http://', adapter)
         
     def get_traffic_flow(self, lat: float, lon: float, radius: int = 5000) -> Dict[str, Any]:
         """
@@ -31,7 +37,7 @@ class HereService:
             Traffic flow data with speed and congestion info
         """
         try:
-            url = f"{self.base_url}/v8/flow/flow"
+            url = f"{self.base_url}/v7/flow"
             params = {
                 'apiKey': self.api_key,
                 'in': f'circle:{lat},{lon};r={radius}',
@@ -72,7 +78,7 @@ class HereService:
             List of traffic incidents with details
         """
         try:
-            url = f"{self.base_url}/v8/incidents"
+            url = f"{self.base_url}/v7/incidents"
             
             params = {
                 'apiKey': self.api_key,
@@ -94,11 +100,21 @@ class HereService:
             # Transform HERE incidents to match TomTom format
             incidents = []
             for incident in data.get('results', []):
+                # Extract location description (street name, etc.)
+                location_desc = incident.get('location', {}).get('description', {}).get('value', '')
+                
+                # Get description from incidentDetails
+                incident_desc = incident.get('incidentDetails', {}).get('description', {}).get('value', '')
+                
+                # Combine location and incident description for better context
+                full_description = f"{location_desc} - {incident_desc}" if location_desc else incident_desc
+                
                 incidents.append({
                     'id': incident.get('incidentDetails', {}).get('id'),
                     'type': self._map_incident_type(incident.get('incidentDetails', {}).get('type')),
                     'severity': self._map_severity(incident.get('incidentDetails', {}).get('criticality')),
-                    'description': incident.get('incidentDetails', {}).get('description', {}).get('value', ''),
+                    'description': full_description,
+                    'location': location_desc,  # Street name/location
                     'from': incident.get('location', {}).get('shape', {}).get('links', [{}])[0].get('points', [{}])[0] if incident.get('location', {}).get('shape', {}).get('links') else {},
                     'to': incident.get('location', {}).get('shape', {}).get('links', [{}])[0].get('points', [{}])[-1] if incident.get('location', {}).get('shape', {}).get('links') else {},
                     'delay': incident.get('incidentDetails', {}).get('delaySeconds', 0),

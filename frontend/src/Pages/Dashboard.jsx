@@ -27,6 +27,7 @@
  */
 
 import { useEffect, useState } from "react";
+import { getTraffic } from "../api";
 
 function Dashboard() {
   const [traffic, setTraffic] = useState([]);
@@ -37,57 +38,13 @@ function Dashboard() {
   useEffect(() => {
     async function fetchTraffic() {
       try {
-        // ✅ Use relative URL so Vite proxy forwards to Flask backend
-        const res = await fetch("/api/traffic");
+        // ✅ Fetch traffic incidents from database
+        const data = await getTraffic();
 
-        // ✅ Throw error if response not OK
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status} - ${res.statusText}`);
-        }
-
-  // ✅ Parse and safely update state
-        const data = await res.json();
-        console.debug("Dashboard fetched /api/traffic =>", data);
-
-        // Normalize different possible response shapes:
-        // - { traffic_data: [...] }
-        // - { data: [...] }
-        // - [...] (array directly)
-        let rows = [];
-        if (Array.isArray(data)) {
-          rows = data;
-        } else if (data && Array.isArray(data.traffic_data)) {
-          rows = data.traffic_data;
-        } else if (data && Array.isArray(data.data)) {
-          rows = data.data;
-        } else if (data && Array.isArray(data.incidents)) {
-          rows = data.incidents;
-        } else {
-          // fallback: attempt to find first array value in object
-          if (data && typeof data === 'object') {
-            const firstArray = Object.values(data).find(v => Array.isArray(v));
-            if (firstArray) rows = firstArray;
-          }
-        }
-
-        // Normalize severity strings (case-insensitive) to canonical 'High'/'Medium'/'Low'
-        const normalizeSeverity = (s) => {
-          if (typeof s === 'string') {
-            const v = s.trim().toLowerCase();
-            if (v === 'high') return 'High';
-            if (v === 'medium') return 'Medium';
-            if (v === 'low') return 'Low';
-          }
-          if (typeof s === 'number') {
-            if (s >= 4) return 'High';
-            if (s === 3) return 'Medium';
-            return 'Low';
-          }
-          return s;
-        };
-
-        rows = (rows || []).map(r => ({ ...r, severity: normalizeSeverity(r.severity) }));
-        setTraffic(rows || []);
+        console.debug("Dashboard fetched traffic incidents =>", data);
+        
+        // Data is already in correct format from backend
+        setTraffic(data || []);
       } catch (err) {
         console.error("Error fetching traffic:", err);
         setTraffic([]); // Prevent stale UI
@@ -97,6 +54,10 @@ function Dashboard() {
     }
 
     fetchTraffic();
+    
+    // Auto-refresh every 2 minutes
+    const interval = setInterval(fetchTraffic, 120000);
+    return () => clearInterval(interval);
   }, []);
 
   const high = traffic.filter((t) => t.severity === "High").length;
@@ -137,9 +98,16 @@ function Dashboard() {
 
   return (
     <div className="p-4 text-white">
-      <h2 className="text-3xl font-bold mb-6 text-violet-300">
-        Dashboard Overview
-      </h2>
+      <div className="flex justify-between items-center mb-6">
+        <div>
+          <h2 className="text-3xl font-bold text-violet-300">
+            Dashboard Overview
+          </h2>
+          <p className="text-sm text-gray-400 mt-1">
+            Traffic incident data from Nashville database
+          </p>
+        </div>
+      </div>
 
       {/* ===== Summary Cards ===== */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">

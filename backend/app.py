@@ -59,8 +59,8 @@ MODEL_PATH = os.path.join(os.path.dirname(__file__), "ml", "model.pkl")
 METRICS_PATH = os.path.join(os.path.dirname(__file__), "ml", "metrics.json")
 
 # HERE Maps API configuration
-HERE_API_KEY = os.getenv("HERE_API_KEY", "_Y8zyahHf6R_i8_nlICiLjVeIQAySkuVSBpmm5LDaUU")
-HERE_BASE_URL = "https://api.here.com"
+HERE_API_KEY = os.getenv("HERE_API_KEY", "_Y8zyahHf6R_i8_nllC1LjVeIQAySkuVSBpmm5LDaUU")
+HERE_BASE_URL = "https://data.traffic.hereapi.com"
 
 # ============================================================
 # Utility: connect to MySQL
@@ -151,7 +151,7 @@ def api_traffic():
                 r["severity"] = str(sev)
         cur.close()
         conn.close()
-        return jsonify({"traffic_data": rows})
+        return jsonify(rows)
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500

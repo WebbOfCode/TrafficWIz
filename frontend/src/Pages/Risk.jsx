@@ -26,6 +26,7 @@
 
 import { useEffect, useState } from "react";
 import { API_BASE } from "../config";
+import { getHereIncidents } from "../api";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 function Risk() {
@@ -38,15 +39,35 @@ function Risk() {
   });
   const [loading, setLoading] = useState(false);
 
-  const COLORS = ["#9333EA", "#A855F7", "#C084FC"]; // purple tones
+  const COLORS = ["#9333EA", "#A855F7", "#C084FC", "#D8B4FE"]; // purple tones
 
   useEffect(() => {
     async function fetchData() {
-      // Fetch severity data
+      // Fetch HERE Maps incident data and calculate severity distribution
       try {
-        const res = await fetch(`${API_BASE}/api/incidents/by-severity`);
-        const data = await res.json();
-        setRisk(data.by_severity || []);
+        const data = await getHereIncidents({
+          lat: 36.1627,
+          lng: -86.7816,
+          radius: 25000
+        });
+        
+        // Calculate severity distribution from HERE data
+        const incidents = data.incidents || [];
+        const severityCounts = {
+          'Critical': incidents.filter(i => i.severity === 4).length,
+          'Major': incidents.filter(i => i.severity === 3).length,
+          'Minor': incidents.filter(i => i.severity === 2).length,
+          'Low': incidents.filter(i => i.severity === 1).length
+        };
+        
+        const severityData = Object.entries(severityCounts)
+          .filter(([_, count]) => count > 0)
+          .map(([severity, count]) => ({
+            severity,
+            count
+          }));
+        
+        setRisk(severityData);
       } catch (error) {
         console.error("Error fetching severity data:", error);
       }
