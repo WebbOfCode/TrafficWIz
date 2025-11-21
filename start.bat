@@ -18,6 +18,8 @@ REM - backend/.env with DB credentials configured
 REM - Python 3.x and Node.js/npm installed
 REM
 REM Usage: Double-click start.bat or run from command line
+REM
+REM Note: Two separate command windows will open for backend and frontend
 REM ============================================================
 
 @echo off
@@ -28,7 +30,7 @@ REM Start backend in new window (create venv, install deps, then start app)
 start "Flask Backend" cmd /k "cd backend && python -m venv venv && call venv\Scripts\activate && pip install -r requirements.txt && echo Starting Flask app... && python app.py"
 
 REM Wait a moment for backend to initialize
-timeout /t 5 /nobreak >nul
+timeout /t 10 /nobreak >nul
 
 REM Start frontend in new window
 start "Frontend Dev Server" cmd /k "cd frontend && npm install && npm run dev"
