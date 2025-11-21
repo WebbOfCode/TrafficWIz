@@ -18,34 +18,27 @@ Registers API routes used in the frontend:
 /predict — load ml/model.pkl and run prediction on posted JSON.
 /metrics, /retrain — return ML training metrics and retrain (runs train script).
 Database connection: get_db_connection() uses mysql.connector and reads credentials from environment variables (.env is used in local dev).
-Note: recent edits aligned all endpoints to use the traffic_incidents table (so seeders that write to that table are read).
+Note: recent edits aligned all endpoints to use the traffic_incidents table.
 
 
 .env
 Holds DB credentials and PORT. Example keys used: DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, PORT.
-start.bat and seed_traffic.py rely on this.
-
-seed_traffic.py
-Python seeder: connects to MySQL, creates traffic_incidents table (if missing) and inserts many randomized sample rows.
-Reads DB creds from environment (dotenv).
+start.bat relies on this.
 
 ml
-make_sample_data.py — generates a CSV dataset used for training and model development (not for DB).
+
 train_model.py — trains the ML model and writes model.pkl and metrics.json (used by app.py).
 predict_local.py — CLI helper to load model.pkl and run predictions from CLI or file. (Standalone CLI; the Flask /predict endpoint loads the model directly.)
 model.pkl (if present) — serialized model used by /predict.
 metrics.json — saved training metrics, returned by /metrics.
 
 scripts (general)
-Other helper scripts; the seed_traffic.py is the important one used by start.bat.
+Other helper scripts.
 
 
 How backend uses DB
 get_db_connection() uses mysql.connector and DB_CONFIG. If these env vars are missing or incorrect, DB queries will fail.
-Two different schema/seed approaches exist:
-SQL-based: schema.sql and seed_data.sql (manual).
-Python seeder: seed_traffic.py (used by start.bat now).
-You should ensure the seeded table name and backend queries match; current backend reads traffic_incidents.
+Backend reads from the traffic_incidents table.
 Frontend (folder: frontend)
 Purpose: React SPA (Vite) that calls backend APIs, shows lists, dashboards, charts.
 
@@ -91,16 +84,13 @@ The config.js API_BASE is used by pages that call absolute URLs (some pages do).
 DB (folder: db)
 schema.sql
 Schema defining multiple tables (city, segment, incident, congestion, weather_hourly, views).
-Note: schema uses an incident table name in this SQL, but the seed scripts and current backend endpoints use traffic_incidents — that mismatch historically caused missing data issues. I updated backend endpoints to read traffic_incidents because that’s where the seeder and seed_data.sql insert.
-seed_data.sql
-Example SQL insert statements that use traffic_incidents (insert rows). If you run this SQL it will populate traffic_incidents.
+Note: schema uses an incident table name in this SQL, but current backend endpoints use traffic_incidents.
+
 
 start.bat (project root)
 Creates/activates a venv in backend, installs requirements,
-Runs the Python seeder python [seed_traffic.py](http://_vscodecontentref_/66) --n 200 --days 60 to populate traffic_incidents,
 Then starts python app.py.
 After a short wait it runs npm install and npm run dev in frontend.
-Important: Seeding relies on .env DB credentials; ensure MySQL is running.
 
 
 
@@ -147,11 +137,11 @@ Assuming MySQL is already running and .env contains the correct credentials:
 
 
 Suggested next improvements (practical)
-Make seeder idempotent (skip if rows exist) or truncate before insert so repeated start.bat runs don’t flood the table.
+
 
 Add a small /api/db-counts endpoint (or extend /api/health) to report counts for traffic_incidents and incident to help debugging.
 
-Consolidate the schema name(s): pick one canonical table name (traffic_incidents or incident) across schema, seeders, and backend to avoid mismatch confusion.
+Consolidate the schema name(s): pick one canonical table name (traffic_incidents or incident) across schema and backend to avoid mismatch confusion.
 
 Move ML helper code into a shared module so predict_local.py and Flask /predict call the same code (remove duplication).
 
@@ -164,7 +154,7 @@ Add unit tests for a couple of backend endpoints (fast smoke tests).
 Short troubleshooting checklist (if pages show “no data”)
 Is MySQL running? Can you connect using the creds in .env?
 Does traffic_incidents contain rows?
-Use the MySQL client or run the Python seeder.
+Use the MySQL client to check.
 Is the Flask backend running on the expected port (5000)? Check netstat -ano.
 Is the frontend pointing to the right backend?
 config.js and vite.config.js proxy should point to the backend port.

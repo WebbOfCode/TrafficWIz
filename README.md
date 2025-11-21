@@ -36,7 +36,7 @@ TrafficWiz is a full-stack web application for analyzing and predicting traffic 
 - **Backend**: Flask (Python), MySQL, CORS-enabled REST API
 - **ML**: scikit-learn, pandas, joblib (RandomForest model)
 - **APIs**: National Weather Service, Mapbox (optional)
-- **Database**: MySQL with automated seeding
+- **Database**: MySQL
 
 ## Team Roles 
 - Web & Frontend – Merhawit  
@@ -57,7 +57,7 @@ TrafficWiz is a full-stack web application for analyzing and predicting traffic 
 
 ## Database Setup
 
-TrafficWiz uses MySQL with SQL-based seeding:
+TrafficWiz uses MySQL:
 
 ```bash
 # Create database and user
@@ -69,16 +69,6 @@ EXIT;
 
 # Import schema
 mysql -u trafficwiz_user -p trafficwiz < db/schema.sql
-
-# Seed sample data (50+ Nashville incidents)
-mysql -u trafficwiz_user -p trafficwiz < db/seed_data.sql
-```
-
-**Generate more data:**
-```bash
-cd backend/ml
-python make_sample_data.py --n 200 --days 60
-mysql -u trafficwiz_user -p trafficwiz < generated_seed_data.sql
 ```
 
 ---
@@ -89,7 +79,5 @@ Simply double-click `start.bat` or run from command prompt:
 ```batch
 start.bat
 ```
-
-**Make sure database is seeded first** (see Database Setup above).
 
 ---

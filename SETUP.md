@@ -84,22 +84,7 @@ mysql -u trafficwiz_user -p trafficwiz < db/schema.sql
 
 Enter the password (`StrongPass123!` or your custom password).
 
-### 2.5 Seed Sample Data
 
-Load sample traffic incidents:
-
-```bash
-mysql -u trafficwiz_user -p trafficwiz < db/seed_data.sql
-```
-
-This will insert 50+ realistic Nashville traffic incidents spanning 60 days.
-
-**Optional:** Generate more data using the SQL generator:
-```bash
-cd backend/ml
-python make_sample_data.py --n 200 --days 60 --output generated_seed_data.sql
-mysql -u trafficwiz_user -p trafficwiz < generated_seed_data.sql
-```
 
 ---
 
@@ -174,7 +159,7 @@ This will:
 4. Install frontend dependencies
 5. Start Vite dev server (port 5173)
 
-**Note:** Make sure you've already seeded the database (Step 2.5) before running this.
+
 
 ### Option B: Manual Start (All Platforms)
 
@@ -238,10 +223,9 @@ DROP DATABASE trafficwiz;
 CREATE DATABASE trafficwiz;
 ```
 
-Then re-run schema and seed:
+Then re-run schema:
 ```bash
 mysql -u trafficwiz_user -p trafficwiz < db/schema.sql
-mysql -u trafficwiz_user -p trafficwiz < db/seed_data.sql
 ```
 
 ### Port Already in Use
@@ -252,20 +236,7 @@ If port 5000 or 5173 is taken:
 
 **Frontend:** The Vite dev server will auto-increment if 5173 is taken
 
-### Need More Sample Data
 
-Generate additional incidents using SQL generator:
-
-```bash
-cd backend/ml
-python make_sample_data.py --n 500 --days 90
-mysql -u trafficwiz_user -p trafficwiz < generated_seed_data.sql
-```
-
-This creates a new SQL file with custom parameters:
-- `--n`: Number of incidents (default: 200)
-- `--days`: Date range in days (default: 60)
-- `--output`: Output filename (default: generated_seed_data.sql)
 
 ### Clear Database Data
 
@@ -277,10 +248,7 @@ TRUNCATE TABLE traffic_incidents;
 EXIT;
 ```
 
-Then re-seed:
-```bash
-mysql -u trafficwiz_user -p trafficwiz < db/seed_data.sql
-```
+
 
 ---
 

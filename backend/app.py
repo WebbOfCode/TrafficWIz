@@ -34,6 +34,7 @@ import os
 import json
 import pandas as pd
 import joblib
+import pickle
 import traceback
 from datetime import datetime
 import mysql.connector
@@ -247,16 +248,29 @@ def predict():
     """Return model prediction for posted JSON input."""
     try:
         payload = request.get_json()
+        if not payload:
+            return jsonify({"error": "No JSON payload provided"}), 400
+            
         if not os.path.exists(MODEL_PATH):
-            return jsonify({"error": "model.pkl not found"}), 404
+            return jsonify({"error": "model.pkl not found. Run train_model.py first."}), 404
 
-        model = joblib.load(MODEL_PATH)
+        # Safely load model with timeout
+        try:
+            model = joblib.load(MODEL_PATH)
+        except (EOFError, pickle.PickleError, joblib.externals.loky.process_executor.TerminatedWorkerError) as e:
+            return jsonify({"error": f"Model file corrupted: {str(e)}. Please retrain the model."}), 500
+            
         df = pd.DataFrame([payload])
+        
+        # Limit dataframe size to prevent memory issues
+        if len(df.columns) > 50 or len(df) > 10:
+            return jsonify({"error": "Payload too large"}), 400
+            
         y_pred = model.predict(df)[0]
         return jsonify({"prediction": float(y_pred)})
     except Exception as e:
         traceback.print_exc()
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": f"Prediction failed: {str(e)[:100]}"}), 500
 
 
 @app.route("/metrics", methods=["GET"])
@@ -264,13 +278,75 @@ def get_metrics():
     """Return the saved ML training metrics."""
     try:
         if not os.path.exists(METRICS_PATH):
-            return jsonify({"error": "metrics.json not found"}), 404
+            return jsonify({
+                "error": "metrics.json not found. Run train_model.py first.",
+                "accuracy": 0,
+                "precision": 0,
+                "recall": 0,
+                "f1_score": 0
+            }), 200  # Return 200 with fallback data instead of 404
+            
+        # Check file size to prevent loading huge files
+        file_size = os.path.getsize(METRICS_PATH)
+        if file_size > 1024 * 1024:  # 1MB limit
+            return jsonify({"error": "Metrics file too large"}), 500
+            
         with open(METRICS_PATH, "r", encoding="utf-8") as f:
             metrics = json.load(f)
+            
+        # Validate metrics structure to prevent frontend crashes
+        required_keys = ['accuracy', 'precision', 'recall', 'f1_score']
+        for key in required_keys:
+            if key not in metrics:
+                metrics[key] = 0
+                
         return jsonify(metrics)
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        return jsonify({
+            "error": f"Invalid metrics file: {str(e)}",
+            "accuracy": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1_score": 0
+        }), 200
     except Exception as e:
         traceback.print_exc()
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": f"Failed to load metrics: {str(e)[:100]}"}), 500
+
+
+@app.route("/road-analysis", methods=["GET"])
+def get_road_analysis():
+    """Return best/worst travel times for each road."""
+    try:
+        road_analysis_path = os.path.join(os.path.dirname(__file__), "ml", "road_analysis.json")
+        if not os.path.exists(road_analysis_path):
+            # Return empty analysis instead of 404 to prevent frontend crashes
+            return jsonify({
+                "message": "Road analysis not available. Run train_model.py to generate data."
+            }), 200
+        
+        # Check file size
+        file_size = os.path.getsize(road_analysis_path)
+        if file_size > 5 * 1024 * 1024:  # 5MB limit
+            return jsonify({"error": "Road analysis file too large"}), 500
+            
+        with open(road_analysis_path, "r", encoding="utf-8") as f:
+            analysis = json.load(f)
+            
+        # Ensure we return valid structure even if file is malformed
+        if not isinstance(analysis, dict):
+            return jsonify({"message": "Invalid road analysis data"}), 200
+            
+        return jsonify(analysis)
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        return jsonify({
+            "error": f"Invalid road analysis file: {str(e)}"
+        }), 200
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({
+            "error": f"Failed to load road analysis: {str(e)[:100]}"
+        }), 200
 
 
 @app.route("/retrain", methods=["POST"])
@@ -297,12 +373,18 @@ def retrain_model():
 # HERE Maps API Endpoints
 # ============================================================
 
-# Import HERE service
+# Import HERE service with enhanced error handling
 try:
     from services.here_service import HereService
-    here_service = HereService(HERE_API_KEY)
-except ImportError as e:
-    print(f"HERE service not available: {e}")
+    # Only initialize if API key exists and is valid
+    if HERE_API_KEY and HERE_API_KEY != "" and len(HERE_API_KEY) > 10:
+        here_service = HereService(HERE_API_KEY)
+        print("✅ HERE Maps service initialized successfully")
+    else:
+        print("⚠️ HERE API key not configured, using fallback data")
+        here_service = None
+except (ImportError, Exception) as e:
+    print(f"⚠️ HERE service not available: {e}")
     here_service = None
 
 @app.route("/api/here/traffic-flow", methods=["GET"])
@@ -328,24 +410,71 @@ def get_here_traffic_flow():
 def get_here_traffic_incidents():
     """Get live traffic incidents in Nashville area"""
     if not here_service:
-        return jsonify({"error": "HERE service not available"}), 503
+        # Return empty incident data instead of error to prevent frontend crashes
+        return jsonify({
+            "incidents": [], 
+            "count": 0,
+            "message": "HERE service not available - using fallback data"
+        })
     
     try:
         # Default to Nashville bounding box if not provided
         bbox = request.args.get('bbox', '-87.0,36.0,-86.5,36.4')
         lat = request.args.get('lat')
         lon = request.args.get('lon')
-        radius = int(request.args.get('radius', 10000))
+        radius = min(int(request.args.get('radius', 10000)), 25000)  # Cap radius to prevent large requests
         
-        if lat and lon:
-            incidents_data = here_service.get_traffic_incidents(lat=float(lat), lon=float(lon), radius=radius)
+        # Use threading timeout (works on both Windows and Unix)
+        from threading import Thread, Event
+        
+        result_container = {'data': None, 'error': None}
+        timeout_event = Event()
+        
+        def fetch_incidents():
+            try:
+                if lat and lon:
+                    result_container['data'] = here_service.get_traffic_incidents(lat=float(lat), lon=float(lon), radius=radius)
+                else:
+                    result_container['data'] = here_service.get_traffic_incidents(bbox=bbox)
+            except Exception as e:
+                result_container['error'] = str(e)
+            finally:
+                timeout_event.set()
+        
+        # Start fetch in background thread with 5-second timeout
+        fetch_thread = Thread(target=fetch_incidents, daemon=True)
+        fetch_thread.start()
+        fetch_thread.join(timeout=5.0)  # Wait max 5 seconds
+        
+        # Check if thread completed
+        if not timeout_event.is_set():
+            # Timeout occurred
+            return jsonify({"incidents": [], "count": 0, "message": "HERE API timeout - try again later"})
+        
+        # Check for errors
+        if result_container['error']:
+            return jsonify({
+                "incidents": [], 
+                "count": 0, 
+                "message": f"HERE API error: {result_container['error'][:100]}"
+            })
+        
+        # Process successful result
+        incidents_data = result_container['data']
+        if isinstance(incidents_data, dict) and 'incidents' in incidents_data:
+            incidents = incidents_data['incidents'][:50]  # Limit to 50 incidents max
+            return jsonify({"incidents": incidents, "count": len(incidents)})
         else:
-            incidents_data = here_service.get_traffic_incidents(bbox=bbox)
-        
-        return jsonify({"incidents": incidents_data.get('incidents', []), "count": len(incidents_data.get('incidents', []))})
+            return jsonify({"incidents": [], "count": 0, "message": "No incident data available"})
+            
     except Exception as e:
         traceback.print_exc()
-        return jsonify({"error": str(e)}), 500
+        # Return empty data instead of error to prevent frontend crash
+        return jsonify({
+            "incidents": [], 
+            "count": 0, 
+            "message": f"Error fetching incidents: {str(e)[:100]}"
+        })
 
 @app.route("/api/here/route", methods=["POST"])
 def calculate_here_route():
