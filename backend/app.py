@@ -414,6 +414,10 @@ def retrain_model():
 # HERE Maps API Endpoints
 # ============================================================
 
+# ============================================================
+# HERE API Ingestion Pipeline
+# ============================================================
+
 # Import HERE service with enhanced error handling
 try:
     from services.here_service import HereService
@@ -427,6 +431,172 @@ try:
 except (ImportError, Exception) as e:
     print(f"⚠️ HERE service not available: {e}")
     here_service = None
+
+def ingest_here_incidents_to_db():
+    """
+    Fetch live HERE incidents and store them in MySQL database.
+    Prevents duplicates using external_id (HERE incident ID).
+    
+    Returns:
+        dict: Status summary with counts of new/updated/skipped incidents
+    """
+    if not here_service:
+        return {
+            "status": "error",
+            "message": "HERE service not available",
+            "new": 0,
+            "updated": 0,
+            "skipped": 0
+        }
+    
+    try:
+        # Fetch incidents from HERE API for Nashville area
+        # Using bounding box for Nashville metropolitan area
+        incidents_data = here_service.get_traffic_incidents(
+            lat=36.1627,
+            lon=-86.7816,
+            radius=25000  # 25km radius
+        )
+        
+        if 'error' in incidents_data:
+            return {
+                "status": "error",
+                "message": incidents_data['error'],
+                "new": 0,
+                "updated": 0,
+                "skipped": 0
+            }
+        
+        incidents = incidents_data.get('incidents', [])
+        
+        if not incidents:
+            return {
+                "status": "success",
+                "message": "No incidents found in Nashville area",
+                "new": 0,
+                "updated": 0,
+                "skipped": 0
+            }
+        
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        new_count = 0
+        updated_count = 0
+        skipped_count = 0
+        
+        for incident in incidents:
+            external_id = incident.get('id')
+            if not external_id:
+                # Generate a unique ID if HERE doesn't provide one
+                external_id = f"here_{incident.get('type', 'unknown')}_{incident.get('location', 'unknown')[:50]}_{incident.get('startTime', '')}"
+            
+            # Extract location coordinates
+            from_point = incident.get('from', {})
+            latitude = from_point.get('lat') or from_point.get('latitude')
+            longitude = from_point.get('lon') or from_point.get('lng') or from_point.get('longitude')
+            
+            # Map HERE severity (1-4) to our severity labels
+            severity_num = incident.get('severity', 2)
+            if severity_num == 4:
+                severity = 'High'
+            elif severity_num == 3:
+                severity = 'Medium'
+            else:
+                severity = 'Low'
+            
+            # Parse start time
+            start_time = incident.get('startTime')
+            if start_time:
+                # HERE uses ISO 8601 format, MySQL can handle it
+                date = start_time
+            else:
+                date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            
+            # Parse end time
+            end_time = incident.get('endTime')
+            
+            # Extract other fields
+            location = incident.get('location', 'Unknown Location')
+            incident_type = incident.get('type', 'Traffic Incident')
+            description = incident.get('description', '')
+            delay_seconds = incident.get('delay', 0)
+            
+            # Check if incident already exists
+            cur.execute(
+                "SELECT id FROM traffic_incidents WHERE external_id = %s",
+                (external_id,)
+            )
+            existing = cur.fetchone()
+            
+            if existing:
+                # Update existing incident
+                cur.execute("""
+                    UPDATE traffic_incidents 
+                    SET date = %s, location = %s, latitude = %s, longitude = %s,
+                        severity = %s, incident_type = %s, description = %s,
+                        delay_seconds = %s, end_time = %s, updated_at = CURRENT_TIMESTAMP
+                    WHERE external_id = %s
+                """, (date, location, latitude, longitude, severity, incident_type, 
+                      description, delay_seconds, end_time, external_id))
+                updated_count += 1
+            else:
+                # Insert new incident
+                try:
+                    cur.execute("""
+                        INSERT INTO traffic_incidents 
+                        (external_id, date, location, latitude, longitude, severity, 
+                         incident_type, description, delay_seconds, end_time)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    """, (external_id, date, location, latitude, longitude, severity,
+                          incident_type, description, delay_seconds, end_time))
+                    new_count += 1
+                except mysql.connector.IntegrityError:
+                    # Duplicate key - skip
+                    skipped_count += 1
+        
+        conn.commit()
+        cur.close()
+        conn.close()
+        
+        return {
+            "status": "success",
+            "message": f"Ingestion complete: {new_count} new, {updated_count} updated, {skipped_count} skipped",
+            "new": new_count,
+            "updated": updated_count,
+            "skipped": skipped_count,
+            "total_incidents": len(incidents)
+        }
+        
+    except Exception as e:
+        traceback.print_exc()
+        return {
+            "status": "error",
+            "message": f"Ingestion failed: {str(e)}",
+            "new": 0,
+            "updated": 0,
+            "skipped": 0
+        }
+
+@app.route("/api/refresh-incidents", methods=["GET", "POST"])
+def refresh_incidents():
+    """
+    Trigger ingestion of live HERE traffic incidents into the database.
+    This endpoint replaces any seed data logic with real-time HERE API data.
+    
+    Returns:
+        JSON: Ingestion status with counts
+    """
+    result = ingest_here_incidents_to_db()
+    
+    if result["status"] == "error":
+        return jsonify(result), 500
+    
+    return jsonify(result), 200
+
+# ============================================================
+# HERE Maps API Proxy Endpoints (DO NOT MODIFY - Ben's code)
+# ============================================================
 
 @app.route("/api/here/traffic-flow", methods=["GET"])
 def get_here_traffic_flow():

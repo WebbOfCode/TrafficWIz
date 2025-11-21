@@ -1,30 +1,4 @@
-/**
- * ============================================================
- * TrafficWiz - Dashboard Page Component
- * ============================================================
- * Purpose: Main dashboard view with incident summary and detailed table
- * 
- * Features:
- * - Summary cards showing total incidents and severity breakdown
- * - Sortable incident table with multiple sort options:
- *   - Date: Recent first / Oldest first
- *   - Severity: High to Low / Low to High
- * - Severity filter dropdown (All / High / Medium / Low)
- * - Debug panel showing raw API response (for development)
- * - Response shape normalization (handles multiple backend formats)
- * 
- * Data Flow:
- * - Fetches from /api/traffic (proxied by Vite dev server)
- * - Normalizes severity values (case-insensitive, numeric mapping)
- * - Applies filtering and sorting before rendering
- * 
- * State Management:
- * - traffic: Raw incident data from API
- * - sortBy: Current sort option (date_desc, date_asc, severity_desc, severity_asc)
- * - severityFilter: Active severity filter ("all", "high", "medium", "low")
- * - loading: Loading state for async data fetch
- * ============================================================
- */
+// Dashboard page - shows incident summary cards and filterable/sortable table
 
 import { useEffect, useState } from "react";
 import { getTraffic } from "../api";
@@ -36,51 +10,52 @@ function Dashboard() {
   const [severityFilter, setSeverityFilter] = useState("all");
 
   useEffect(() => {
-    async function fetchTraffic() {
+    async function fetchTrafficData() {
       try {
-        // ✅ Fetch traffic incidents from database
         const data = await getTraffic();
-
         console.debug("Dashboard fetched traffic incidents =>", data);
-        
-        // Data is already in correct format from backend
         setTraffic(data || []);
-      } catch (err) {
-        console.error("Error fetching traffic:", err);
-        setTraffic([]); // Prevent stale UI
+      } catch (error) {
+        console.error("Error fetching traffic:", error);
+        setTraffic([]);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchTraffic();
+    fetchTrafficData();
     
-    // Auto-refresh every 2 minutes
-    const interval = setInterval(fetchTraffic, 120000);
-    return () => clearInterval(interval);
+    // Refresh every 2 minutes
+    const refreshInterval = setInterval(fetchTrafficData, 120000);
+    return () => clearInterval(refreshInterval);
   }, []);
 
-  const high = traffic.filter((t) => t.severity === "High").length;
-  const med = traffic.filter((t) => t.severity === "Medium").length;
-  const low = traffic.filter((t) => t.severity === "Low").length;
+  // Count incidents by severity
+  const highCount = traffic.filter((t) => t.severity === "High").length;
+  const mediumCount = traffic.filter((t) => t.severity === "Medium").length;
+  const lowCount = traffic.filter((t) => t.severity === "Low").length;
 
-  // Derived filtered + sorted rows based on sortBy and severityFilter
-  const severityRank = (s) => {
-    if (!s) return 0;
-    const v = String(s).trim().toLowerCase();
-    if (v === "high") return 3;
-    if (v === "medium") return 2;
-    if (v === "low") return 1;
-    const n = Number(s);
-    if (!isNaN(n)) return n;
+  // Helper to convert severity string to numeric rank for sorting
+  const getSeverityRank = (severity) => {
+    if (!severity) return 0;
+    const normalized = String(severity).trim().toLowerCase();
+    if (normalized === "high") return 3;
+    if (normalized === "medium") return 2;
+    if (normalized === "low") return 1;
+    
+    // Handle numeric severity values
+    const numericValue = Number(severity);
+    if (!isNaN(numericValue)) return numericValue;
     return 0;
   };
 
-  const filtered = severityFilter === "all" ? traffic : traffic.filter(t => {
-    return String(t.severity || "").toLowerCase() === severityFilter;
-  });
+  // Apply severity filter
+  const filteredIncidents = severityFilter === "all" 
+    ? traffic 
+    : traffic.filter(t => String(t.severity || "").toLowerCase() === severityFilter);
 
-  const displayRows = [...filtered].sort((a, b) => {
+  // Apply sorting
+  const sortedIncidents = [...filteredIncidents].sort((a, b) => {
     if (sortBy === "date_desc") {
       return (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0);
     }
@@ -88,10 +63,10 @@ function Dashboard() {
       return (new Date(a.date).getTime() || 0) - (new Date(b.date).getTime() || 0);
     }
     if (sortBy === "severity_desc") {
-      return severityRank(b.severity) - severityRank(a.severity);
+      return getSeverityRank(b.severity) - getSeverityRank(a.severity);
     }
     if (sortBy === "severity_asc") {
-      return severityRank(a.severity) - severityRank(b.severity);
+      return getSeverityRank(a.severity) - getSeverityRank(b.severity);
     }
     return 0;
   });
@@ -109,60 +84,57 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* ===== Summary Cards ===== */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="card border-l-4 border-red-500 p-4">
           <h3 className="text-lg font-semibold text-gray-300">High Severity</h3>
-          <p className="text-3xl font-bold text-red-400">{high}</p>
+          <p className="text-3xl font-bold text-red-400">{highCount}</p>
         </div>
         <div className="card border-l-4 border-yellow-400 p-4">
-          <h3 className="text-lg font-semibold text-gray-300">
-            Medium Severity
-          </h3>
-          <p className="text-3xl font-bold text-yellow-400">{med}</p>
+          <h3 className="text-lg font-semibold text-gray-300">Medium Severity</h3>
+          <p className="text-3xl font-bold text-yellow-400">{mediumCount}</p>
         </div>
         <div className="card border-l-4 border-green-400 p-4">
           <h3 className="text-lg font-semibold text-gray-300">Low Severity</h3>
-          <p className="text-3xl font-bold text-green-400">{low}</p>
+          <p className="text-3xl font-bold text-green-400">{lowCount}</p>
         </div>
       </div>
 
-      {/* ===== Table and Controls ===== */}
       <div className="flex items-center justify-between mb-4">
         <div className="text-sm text-gray-300">Showing {traffic.length} incidents</div>
         <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <label className="text-sm text-gray-300">Filter severity:</label>
-              <select
-                value={severityFilter}
-                onChange={(e) => setSeverityFilter(e.target.value)}
-                className="bg-black/60 text-white border border-violet-700 rounded px-2 py-1 text-sm"
-              >
-                <option value="all">All</option>
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
-              </select>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <label className="text-sm text-gray-300">Sort by:</label>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="bg-black/60 text-white border border-violet-700 rounded px-2 py-1 text-sm"
-              >
-                <option value="date_desc">Date: Recent</option>
-                <option value="date_asc">Date: Oldest</option>
-                <option value="severity_desc">Severity (High → Low)</option>
-                <option value="severity_asc">Severity (Low → High)</option>
-              </select>
-            </div>
+          <div className="flex items-center space-x-2">
+            <label className="text-sm text-gray-300">Filter severity:</label>
+            <select
+              value={severityFilter}
+              onChange={(e) => setSeverityFilter(e.target.value)}
+              className="bg-black/60 text-white border border-violet-700 rounded px-2 py-1 text-sm"
+            >
+              <option value="all">All</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
           </div>
+
+          <div className="flex items-center space-x-2">
+            <label className="text-sm text-gray-300">Sort by:</label>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-black/60 text-white border border-violet-700 rounded px-2 py-1 text-sm"
+            >
+              <option value="date_desc">Date: Recent</option>
+              <option value="date_asc">Date: Oldest</option>
+              <option value="severity_desc">Severity (High → Low)</option>
+              <option value="severity_asc">Severity (Low → High)</option>
+            </select>
+          </div>
+        </div>
       </div>
+
       {loading ? (
         <p className="text-gray-400">Loading traffic data...</p>
-      ) : displayRows.length > 0 ? (
+      ) : sortedIncidents.length > 0 ? (
         <div className="overflow-x-auto card">
           <table className="min-w-full border border-violet-700">
             <thead className="bg-black/40">
@@ -170,33 +142,31 @@ function Dashboard() {
                 <th className="px-4 py-2 border border-violet-700">Date</th>
                 <th className="px-4 py-2 border border-violet-700">Location</th>
                 <th className="px-4 py-2 border border-violet-700">Severity</th>
-                <th className="px-4 py-2 border border-violet-700">
-                  Description
-                </th>
+                <th className="px-4 py-2 border border-violet-700">Description</th>
               </tr>
             </thead>
             <tbody>
-              {displayRows.map((t) => (
-                <tr key={t.id} className="hover:bg-violet-900/40">
+              {sortedIncidents.map((incident) => (
+                <tr key={incident.id} className="hover:bg-violet-900/40">
                   <td className="border border-violet-800 px-3 py-2">
-                    {t.date ? new Date(t.date).toLocaleDateString() : "Unknown"}
+                    {incident.date ? new Date(incident.date).toLocaleDateString() : "Unknown"}
                   </td>
                   <td className="border border-violet-800 px-3 py-2">
-                    {t.location || "Unknown"}
+                    {incident.location || "Unknown"}
                   </td>
                   <td
                     className={`border border-violet-800 px-3 py-2 font-semibold ${
-                      t.severity === "High"
+                      incident.severity === "High"
                         ? "text-red-400"
-                        : t.severity === "Medium"
+                        : incident.severity === "Medium"
                         ? "text-yellow-400"
                         : "text-green-400"
                     }`}
                   >
-                    {t.severity || "N/A"}
+                    {incident.severity || "N/A"}
                   </td>
                   <td className="border border-violet-800 px-3 py-2 text-gray-300">
-                    {t.description || "—"}
+                    {incident.description || "—"}
                   </td>
                 </tr>
               ))}

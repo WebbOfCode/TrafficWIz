@@ -1,60 +1,38 @@
-/**
- * ============================================================
- * TrafficWiz - Incidents List Page Component
- * ============================================================
- * Purpose: Searchable list of all traffic incidents
- * 
- * Features:
- * - Real-time search/filter by description or location
- * - Clickable incident cards (navigate to detail view)
- * - Severity badge color-coding (High/Medium/Low)
- * - Date display with formatted timestamps
- * - Empty state message when no incidents match search
- * 
- * Data Flow:
- * - Fetches all incidents from API_BASE/api/traffic
- * - Client-side filtering based on search query
- * - Links to /incidents/:id for detailed view
- * 
- * User Interaction:
- * - Search bar filters incidents in real-time
- * - Click any incident card to view full details
- * ============================================================
- */
+// Incidents page - searchable list of all traffic incidents
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getTraffic } from "../api";
 
 function Incidents() {
-  const [traffic, setTraffic] = useState([]);
-  const [query, setQuery] = useState("");
+  const [incidents, setIncidents] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchTraffic() {
+    async function fetchIncidents() {
       try {
-        // Fetch traffic incidents from database (populated by HERE API)
         const data = await getTraffic();
-        
-        setTraffic(data || []);
-      } catch (err) {
-        console.error('Error fetching incidents:', err);
+        setIncidents(data || []);
+      } catch (error) {
+        console.error('Error fetching incidents:', error);
       } finally {
         setLoading(false);
       }
     }
-    fetchTraffic();
     
-    // Auto-refresh every 2 minutes
-    const interval = setInterval(fetchTraffic, 120000);
-    return () => clearInterval(interval);
+    fetchIncidents();
+    
+    // Refresh every 2 minutes
+    const refreshInterval = setInterval(fetchIncidents, 120000);
+    return () => clearInterval(refreshInterval);
   }, []);
 
-  const filtered = traffic.filter((i) =>
-    (i.location?.toLowerCase() || '').includes(query.toLowerCase()) ||
-    (i.description?.toLowerCase() || '').includes(query.toLowerCase()) ||
-    (i.type?.toLowerCase() || '').includes(query.toLowerCase())
+  // Filter incidents by search query
+  const filteredIncidents = incidents.filter((incident) =>
+    (incident.location?.toLowerCase() || '').includes(searchQuery.toLowerCase()) ||
+    (incident.description?.toLowerCase() || '').includes(searchQuery.toLowerCase()) ||
+    (incident.type?.toLowerCase() || '').includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -62,41 +40,41 @@ function Incidents() {
       <div className="mb-4">
         <h2 className="text-3xl font-bold text-violet-300">All Incidents</h2>
         <p className="text-sm text-gray-400 mt-1">
-          Traffic incident data from Nashville database • {traffic.length} incidents
+          Traffic incident data from Nashville database • {incidents.length} incidents
         </p>
       </div>
 
       <input
         type="text"
         placeholder="Search by location..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
         className="border border-violet-700 bg-black/60 text-white rounded px-3 py-2 mb-4 w-full"
       />
 
-      {filtered.length > 0 ? (
+      {filteredIncidents.length > 0 ? (
         <div className="grid gap-4">
-          {filtered.map((i) => (
+          {filteredIncidents.map((incident) => (
             <Link
-              key={i.id}
-              to={`/incidents/${i.id}`}
+              key={incident.id}
+              to={`/incidents/${incident.id}`}
               className="card p-4 hover:bg-violet-900/40 transition block"
             >
               <div className="flex justify-between">
-                <span className="font-semibold">{i.location}</span>
+                <span className="font-semibold">{incident.location}</span>
                 <span
                   className={`font-bold ${
-                    i.severity === "High"
+                    incident.severity === "High"
                       ? "text-red-400"
-                      : i.severity === "Medium"
+                      : incident.severity === "Medium"
                       ? "text-yellow-400"
                       : "text-green-400"
                   }`}
                 >
-                  {i.severity}
+                  {incident.severity}
                 </span>
               </div>
-              <p className="text-sm text-gray-300 mt-1 truncate">{i.description}</p>
+              <p className="text-sm text-gray-300 mt-1 truncate">{incident.description}</p>
               <div className="text-xs text-gray-400 mt-2">Click for details →</div>
             </Link>
           ))}

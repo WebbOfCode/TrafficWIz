@@ -1,10 +1,4 @@
-/**
- * ============================================================
- * TrafficWiz - Simple HERE Maps Component (Backend Proxy)
- * ============================================================
- * Uses backend API instead of HERE SDK to avoid auth issues
- * ============================================================
- */
+// Simple map component - displays OpenStreetMap with traffic incidents
 
 import React, { useState, useEffect } from 'react';
 import { getHereIncidents } from '../api';
@@ -41,12 +35,11 @@ const SimpleHereMap = ({
     }
   };
 
-  // Use OpenStreetMap tiles (free, no API key needed)
+  // OpenStreetMap embed URL (no API key required)
   const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${center.lng-0.1},${center.lat-0.1},${center.lng+0.1},${center.lat+0.1}&layer=mapnik&marker=${center.lat},${center.lng}`;
 
   return (
     <div style={{ position: 'relative', width: '100%', height }}>
-      {/* OpenStreetMap iframe - works without any API keys */}
       <iframe
         src={mapUrl}
         style={{ width: '100%', height: '100%', border: 'none' }}

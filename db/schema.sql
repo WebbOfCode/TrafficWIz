@@ -4,8 +4,8 @@ CREATE DATABASE IF NOT EXISTS trafficwiz
   DEFAULT CHARACTER SET utf8mb4
   DEFAULT COLLATE utf8mb4_0900_ai_ci;
 USE trafficwiz;
-
--- =========================
+   
+--   =========================
 -- 1) CITY
 -- =========================
 CREATE TABLE IF NOT EXISTS city (
@@ -92,6 +92,32 @@ CREATE TABLE IF NOT EXISTS weather_hourly (
 
 CREATE UNIQUE INDEX uq_weather_point ON weather_hourly(city_id, observed_at);
 CREATE INDEX ix_weather_temp ON weather_hourly(temperature_c);
+
+-- =========================
+-- 6) TRAFFIC_INCIDENTS (HERE API data for Dashboard/Incidents pages)
+-- =========================
+-- Separate from normalized schema - used for real-time HERE API ingestion
+CREATE TABLE IF NOT EXISTS traffic_incidents (
+  id                INT AUTO_INCREMENT PRIMARY KEY,
+  external_id       VARCHAR(255),
+  date              DATETIME NOT NULL,
+  location          VARCHAR(500),
+  latitude          DECIMAL(10, 7),
+  longitude         DECIMAL(10, 7),
+  severity          VARCHAR(50) NOT NULL,
+  incident_type     VARCHAR(100),
+  description       TEXT,
+  delay_seconds     INT DEFAULT 0,
+  end_time          DATETIME,
+  created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+  INDEX idx_date (date),
+  INDEX idx_severity (severity),
+  INDEX idx_location (location(255)),
+  INDEX idx_external_id (external_id),
+  UNIQUE KEY unique_external_id (external_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- =========================
 -- Helpful Views (optional)
