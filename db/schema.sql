@@ -117,3 +117,30 @@ SELECT s.segment_id,
 FROM congestion cg
 JOIN segment s ON s.segment_id = cg.segment_id
 GROUP BY s.segment_id, s.road_name, DATE_FORMAT(measured_at, '%Y-%m-%d %H:00:00');
+CREATE TABLE IF NOT EXISTS incident_interval (
+  interval_id     BIGINT AUTO_INCREMENT PRIMARY KEY,
+  incident_id     BIGINT NOT NULL,
+  segment_id      INT NOT NULL,
+  start_time      DATETIME NOT NULL,
+  end_time        DATETIME,
+  
+  -- Duration auto-calculated when end_time exists
+  duration_min    INT GENERATED ALWAYS AS (
+                      CASE 
+                        WHEN end_time IS NULL THEN NULL
+                        ELSE TIMESTAMPDIFF(MINUTE, start_time, end_time)
+                      END
+                    ) VIRTUAL,
+
+  CONSTRAINT fk_interval_incident
+    FOREIGN KEY (incident_id) REFERENCES incident(incident_id)
+      ON UPDATE CASCADE ON DELETE CASCADE,
+
+  CONSTRAINT fk_interval_segment
+    FOREIGN KEY (segment_id) REFERENCES segment(segment_id)
+      ON UPDATE CASCADE ON DELETE RESTRICT,
+
+  -- Ensures the time range is valid
+  CONSTRAINT ck_valid_interval
+    CHECK (end_time IS NULL OR end_time >= start_time)
+) ENGINE=InnoDB;
