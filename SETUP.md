@@ -3,7 +3,7 @@
 This guide walks you through setting up TrafficWiz on your local machine.
 
 ---
-
+once aquiring the 
 ## Prerequisites
 
 Before you start, make sure you have installed:

@@ -30,29 +30,52 @@ function Dashboard() {
     return () => clearInterval(refreshInterval);
   }, []);
 
-  // Count incidents by severity
-  const highCount = traffic.filter((t) => t.severity === "High").length;
-  const mediumCount = traffic.filter((t) => t.severity === "Medium").length;
-  const lowCount = traffic.filter((t) => t.severity === "Low").length;
+  // Normalize severity to lowercase for consistent matching
+  const normalizeSeverity = (severity) => {
+    if (!severity) return "low";
+    return String(severity).trim().toLowerCase();
+  };
+
+  // Count incidents by severity with normalized matching
+  const highCount = traffic.filter((t) => normalizeSeverity(t.severity) === "high").length;
+  const mediumCount = traffic.filter((t) => normalizeSeverity(t.severity) === "medium").length;
+  const lowCount = traffic.filter((t) => normalizeSeverity(t.severity) === "low").length;
+
+  // Debug: Log severity distribution in dev mode
+  if (process.env.NODE_ENV === 'development' && traffic.length > 0) {
+    const severityCounts = traffic.reduce((acc, t) => {
+      const raw = t.severity;
+      const normalized = normalizeSeverity(raw);
+      acc[normalized] = (acc[normalized] || 0) + 1;
+      return acc;
+    }, {});
+    console.debug('[Dashboard] Severity distribution:', severityCounts);
+    
+    // Warn about unknown severities
+    const unknownSeverities = traffic.filter(t => {
+      const norm = normalizeSeverity(t.severity);
+      return norm !== 'high' && norm !== 'medium' && norm !== 'low';
+    });
+    if (unknownSeverities.length > 0) {
+      console.warn('[Dashboard] Found incidents with unknown severity:', 
+        unknownSeverities.map(t => ({ id: t.id, severity: t.severity }))
+      );
+    }
+  }
 
   // Helper to convert severity string to numeric rank for sorting
   const getSeverityRank = (severity) => {
-    if (!severity) return 0;
-    const normalized = String(severity).trim().toLowerCase();
+    const normalized = normalizeSeverity(severity);
     if (normalized === "high") return 3;
     if (normalized === "medium") return 2;
     if (normalized === "low") return 1;
-    
-    // Handle numeric severity values
-    const numericValue = Number(severity);
-    if (!isNaN(numericValue)) return numericValue;
-    return 0;
+    return 0; // Unknown severity gets lowest rank
   };
 
-  // Apply severity filter
+  // Apply severity filter with normalized matching
   const filteredIncidents = severityFilter === "all" 
     ? traffic 
-    : traffic.filter(t => String(t.severity || "").toLowerCase() === severityFilter);
+    : traffic.filter(t => normalizeSeverity(t.severity) === severityFilter);
 
   // Apply sorting
   const sortedIncidents = [...filteredIncidents].sort((a, b) => {
@@ -146,30 +169,33 @@ function Dashboard() {
               </tr>
             </thead>
             <tbody>
-              {sortedIncidents.map((incident) => (
-                <tr key={incident.id} className="hover:bg-violet-900/40">
-                  <td className="border border-violet-800 px-3 py-2">
-                    {incident.date ? new Date(incident.date).toLocaleDateString() : "Unknown"}
-                  </td>
-                  <td className="border border-violet-800 px-3 py-2">
-                    {incident.location || "Unknown"}
-                  </td>
-                  <td
-                    className={`border border-violet-800 px-3 py-2 font-semibold ${
-                      incident.severity === "High"
-                        ? "text-red-400"
-                        : incident.severity === "Medium"
-                        ? "text-yellow-400"
-                        : "text-green-400"
-                    }`}
-                  >
-                    {incident.severity || "N/A"}
-                  </td>
-                  <td className="border border-violet-800 px-3 py-2 text-gray-300">
-                    {incident.description || "—"}
-                  </td>
-                </tr>
-              ))}
+              {sortedIncidents.map((incident) => {
+                const normalizedSeverity = normalizeSeverity(incident.severity);
+                return (
+                  <tr key={incident.id} className="hover:bg-violet-900/40">
+                    <td className="border border-violet-800 px-3 py-2">
+                      {incident.date ? new Date(incident.date).toLocaleDateString() : "Unknown"}
+                    </td>
+                    <td className="border border-violet-800 px-3 py-2">
+                      {incident.location || "Unknown"}
+                    </td>
+                    <td
+                      className={`border border-violet-800 px-3 py-2 font-semibold ${
+                        normalizedSeverity === "high"
+                          ? "text-red-400"
+                          : normalizedSeverity === "medium"
+                          ? "text-yellow-400"
+                          : "text-green-400"
+                      }`}
+                    >
+                      {incident.severity || "N/A"}
+                    </td>
+                    <td className="border border-violet-800 px-3 py-2 text-gray-300">
+                      {incident.description || "—"}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

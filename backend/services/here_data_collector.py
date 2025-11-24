@@ -90,7 +90,7 @@ class HereDataCollector:
                 lon = -86.7816
             
             # Try to get location from HERE API 'location' field (street name)
-            # If not available, fall back to description or coordinates
+            # If not available, fall back to reverse geocoding or description
             location_str = incident.get('location', '')
             if not location_str or len(location_str) < 3:
                 # Extract location from description if it contains "At " pattern
@@ -98,7 +98,25 @@ class HereDataCollector:
                     # Split on " - " and take the location part
                     location_str = description.split(' - ')[0] if ' - ' in description else description
                 else:
-                    location_str = f"{lat},{lon}"
+                    # Use reverse geocoding to get street intersection
+                    try:
+                        reverse_result = self.here_service.reverse_geocode(lat, lon)
+                        if reverse_result and reverse_result.get('items'):
+                            address = reverse_result['items'][0].get('address', {})
+                            street = address.get('street', '')
+                            intersection = address.get('label', '')
+                            
+                            # Prefer intersection format or street name
+                            if 'At ' in intersection:
+                                location_str = intersection.split(',')[0]  # Get "At Street/Street" part
+                            elif street:
+                                location_str = street
+                            else:
+                                location_str = f"{lat},{lon}"
+                        else:
+                            location_str = f"{lat},{lon}"
+                    except:
+                        location_str = f"{lat},{lon}"
             
             # Get start time or use current time
             start_time = incident.get('startTime')

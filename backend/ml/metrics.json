@@ -1,8 +1,8 @@
 {
   "model_type": "RandomForestClassifier",
-  "accuracy": 0.4756944444444444,
-  "n_train": 1149,
-  "n_test": 288,
+  "accuracy": 0.520764119601329,
+  "n_train": 4814,
+  "n_test": 1204,
   "features": [
     "hour",
     "day_of_week",
@@ -18,44 +18,44 @@
   "top_features": [
     {
       "name": "hour",
-      "importance": 0.14991289343100586
-    },
-    {
-      "name": "road_36.1627",
-      "importance": 0.10860043949638705
+      "importance": 0.32714921565482497
     },
     {
       "name": "day_of_week",
-      "importance": 0.08878676400721734
+      "importance": 0.20492382208711932
     },
     {
       "name": "is_rush_hour",
-      "importance": 0.026924943204876515
+      "importance": 0.057927365184964455
     },
     {
       "name": "is_weekend",
-      "importance": 0.025556266519543618
+      "importance": 0.05006627556238124
     },
     {
-      "name": "road_Murfreesboro Pike @ Exit 52",
-      "importance": 0.020582007361993924
+      "name": "road_Broadway at Briley Pkwy",
+      "importance": 0.011816225984217317
     },
     {
-      "name": "road_I-65 near 21st Ave S",
-      "importance": 0.018004000747160676
+      "name": "road_Murfreesboro Pike near Old Hickory Blvd",
+      "importance": 0.011128758732941644
     },
     {
-      "name": "road_Woodmont Blvd @ Charlotte Ave",
-      "importance": 0.01638197442325341
+      "name": "road_Harding Pl @ Wedgewood",
+      "importance": 0.01077688501845228
     },
     {
-      "name": "road_Ellington Pkwy near 21st Ave S",
-      "importance": 0.014611946213928013
+      "name": "road_21st Ave S near 21st Ave S",
+      "importance": 0.007651712655846988
     },
     {
-      "name": "road_I-440 @ Exit 209",
-      "importance": 0.014524491208817365
+      "name": "road_8th Ave S near Demonbreun",
+      "importance": 0.007155448896053101
+    },
+    {
+      "name": "road_8th Ave S @ Exit 52",
+      "importance": 0.007008433219775302
     }
   ],
-  "trained_at": "2025-11-21T02:31:07.486696"
+  "trained_at": "2025-11-24T14:45:58.998562"
 }

@@ -1,3255 +1,5658 @@
 {
-  "36.1627": {
-    "total_incidents": 37,
-    "avg_severity": 1.0,
+  "Nolensville Pike near 21st Ave S": {
+    "total_incidents": 41,
+    "avg_severity": 1.853658536585366,
+    "risk_score": 76.0,
     "best_hours": [
       7,
-      12,
+      10,
       2
-    ],
-    "worst_hours": [
-      9,
-      23,
-      1
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 14,
-    "weekend_incidents": 0
-  },
-  "I-40 @ Exit 209": {
-    "total_incidents": 18,
-    "avg_severity": 1.8333333333333333,
-    "best_hours": [
-      7,
-      11,
-      17
     ],
     "worst_hours": [
       5,
       13,
-      3
-    ],
-    "best_day": "Monday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 7
-  },
-  "8th Ave S @ Wedgewood": {
-    "total_incidents": 16,
-    "avg_severity": 1.5,
-    "best_hours": [
-      9,
-      16,
       0
     ],
-    "worst_hours": [
-      14,
-      3,
-      4
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 4
-  },
-  "I-65 @ Charlotte Ave": {
-    "total_incidents": 15,
-    "avg_severity": 1.7333333333333334,
-    "best_hours": [
-      0,
-      3,
-      4
-    ],
-    "worst_hours": [
-      18,
-      7,
-      9
-    ],
-    "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 8,
-    "weekend_incidents": 5
-  },
-  "Murfreesboro Pike @ Exit 209": {
-    "total_incidents": 15,
-    "avg_severity": 1.8,
-    "best_hours": [
-      9,
-      13,
-      14
-    ],
-    "worst_hours": [
-      18,
-      3,
-      11
-    ],
-    "best_day": "Monday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 9
-  },
-  "Gallatin Pike @ Charlotte Ave": {
-    "total_incidents": 14,
-    "avg_severity": 1.8571428571428572,
-    "best_hours": [
-      6,
-      19,
-      20
-    ],
-    "worst_hours": [
-      21,
-      10,
-      14
-    ],
-    "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 4
-  },
-  "I-65 near 21st Ave S": {
-    "total_incidents": 14,
-    "avg_severity": 1.7142857142857142,
-    "best_hours": [
-      0,
-      6,
-      14
-    ],
-    "worst_hours": [
-      1,
-      10,
-      8
-    ],
-    "best_day": "Saturday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 2
-  },
-  "Murfreesboro Pike at Briley Pkwy": {
-    "total_incidents": 14,
-    "avg_severity": 1.7857142857142858,
-    "best_hours": [
-      3,
-      6,
-      19
-    ],
-    "worst_hours": [
-      9,
-      20,
-      2
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 5
+    "best_day": "Wednesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 13
   },
   "Gallatin Pike at Briley Pkwy": {
-    "total_incidents": 14,
-    "avg_severity": 1.5,
+    "total_incidents": 46,
+    "avg_severity": 1.6304347826086956,
+    "risk_score": 75.0,
     "best_hours": [
       4,
-      8,
-      10
-    ],
-    "worst_hours": [
-      14,
-      16,
-      20
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 3
-  },
-  "I-24 @ Exit 209": {
-    "total_incidents": 13,
-    "avg_severity": 1.6153846153846154,
-    "best_hours": [
-      2,
-      4,
-      6
-    ],
-    "worst_hours": [
-      21,
-      3,
-      13
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 4
-  },
-  "I-65 @ Wedgewood": {
-    "total_incidents": 13,
-    "avg_severity": 1.7692307692307692,
-    "best_hours": [
-      0,
-      8,
-      14
-    ],
-    "worst_hours": [
-      5,
       9,
       13
     ],
-    "best_day": "Wednesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "21st Ave S near Broadway": {
-    "total_incidents": 13,
-    "avg_severity": 1.5384615384615385,
-    "best_hours": [
-      14,
-      19,
-      23
-    ],
     "worst_hours": [
-      2,
-      11,
-      22
-    ],
-    "best_day": "Saturday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 3
-  },
-  "Broadway @ Exit 209": {
-    "total_incidents": 13,
-    "avg_severity": 1.4615384615384615,
-    "best_hours": [
       0,
-      9,
-      23
-    ],
-    "worst_hours": [
-      3,
-      22,
-      1
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 4
-  },
-  "Ellington Pkwy @ Exit 209": {
-    "total_incidents": 13,
-    "avg_severity": 1.8461538461538463,
-    "best_hours": [
-      11,
-      15,
-      9
-    ],
-    "worst_hours": [
-      14,
-      7,
-      2
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 5
-  },
-  "Ellington Pkwy @ Wedgewood": {
-    "total_incidents": 12,
-    "avg_severity": 1.5,
-    "best_hours": [
       1,
-      3,
       7
     ],
-    "worst_hours": [
-      6,
-      10,
-      23
-    ],
-    "best_day": "Monday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
+    "best_day": "Tuesday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 16
   },
-  "8th Ave S @ Exit 52": {
-    "total_incidents": 12,
-    "avg_severity": 1.25,
+  "I-24 near 21st Ave S": {
+    "total_incidents": 47,
+    "avg_severity": 1.574468085106383,
+    "risk_score": 74.0,
     "best_hours": [
-      0,
-      1,
-      3
+      3,
+      8,
+      15
     ],
     "worst_hours": [
-      7,
-      18,
-      21
+      11,
+      1,
+      6
     ],
     "best_day": "Wednesday",
     "worst_day": "Tuesday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 4
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 12
   },
-  "Harding Pl near Demonbreun": {
-    "total_incidents": 12,
-    "avg_severity": 1.75,
+  "I-65 at Briley Pkwy": {
+    "total_incidents": 42,
+    "avg_severity": 1.7380952380952381,
+    "risk_score": 73.0,
     "best_hours": [
-      8,
-      7,
-      13
-    ],
-    "worst_hours": [
       0,
-      2,
-      19
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 4
-  },
-  "Woodmont Blvd @ Charlotte Ave": {
-    "total_incidents": 12,
-    "avg_severity": 1.1666666666666667,
-    "best_hours": [
-      6,
-      8,
-      9
+      7,
+      1
     ],
     "worst_hours": [
       3,
       13,
-      23
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 4
-  },
-  "I-440 @ Wedgewood": {
-    "total_incidents": 12,
-    "avg_severity": 1.5833333333333333,
-    "best_hours": [
-      1,
-      4,
-      10
-    ],
-    "worst_hours": [
-      0,
-      23,
-      14
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 6
-  },
-  "Woodmont Blvd @ Wedgewood": {
-    "total_incidents": 12,
-    "avg_severity": 1.9166666666666667,
-    "best_hours": [
-      1,
-      2,
-      21
-    ],
-    "worst_hours": [
-      0,
-      14,
-      3
-    ],
-    "best_day": "Saturday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 4
-  },
-  "Old Hickory Blvd @ Wedgewood": {
-    "total_incidents": 11,
-    "avg_severity": 1.7272727272727273,
-    "best_hours": [
-      7,
-      8,
-      16
-    ],
-    "worst_hours": [
-      2,
-      11,
-      0
+      5
     ],
     "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 1
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 15
   },
-  "I-24 near Old Hickory Blvd": {
-    "total_incidents": 11,
-    "avg_severity": 1.6363636363636365,
+  "Broadway near Old Hickory Blvd": {
+    "total_incidents": 42,
+    "avg_severity": 1.7380952380952381,
+    "risk_score": 73.0,
     "best_hours": [
-      11,
-      14,
-      16
-    ],
-    "worst_hours": [
-      7,
-      1,
-      15
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 4
-  },
-  "Harding Pl near Spence Ln": {
-    "total_incidents": 11,
-    "avg_severity": 1.6363636363636365,
-    "best_hours": [
-      13,
-      17,
+      0,
+      3,
       5
     ],
     "worst_hours": [
       14,
-      2,
+      16,
       22
     ],
     "best_day": "Friday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 11
   },
-  "West End Ave @ Charlotte Ave": {
-    "total_incidents": 11,
-    "avg_severity": 1.5454545454545454,
+  "Woodmont Blvd @ Charlotte Ave": {
+    "total_incidents": 43,
+    "avg_severity": 1.697674418604651,
+    "risk_score": 73.0,
+    "best_hours": [
+      0,
+      4,
+      11
+    ],
+    "worst_hours": [
+      8,
+      3,
+      6
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 12
+  },
+  "Old Hickory Blvd near Broadway": {
+    "total_incidents": 40,
+    "avg_severity": 1.8,
+    "risk_score": 72.0,
+    "best_hours": [
+      13,
+      14,
+      15
+    ],
+    "worst_hours": [
+      18,
+      0,
+      3
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 14,
+    "weekend_incidents": 8
+  },
+  "I-65 @ Charlotte Ave": {
+    "total_incidents": 41,
+    "avg_severity": 1.6829268292682926,
+    "risk_score": 69.0,
     "best_hours": [
       2,
       3,
-      7
-    ],
-    "worst_hours": [
-      23,
-      12,
-      15
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Broadway @ Exit 52": {
-    "total_incidents": 11,
-    "avg_severity": 1.7272727272727273,
-    "best_hours": [
-      5,
-      14,
-      18
-    ],
-    "worst_hours": [
-      6,
-      21,
-      1
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "I-65 near Old Hickory Blvd": {
-    "total_incidents": 11,
-    "avg_severity": 1.8181818181818181,
-    "best_hours": [
-      0,
-      18,
       21
     ],
     "worst_hours": [
+      12,
+      7,
+      11
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 7
+  },
+  "Charlotte Ave near Old Hickory Blvd": {
+    "total_incidents": 40,
+    "avg_severity": 1.725,
+    "risk_score": 69.0,
+    "best_hours": [
+      7,
+      9,
+      19
+    ],
+    "worst_hours": [
+      6,
+      23,
+      14
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 11
+  },
+  "21st Ave S @ Charlotte Ave": {
+    "total_incidents": 35,
+    "avg_severity": 1.9714285714285715,
+    "risk_score": 69.0,
+    "best_hours": [
+      6,
+      21,
+      22
+    ],
+    "worst_hours": [
       20,
-      3,
-      4
+      19,
+      0
     ],
     "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 12
   },
-  "I-40 @ Charlotte Ave": {
-    "total_incidents": 11,
-    "avg_severity": 1.4545454545454546,
+  "Gallatin Pike near 21st Ave S": {
+    "total_incidents": 43,
+    "avg_severity": 1.6046511627906976,
+    "risk_score": 69.0,
     "best_hours": [
-      11,
+      2,
+      7,
+      9
+    ],
+    "worst_hours": [
+      13,
+      6,
+      14
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 8
+  },
+  "Harding Pl @ Exit 52": {
+    "total_incidents": 43,
+    "avg_severity": 1.6046511627906976,
+    "risk_score": 69.0,
+    "best_hours": [
+      3,
+      6,
+      11
+    ],
+    "worst_hours": [
+      8,
       15,
-      16
+      20
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 14
+  },
+  "Murfreesboro Pike near Old Hickory Blvd": {
+    "total_incidents": 36,
+    "avg_severity": 1.8888888888888888,
+    "risk_score": 68.0,
+    "best_hours": [
+      7,
+      12,
+      8
+    ],
+    "worst_hours": [
+      3,
+      5,
+      11
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 12
+  },
+  "21st Ave S @ Wedgewood": {
+    "total_incidents": 41,
+    "avg_severity": 1.6585365853658536,
+    "risk_score": 68.0,
+    "best_hours": [
+      2,
+      12,
+      19
+    ],
+    "worst_hours": [
+      0,
+      17,
+      9
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 13
+  },
+  "Gallatin Pike @ Wedgewood": {
+    "total_incidents": 40,
+    "avg_severity": 1.7,
+    "risk_score": 68.0,
+    "best_hours": [
+      0,
+      8,
+      17
+    ],
+    "worst_hours": [
+      18,
+      10,
+      1
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 13
+  },
+  "Broadway near Demonbreun": {
+    "total_incidents": 36,
+    "avg_severity": 1.8888888888888888,
+    "risk_score": 68.0,
+    "best_hours": [
+      14,
+      21,
+      4
+    ],
+    "worst_hours": [
+      18,
+      23,
+      9
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 13
+  },
+  "I-24 @ Exit 209": {
+    "total_incidents": 39,
+    "avg_severity": 1.7179487179487178,
+    "risk_score": 67.0,
+    "best_hours": [
+      0,
+      12,
+      6
+    ],
+    "worst_hours": [
+      5,
+      14,
+      10
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 8
+  },
+  "I-40 near Broadway": {
+    "total_incidents": 38,
+    "avg_severity": 1.736842105263158,
+    "risk_score": 66.0,
+    "best_hours": [
+      8,
+      12,
+      6
+    ],
+    "worst_hours": [
+      14,
+      19,
+      0
+    ],
+    "best_day": "Monday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 11
+  },
+  "8th Ave S @ Exit 209": {
+    "total_incidents": 42,
+    "avg_severity": 1.5714285714285714,
+    "risk_score": 66.0,
+    "best_hours": [
+      1,
+      2,
+      8
+    ],
+    "worst_hours": [
+      20,
+      11,
+      15
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 4
+  },
+  "21st Ave S at Briley Pkwy": {
+    "total_incidents": 37,
+    "avg_severity": 1.7837837837837838,
+    "risk_score": 66.0,
+    "best_hours": [
+      1,
+      5,
+      6
+    ],
+    "worst_hours": [
+      18,
+      21,
+      3
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 14,
+    "weekend_incidents": 9
+  },
+  "Charlotte Ave at Briley Pkwy": {
+    "total_incidents": 42,
+    "avg_severity": 1.5714285714285714,
+    "risk_score": 66.0,
+    "best_hours": [
+      7,
+      13,
+      22
+    ],
+    "worst_hours": [
+      12,
+      10,
+      6
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 7
+  },
+  "Lebanon Pike near Broadway": {
+    "total_incidents": 36,
+    "avg_severity": 1.8333333333333333,
+    "risk_score": 66.0,
+    "best_hours": [
+      21,
+      4,
+      7
     ],
     "worst_hours": [
       12,
       2,
+      5
+    ],
+    "best_day": "Friday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 13
+  },
+  "Ellington Pkwy @ Wedgewood": {
+    "total_incidents": 37,
+    "avg_severity": 1.7567567567567568,
+    "risk_score": 65.0,
+    "best_hours": [
+      7,
+      8,
+      12
+    ],
+    "worst_hours": [
+      10,
+      3,
+      5
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 8
+  },
+  "Briley Pkwy near 21st Ave S": {
+    "total_incidents": 39,
+    "avg_severity": 1.6666666666666667,
+    "risk_score": 65.0,
+    "best_hours": [
+      0,
+      7,
+      9
+    ],
+    "worst_hours": [
+      1,
+      12,
+      17
+    ],
+    "best_day": "Monday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 10
+  },
+  "Broadway near Broadway": {
+    "total_incidents": 38,
+    "avg_severity": 1.7105263157894737,
+    "risk_score": 65.0,
+    "best_hours": [
+      8,
+      9,
+      7
+    ],
+    "worst_hours": [
+      3,
+      4,
+      12
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 17
+  },
+  "Harding Pl near Spence Ln": {
+    "total_incidents": 42,
+    "avg_severity": 1.5238095238095237,
+    "risk_score": 64.0,
+    "best_hours": [
+      10,
+      14,
+      16
+    ],
+    "worst_hours": [
+      6,
+      13,
+      15
+    ],
+    "best_day": "Friday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 8
+  },
+  "21st Ave S @ Exit 209": {
+    "total_incidents": 38,
+    "avg_severity": 1.6842105263157894,
+    "risk_score": 64.0,
+    "best_hours": [
+      11,
+      12,
+      13
+    ],
+    "worst_hours": [
+      3,
+      2,
+      19
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 14
+  },
+  "I-440 @ Exit 209": {
+    "total_incidents": 40,
+    "avg_severity": 1.6,
+    "risk_score": 64.0,
+    "best_hours": [
+      14,
+      1,
       4
+    ],
+    "worst_hours": [
+      0,
+      12,
+      5
+    ],
+    "best_day": "Monday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 14
+  },
+  "Harding Pl @ Wedgewood": {
+    "total_incidents": 30,
+    "avg_severity": 2.1,
+    "risk_score": 63.0,
+    "best_hours": [
+      23,
+      3,
+      6
+    ],
+    "worst_hours": [
+      22,
+      2,
+      10
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 6
+  },
+  "Lebanon Pike @ Exit 209": {
+    "total_incidents": 37,
+    "avg_severity": 1.7027027027027026,
+    "risk_score": 63.0,
+    "best_hours": [
+      17,
+      0,
+      3
+    ],
+    "worst_hours": [
+      23,
+      1,
+      20
+    ],
+    "best_day": "Friday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 11
+  },
+  "Broadway @ Exit 209": {
+    "total_incidents": 39,
+    "avg_severity": 1.6153846153846154,
+    "risk_score": 63.0,
+    "best_hours": [
+      7,
+      8,
+      10
+    ],
+    "worst_hours": [
+      2,
+      11,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 15
+  },
+  "Nolensville Pike @ Charlotte Ave": {
+    "total_incidents": 39,
+    "avg_severity": 1.6153846153846154,
+    "risk_score": 63.0,
+    "best_hours": [
+      3,
+      4,
+      5
+    ],
+    "worst_hours": [
+      2,
+      8,
+      16
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 15,
+    "weekend_incidents": 7
+  },
+  "Lebanon Pike at Briley Pkwy": {
+    "total_incidents": 35,
+    "avg_severity": 1.7714285714285714,
+    "risk_score": 62.0,
+    "best_hours": [
+      1,
+      13,
+      15
+    ],
+    "worst_hours": [
+      20,
+      4,
+      9
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 9
+  },
+  "Ellington Pkwy near Spence Ln": {
+    "total_incidents": 34,
+    "avg_severity": 1.8235294117647058,
+    "risk_score": 62.0,
+    "best_hours": [
+      7,
+      10,
+      20
+    ],
+    "worst_hours": [
+      13,
+      3,
+      6
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 8
+  },
+  "I-440 at Briley Pkwy": {
+    "total_incidents": 34,
+    "avg_severity": 1.8235294117647058,
+    "risk_score": 62.0,
+    "best_hours": [
+      3,
+      7,
+      11
+    ],
+    "worst_hours": [
+      2,
+      0,
+      19
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 13
+  },
+  "Old Hickory Blvd near Old Hickory Blvd": {
+    "total_incidents": 35,
+    "avg_severity": 1.7714285714285714,
+    "risk_score": 62.0,
+    "best_hours": [
+      21,
+      0,
+      7
+    ],
+    "worst_hours": [
+      4,
+      15,
+      17
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 13,
+    "weekend_incidents": 7
+  },
+  "I-40 near Demonbreun": {
+    "total_incidents": 36,
+    "avg_severity": 1.7222222222222223,
+    "risk_score": 62.0,
+    "best_hours": [
+      8,
+      19,
+      23
+    ],
+    "worst_hours": [
+      1,
+      13,
+      6
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 9
+  },
+  "Briley Pkwy near Spence Ln": {
+    "total_incidents": 36,
+    "avg_severity": 1.7222222222222223,
+    "risk_score": 62.0,
+    "best_hours": [
+      10,
+      3,
+      9
+    ],
+    "worst_hours": [
+      6,
+      15,
+      18
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 14
+  },
+  "Broadway at Briley Pkwy": {
+    "total_incidents": 36,
+    "avg_severity": 1.7222222222222223,
+    "risk_score": 62.0,
+    "best_hours": [
+      8,
+      19,
+      0
+    ],
+    "worst_hours": [
+      10,
+      7,
+      21
+    ],
+    "best_day": "Monday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 12
+  },
+  "Lebanon Pike near 21st Ave S": {
+    "total_incidents": 36,
+    "avg_severity": 1.6944444444444444,
+    "risk_score": 61.0,
+    "best_hours": [
+      8,
+      13,
+      17
+    ],
+    "worst_hours": [
+      22,
+      16,
+      6
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 11
+  },
+  "Woodmont Blvd near 21st Ave S": {
+    "total_incidents": 34,
+    "avg_severity": 1.7941176470588236,
+    "risk_score": 61.0,
+    "best_hours": [
+      3,
+      4,
+      9
+    ],
+    "worst_hours": [
+      1,
+      5,
+      8
+    ],
+    "best_day": "Monday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 15
+  },
+  "21st Ave S near Spence Ln": {
+    "total_incidents": 39,
+    "avg_severity": 1.564102564102564,
+    "risk_score": 61.0,
+    "best_hours": [
+      11,
+      15,
+      20
+    ],
+    "worst_hours": [
+      19,
+      8,
+      4
+    ],
+    "best_day": "Monday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 9
+  },
+  "Nolensville Pike at Briley Pkwy": {
+    "total_incidents": 34,
+    "avg_severity": 1.7941176470588236,
+    "risk_score": 61.0,
+    "best_hours": [
+      1,
+      3,
+      6
+    ],
+    "worst_hours": [
+      2,
+      19,
+      7
     ],
     "best_day": "Monday",
     "worst_day": "Wednesday",
     "rush_hour_incidents": 5,
-    "weekend_incidents": 3
+    "weekend_incidents": 7
   },
-  "Briley Pkwy @ Exit 209": {
-    "total_incidents": 11,
-    "avg_severity": 1.7272727272727273,
+  "Briley Pkwy @ Charlotte Ave": {
+    "total_incidents": 40,
+    "avg_severity": 1.525,
+    "risk_score": 61.0,
     "best_hours": [
-      21,
-      5,
-      9
+      0,
+      14,
+      19
     ],
     "worst_hours": [
-      0,
-      12,
-      8
+      10,
+      21,
+      3
     ],
-    "best_day": "Thursday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 4
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 9
   },
-  "Murfreesboro Pike @ Exit 52": {
-    "total_incidents": 11,
-    "avg_severity": 1.1818181818181819,
+  "Old Hickory Blvd @ Wedgewood": {
+    "total_incidents": 33,
+    "avg_severity": 1.8181818181818181,
+    "risk_score": 60.0,
     "best_hours": [
-      0,
-      11,
-      12
+      20,
+      23,
+      3
     ],
     "worst_hours": [
       8,
-      20,
+      9,
+      12
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 8
+  },
+  "Murfreesboro Pike @ Exit 52": {
+    "total_incidents": 36,
+    "avg_severity": 1.6666666666666667,
+    "risk_score": 60.0,
+    "best_hours": [
+      0,
+      6,
+      17
+    ],
+    "worst_hours": [
+      2,
+      4,
+      13
+    ],
+    "best_day": "Friday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 12
+  },
+  "Nolensville Pike @ Exit 52": {
+    "total_incidents": 40,
+    "avg_severity": 1.5,
+    "risk_score": 60.0,
+    "best_hours": [
+      2,
+      17,
+      20
+    ],
+    "worst_hours": [
+      8,
+      9,
+      10
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 14,
+    "weekend_incidents": 9
+  },
+  "Woodmont Blvd at Briley Pkwy": {
+    "total_incidents": 36,
+    "avg_severity": 1.6666666666666667,
+    "risk_score": 60.0,
+    "best_hours": [
+      5,
+      8,
+      18
+    ],
+    "worst_hours": [
+      13,
+      10,
+      15
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 16
+  },
+  "Harding Pl near 21st Ave S": {
+    "total_incidents": 37,
+    "avg_severity": 1.6216216216216217,
+    "risk_score": 60.0,
+    "best_hours": [
+      2,
+      7,
+      11
+    ],
+    "worst_hours": [
+      8,
+      1,
+      20
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 11
+  },
+  "Harding Pl @ Charlotte Ave": {
+    "total_incidents": 40,
+    "avg_severity": 1.475,
+    "risk_score": 59.0,
+    "best_hours": [
+      7,
+      12,
+      14
+    ],
+    "worst_hours": [
+      9,
+      0,
+      1
+    ],
+    "best_day": "Monday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 13,
+    "weekend_incidents": 11
+  },
+  "Old Hickory Blvd at Briley Pkwy": {
+    "total_incidents": 37,
+    "avg_severity": 1.5945945945945945,
+    "risk_score": 59.0,
+    "best_hours": [
+      0,
+      2,
+      3
+    ],
+    "worst_hours": [
+      14,
+      1,
+      5
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 13
+  },
+  "Murfreesboro Pike @ Charlotte Ave": {
+    "total_incidents": 36,
+    "avg_severity": 1.6388888888888888,
+    "risk_score": 59.0,
+    "best_hours": [
+      3,
+      8,
+      15
+    ],
+    "worst_hours": [
+      13,
+      1,
       0
     ],
     "best_day": "Wednesday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 0
+    "worst_day": "Monday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 11
   },
-  "I-40 near Old Hickory Blvd": {
-    "total_incidents": 10,
-    "avg_severity": 1.6,
+  "Harding Pl @ Exit 209": {
+    "total_incidents": 35,
+    "avg_severity": 1.6857142857142857,
+    "risk_score": 59.0,
     "best_hours": [
-      1,
       2,
-      12
-    ],
-    "worst_hours": [
       3,
-      6,
       16
     ],
+    "worst_hours": [
+      21,
+      6,
+      1
+    ],
     "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 17
   },
-  "Briley Pkwy near Broadway": {
-    "total_incidents": 10,
-    "avg_severity": 1.9,
+  "I-440 @ Charlotte Ave": {
+    "total_incidents": 36,
+    "avg_severity": 1.6388888888888888,
+    "risk_score": 59.0,
+    "best_hours": [
+      8,
+      2,
+      10
+    ],
+    "worst_hours": [
+      4,
+      13,
+      14
+    ],
+    "best_day": "Friday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 9
+  },
+  "Woodmont Blvd near Old Hickory Blvd": {
+    "total_incidents": 34,
+    "avg_severity": 1.7058823529411764,
+    "risk_score": 58.0,
+    "best_hours": [
+      0,
+      3,
+      11
+    ],
+    "worst_hours": [
+      2,
+      13,
+      16
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 7
+  },
+  "I-440 near Broadway": {
+    "total_incidents": 31,
+    "avg_severity": 1.8709677419354838,
+    "risk_score": 58.0,
+    "best_hours": [
+      2,
+      19,
+      10
+    ],
+    "worst_hours": [
+      20,
+      12,
+      7
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 9
+  },
+  "Broadway @ Charlotte Ave": {
+    "total_incidents": 32,
+    "avg_severity": 1.8125,
+    "risk_score": 58.0,
+    "best_hours": [
+      7,
+      15,
+      17
+    ],
+    "worst_hours": [
+      21,
+      6,
+      3
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 10
+  },
+  "I-65 @ Exit 209": {
+    "total_incidents": 35,
+    "avg_severity": 1.6285714285714286,
+    "risk_score": 57.0,
+    "best_hours": [
+      1,
+      4,
+      6
+    ],
+    "worst_hours": [
+      21,
+      3,
+      13
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 13
+  },
+  "I-40 @ Wedgewood": {
+    "total_incidents": 32,
+    "avg_severity": 1.78125,
+    "risk_score": 57.0,
     "best_hours": [
       0,
       7,
-      16
+      9
     ],
     "worst_hours": [
+      15,
+      16,
+      10
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 11
+  },
+  "Ellington Pkwy @ Exit 52": {
+    "total_incidents": 36,
+    "avg_severity": 1.5833333333333333,
+    "risk_score": 57.0,
+    "best_hours": [
+      0,
+      3,
+      6
+    ],
+    "worst_hours": [
+      16,
       23,
-      6,
-      15
+      13
     ],
     "best_day": "Monday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 4
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 8
   },
-  "I-65 @ Exit 52": {
-    "total_incidents": 10,
-    "avg_severity": 1.6,
+  "West End Ave @ Wedgewood": {
+    "total_incidents": 35,
+    "avg_severity": 1.6285714285714286,
+    "risk_score": 57.0,
     "best_hours": [
-      11,
-      15,
-      22
+      4,
+      5,
+      8
     ],
     "worst_hours": [
       12,
+      7,
+      10
+    ],
+    "best_day": "Monday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 14,
+    "weekend_incidents": 10
+  },
+  "Gallatin Pike near Demonbreun": {
+    "total_incidents": 34,
+    "avg_severity": 1.6764705882352942,
+    "risk_score": 57.0,
+    "best_hours": [
+      6,
+      15,
+      16
+    ],
+    "worst_hours": [
+      9,
+      12,
+      8
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 15
+  },
+  "Harding Pl near Broadway": {
+    "total_incidents": 32,
+    "avg_severity": 1.78125,
+    "risk_score": 57.0,
+    "best_hours": [
+      5,
+      23,
+      1
+    ],
+    "worst_hours": [
+      22,
+      19,
+      21
+    ],
+    "best_day": "Monday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 7
+  },
+  "Murfreesboro Pike @ Wedgewood": {
+    "total_incidents": 36,
+    "avg_severity": 1.5555555555555556,
+    "risk_score": 56.0,
+    "best_hours": [
+      8,
+      9,
+      15
+    ],
+    "worst_hours": [
+      18,
+      13,
+      2
+    ],
+    "best_day": "Friday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 7
+  },
+  "Charlotte Ave @ Exit 209": {
+    "total_incidents": 35,
+    "avg_severity": 1.6,
+    "risk_score": 56.0,
+    "best_hours": [
       0,
-      7
+      14,
+      18
+    ],
+    "worst_hours": [
+      7,
+      9,
+      5
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 11
+  },
+  "Nolensville Pike near Broadway": {
+    "total_incidents": 35,
+    "avg_severity": 1.6,
+    "risk_score": 56.0,
+    "best_hours": [
+      1,
+      13,
+      16
+    ],
+    "worst_hours": [
+      3,
+      15,
+      19
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 2,
+    "weekend_incidents": 9
+  },
+  "West End Ave @ Charlotte Ave": {
+    "total_incidents": 30,
+    "avg_severity": 1.8333333333333333,
+    "risk_score": 55.0,
+    "best_hours": [
+      3,
+      5,
+      6
+    ],
+    "worst_hours": [
+      2,
+      13,
+      22
     ],
     "best_day": "Saturday",
     "worst_day": "Thursday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 6
   },
-  "Lebanon Pike @ Charlotte Ave": {
-    "total_incidents": 10,
-    "avg_severity": 1.6,
+  "Woodmont Blvd @ Wedgewood": {
+    "total_incidents": 31,
+    "avg_severity": 1.7741935483870968,
+    "risk_score": 55.0,
+    "best_hours": [
+      0,
+      8,
+      11
+    ],
+    "worst_hours": [
+      20,
+      9,
+      5
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 10
+  },
+  "Old Hickory Blvd @ Exit 52": {
+    "total_incidents": 37,
+    "avg_severity": 1.4864864864864864,
+    "risk_score": 55.0,
+    "best_hours": [
+      7,
+      9,
+      13
+    ],
+    "worst_hours": [
+      16,
+      10,
+      20
+    ],
+    "best_day": "Friday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 13,
+    "weekend_incidents": 10
+  },
+  "Briley Pkwy @ Exit 52": {
+    "total_incidents": 30,
+    "avg_severity": 1.8333333333333333,
+    "risk_score": 55.0,
     "best_hours": [
       1,
+      3,
+      4
+    ],
+    "worst_hours": [
+      23,
+      8,
+      12
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 11
+  },
+  "Lebanon Pike near Old Hickory Blvd": {
+    "total_incidents": 34,
+    "avg_severity": 1.6176470588235294,
+    "risk_score": 55.0,
+    "best_hours": [
+      0,
+      3,
+      16
+    ],
+    "worst_hours": [
+      8,
+      10,
+      20
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 10
+  },
+  "21st Ave S near Demonbreun": {
+    "total_incidents": 32,
+    "avg_severity": 1.71875,
+    "risk_score": 55.0,
+    "best_hours": [
+      2,
+      6,
+      9
+    ],
+    "worst_hours": [
+      17,
+      13,
+      5
+    ],
+    "best_day": "Friday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 8
+  },
+  "Nolensville Pike @ Wedgewood": {
+    "total_incidents": 32,
+    "avg_severity": 1.71875,
+    "risk_score": 55.0,
+    "best_hours": [
+      7,
+      12,
+      13
+    ],
+    "worst_hours": [
+      8,
+      6,
+      17
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 11
+  },
+  "Ellington Pkwy near Old Hickory Blvd": {
+    "total_incidents": 30,
+    "avg_severity": 1.8,
+    "risk_score": 54.0,
+    "best_hours": [
+      1,
+      8,
+      9
+    ],
+    "worst_hours": [
+      5,
+      6,
+      7
+    ],
+    "best_day": "Monday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 10
+  },
+  "I-24 near Old Hickory Blvd": {
+    "total_incidents": 34,
+    "avg_severity": 1.588235294117647,
+    "risk_score": 54.0,
+    "best_hours": [
+      0,
+      4,
+      5
+    ],
+    "worst_hours": [
+      3,
+      7,
+      13
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 11
+  },
+  "8th Ave S @ Wedgewood": {
+    "total_incidents": 34,
+    "avg_severity": 1.588235294117647,
+    "risk_score": 54.0,
+    "best_hours": [
+      1,
+      7,
+      9
+    ],
+    "worst_hours": [
+      2,
+      3,
+      4
+    ],
+    "best_day": "Friday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 6
+  },
+  "Nolensville Pike near Demonbreun": {
+    "total_incidents": 33,
+    "avg_severity": 1.6363636363636365,
+    "risk_score": 54.0,
+    "best_hours": [
+      0,
+      3,
+      14
+    ],
+    "worst_hours": [
+      4,
+      9,
+      22
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 5
+  },
+  "I-65 near Demonbreun": {
+    "total_incidents": 36,
+    "avg_severity": 1.5,
+    "risk_score": 54.0,
+    "best_hours": [
+      1,
+      12,
+      17
+    ],
+    "worst_hours": [
+      23,
+      18,
+      4
+    ],
+    "best_day": "Monday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 11
+  },
+  "I-40 at Briley Pkwy": {
+    "total_incidents": 35,
+    "avg_severity": 1.542857142857143,
+    "risk_score": 54.0,
+    "best_hours": [
+      13,
+      18,
+      22
+    ],
+    "worst_hours": [
+      5,
+      1,
+      2
+    ],
+    "best_day": "Friday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 11
+  },
+  "West End Ave near Demonbreun": {
+    "total_incidents": 29,
+    "avg_severity": 1.8620689655172413,
+    "risk_score": 54.0,
+    "best_hours": [
+      4,
       13,
       14
     ],
     "worst_hours": [
-      2,
-      5,
-      9
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "Ellington Pkwy near 21st Ave S": {
-    "total_incidents": 10,
-    "avg_severity": 1.8,
-    "best_hours": [
-      17,
-      3,
-      6
-    ],
-    "worst_hours": [
-      7,
-      3,
-      6
+      18,
+      0,
+      19
     ],
     "best_day": "Wednesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 4
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 10
   },
-  "I-24 near Demonbreun": {
-    "total_incidents": 10,
-    "avg_severity": 1.7,
+  "I-24 @ Wedgewood": {
+    "total_incidents": 33,
+    "avg_severity": 1.6363636363636365,
+    "risk_score": 54.0,
     "best_hours": [
-      18,
-      19,
-      1
+      12,
+      13,
+      15
     ],
     "worst_hours": [
+      11,
+      6,
+      21
+    ],
+    "best_day": "Monday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 10
+  },
+  "Briley Pkwy @ Exit 209": {
+    "total_incidents": 33,
+    "avg_severity": 1.606060606060606,
+    "risk_score": 53.0,
+    "best_hours": [
+      3,
+      13,
+      15
+    ],
+    "worst_hours": [
+      21,
+      12,
+      0
+    ],
+    "best_day": "Friday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 11
+  },
+  "I-65 @ Exit 52": {
+    "total_incidents": 30,
+    "avg_severity": 1.7666666666666666,
+    "risk_score": 53.0,
+    "best_hours": [
+      2,
+      3,
+      6
+    ],
+    "worst_hours": [
+      5,
+      18,
+      21
+    ],
+    "best_day": "Monday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 8
+  },
+  "I-24 near Broadway": {
+    "total_incidents": 30,
+    "avg_severity": 1.7666666666666666,
+    "risk_score": 53.0,
+    "best_hours": [
+      2,
+      3,
+      5
+    ],
+    "worst_hours": [
+      1,
+      20,
+      7
+    ],
+    "best_day": "Friday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 11
+  },
+  "Ellington Pkwy near Broadway": {
+    "total_incidents": 34,
+    "avg_severity": 1.5588235294117647,
+    "risk_score": 53.0,
+    "best_hours": [
+      1,
+      12,
+      14
+    ],
+    "worst_hours": [
+      5,
+      0,
+      8
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 6
+  },
+  "I-440 near 21st Ave S": {
+    "total_incidents": 31,
+    "avg_severity": 1.7096774193548387,
+    "risk_score": 53.0,
+    "best_hours": [
       8,
-      16,
-      11
+      10,
+      14
+    ],
+    "worst_hours": [
+      23,
+      3,
+      6
     ],
     "best_day": "Thursday",
     "worst_day": "Monday",
     "rush_hour_incidents": 6,
-    "weekend_incidents": 1
+    "weekend_incidents": 8
   },
-  "Broadway near Broadway": {
-    "total_incidents": 10,
-    "avg_severity": 1.4,
+  "8th Ave S near 21st Ave S": {
+    "total_incidents": 32,
+    "avg_severity": 1.625,
+    "risk_score": 52.0,
     "best_hours": [
-      2,
-      5,
-      12
+      11,
+      13,
+      23
     ],
     "worst_hours": [
-      17,
+      14,
+      16,
+      18
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 13
+  },
+  "I-40 near 21st Ave S": {
+    "total_incidents": 33,
+    "avg_severity": 1.5757575757575757,
+    "risk_score": 52.0,
+    "best_hours": [
+      4,
+      8,
+      9
+    ],
+    "worst_hours": [
+      0,
+      13,
+      14
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 10
+  },
+  "Murfreesboro Pike near Spence Ln": {
+    "total_incidents": 33,
+    "avg_severity": 1.5757575757575757,
+    "risk_score": 52.0,
+    "best_hours": [
+      0,
+      9,
+      14
+    ],
+    "worst_hours": [
+      5,
+      10,
+      12
+    ],
+    "best_day": "Friday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 8
+  },
+  "I-24 near Demonbreun": {
+    "total_incidents": 30,
+    "avg_severity": 1.7333333333333334,
+    "risk_score": 52.0,
+    "best_hours": [
+      13,
+      15,
+      16
+    ],
+    "worst_hours": [
+      3,
+      18,
+      4
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 9
+  },
+  "Lebanon Pike @ Exit 52": {
+    "total_incidents": 34,
+    "avg_severity": 1.5294117647058822,
+    "risk_score": 52.0,
+    "best_hours": [
+      3,
+      7,
+      10
+    ],
+    "worst_hours": [
+      0,
+      11,
+      21
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 11
+  },
+  "I-40 @ Exit 52": {
+    "total_incidents": 30,
+    "avg_severity": 1.7333333333333334,
+    "risk_score": 52.0,
+    "best_hours": [
+      5,
+      6,
+      8
+    ],
+    "worst_hours": [
+      21,
+      0,
+      12
+    ],
+    "best_day": "Friday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 7
+  },
+  "Old Hickory Blvd near 21st Ave S": {
+    "total_incidents": 33,
+    "avg_severity": 1.5757575757575757,
+    "risk_score": 52.0,
+    "best_hours": [
+      6,
+      10,
+      20
+    ],
+    "worst_hours": [
+      1,
+      2,
+      4
+    ],
+    "best_day": "Friday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 10
+  },
+  "West End Ave near Old Hickory Blvd": {
+    "total_incidents": 34,
+    "avg_severity": 1.5294117647058822,
+    "risk_score": 52.0,
+    "best_hours": [
+      3,
+      4,
+      10
+    ],
+    "worst_hours": [
+      16,
+      2,
+      17
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 18,
+    "weekend_incidents": 6
+  },
+  "I-40 @ Exit 209": {
+    "total_incidents": 29,
+    "avg_severity": 1.793103448275862,
+    "risk_score": 52.0,
+    "best_hours": [
+      0,
+      5,
+      8
+    ],
+    "worst_hours": [
+      22,
+      21,
+      14
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 8
+  },
+  "Nolensville Pike @ Exit 209": {
+    "total_incidents": 28,
+    "avg_severity": 1.8571428571428572,
+    "risk_score": 52.0,
+    "best_hours": [
+      7,
+      19,
+      23
+    ],
+    "worst_hours": [
+      0,
+      20,
+      2
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 7
+  },
+  "8th Ave S @ Charlotte Ave": {
+    "total_incidents": 31,
+    "avg_severity": 1.6774193548387097,
+    "risk_score": 52.0,
+    "best_hours": [
+      11,
+      12,
+      18
+    ],
+    "worst_hours": [
+      9,
+      5,
+      8
+    ],
+    "best_day": "Friday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 7
+  },
+  "Old Hickory Blvd near Demonbreun": {
+    "total_incidents": 33,
+    "avg_severity": 1.5757575757575757,
+    "risk_score": 52.0,
+    "best_hours": [
+      6,
       8,
       15
     ],
+    "worst_hours": [
+      10,
+      14,
+      1
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 8
+  },
+  "Gallatin Pike near Old Hickory Blvd": {
+    "total_incidents": 33,
+    "avg_severity": 1.5757575757575757,
+    "risk_score": 52.0,
+    "best_hours": [
+      14,
+      5,
+      15
+    ],
+    "worst_hours": [
+      0,
+      3,
+      18
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 5
+  },
+  "West End Ave near 21st Ave S": {
+    "total_incidents": 31,
+    "avg_severity": 1.6451612903225807,
+    "risk_score": 51.0,
+    "best_hours": [
+      1,
+      5,
+      11
+    ],
+    "worst_hours": [
+      0,
+      6,
+      4
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 8
+  },
+  "Murfreesboro Pike near Demonbreun": {
+    "total_incidents": 28,
+    "avg_severity": 1.8214285714285714,
+    "risk_score": 51.0,
+    "best_hours": [
+      3,
+      4,
+      13
+    ],
+    "worst_hours": [
+      5,
+      7,
+      16
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 9
+  },
+  "I-65 @ Wedgewood": {
+    "total_incidents": 29,
+    "avg_severity": 1.7586206896551724,
+    "risk_score": 51.0,
+    "best_hours": [
+      6,
+      12,
+      20
+    ],
+    "worst_hours": [
+      18,
+      15,
+      16
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 6
+  },
+  "Nolensville Pike near Old Hickory Blvd": {
+    "total_incidents": 33,
+    "avg_severity": 1.5454545454545454,
+    "risk_score": 51.0,
+    "best_hours": [
+      1,
+      3,
+      4
+    ],
+    "worst_hours": [
+      15,
+      8,
+      0
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 6
+  },
+  "Lebanon Pike @ Wedgewood": {
+    "total_incidents": 31,
+    "avg_severity": 1.6451612903225807,
+    "risk_score": 51.0,
+    "best_hours": [
+      2,
+      6,
+      10
+    ],
+    "worst_hours": [
+      18,
+      3,
+      8
+    ],
+    "best_day": "Friday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 9
+  },
+  "I-65 near Broadway": {
+    "total_incidents": 31,
+    "avg_severity": 1.6451612903225807,
+    "risk_score": 51.0,
+    "best_hours": [
+      5,
+      14,
+      0
+    ],
+    "worst_hours": [
+      1,
+      6,
+      7
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 9
+  },
+  "I-65 near Spence Ln": {
+    "total_incidents": 36,
+    "avg_severity": 1.4166666666666667,
+    "risk_score": 51.0,
+    "best_hours": [
+      12,
+      14,
+      21
+    ],
+    "worst_hours": [
+      3,
+      5,
+      20
+    ],
+    "best_day": "Monday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 11
+  },
+  "Old Hickory Blvd near Spence Ln": {
+    "total_incidents": 36,
+    "avg_severity": 1.4166666666666667,
+    "risk_score": 51.0,
+    "best_hours": [
+      0,
+      1,
+      2
+    ],
+    "worst_hours": [
+      14,
+      12,
+      23
+    ],
+    "best_day": "Monday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 10
+  },
+  "Briley Pkwy at Briley Pkwy": {
+    "total_incidents": 29,
+    "avg_severity": 1.7586206896551724,
+    "risk_score": 51.0,
+    "best_hours": [
+      3,
+      7,
+      12
+    ],
+    "worst_hours": [
+      2,
+      23,
+      11
+    ],
+    "best_day": "Monday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 8
+  },
+  "Woodmont Blvd @ Exit 52": {
+    "total_incidents": 33,
+    "avg_severity": 1.5151515151515151,
+    "risk_score": 50.0,
+    "best_hours": [
+      2,
+      4,
+      8
+    ],
+    "worst_hours": [
+      10,
+      1,
+      5
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 13
+  },
+  "I-24 near Spence Ln": {
+    "total_incidents": 32,
+    "avg_severity": 1.5625,
+    "risk_score": 50.0,
+    "best_hours": [
+      1,
+      3,
+      7
+    ],
+    "worst_hours": [
+      2,
+      18,
+      4
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 8
+  },
+  "I-440 near Spence Ln": {
+    "total_incidents": 31,
+    "avg_severity": 1.6129032258064515,
+    "risk_score": 50.0,
+    "best_hours": [
+      5,
+      14,
+      23
+    ],
+    "worst_hours": [
+      2,
+      16,
+      19
+    ],
+    "best_day": "Monday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 11
+  },
+  "I-40 near Old Hickory Blvd": {
+    "total_incidents": 31,
+    "avg_severity": 1.6129032258064515,
+    "risk_score": 50.0,
+    "best_hours": [
+      0,
+      4,
+      9
+    ],
+    "worst_hours": [
+      8,
+      12,
+      19
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 5
+  },
+  "I-65 near 21st Ave S": {
+    "total_incidents": 32,
+    "avg_severity": 1.5625,
+    "risk_score": 50.0,
+    "best_hours": [
+      0,
+      1,
+      4
+    ],
+    "worst_hours": [
+      7,
+      23,
+      9
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 10
+  },
+  "Gallatin Pike near Spence Ln": {
+    "total_incidents": 29,
+    "avg_severity": 1.7241379310344827,
+    "risk_score": 50.0,
+    "best_hours": [
+      3,
+      6,
+      9
+    ],
+    "worst_hours": [
+      1,
+      10,
+      20
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 7
+  },
+  "Charlotte Ave @ Wedgewood": {
+    "total_incidents": 31,
+    "avg_severity": 1.6129032258064515,
+    "risk_score": 50.0,
+    "best_hours": [
+      0,
+      2,
+      5
+    ],
+    "worst_hours": [
+      1,
+      4,
+      6
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 12
+  },
+  "Gallatin Pike @ Exit 209": {
+    "total_incidents": 33,
+    "avg_severity": 1.5151515151515151,
+    "risk_score": 50.0,
+    "best_hours": [
+      4,
+      6,
+      10
+    ],
+    "worst_hours": [
+      16,
+      22,
+      21
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 7
+  },
+  "I-24 @ Charlotte Ave": {
+    "total_incidents": 27,
+    "avg_severity": 1.8148148148148149,
+    "risk_score": 49.0,
+    "best_hours": [
+      7,
+      9,
+      16
+    ],
+    "worst_hours": [
+      1,
+      10,
+      0
+    ],
+    "best_day": "Monday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 7
+  },
+  "8th Ave S near Old Hickory Blvd": {
+    "total_incidents": 28,
+    "avg_severity": 1.75,
+    "risk_score": 49.0,
+    "best_hours": [
+      0,
+      7,
+      11
+    ],
+    "worst_hours": [
+      1,
+      18,
+      2
+    ],
+    "best_day": "Monday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 11
+  },
+  "Old Hickory Blvd @ Charlotte Ave": {
+    "total_incidents": 33,
+    "avg_severity": 1.4848484848484849,
+    "risk_score": 49.0,
+    "best_hours": [
+      8,
+      11,
+      15
+    ],
+    "worst_hours": [
+      0,
+      4,
+      5
+    ],
+    "best_day": "Friday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 13
+  },
+  "Briley Pkwy near Broadway": {
+    "total_incidents": 35,
+    "avg_severity": 1.4,
+    "risk_score": 49.0,
+    "best_hours": [
+      0,
+      1,
+      8
+    ],
+    "worst_hours": [
+      23,
+      9,
+      16
+    ],
+    "best_day": "Monday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 12,
+    "weekend_incidents": 9
+  },
+  "8th Ave S near Broadway": {
+    "total_incidents": 32,
+    "avg_severity": 1.53125,
+    "risk_score": 49.0,
+    "best_hours": [
+      1,
+      9,
+      10
+    ],
+    "worst_hours": [
+      4,
+      14,
+      0
+    ],
     "best_day": "Monday",
     "worst_day": "Thursday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 10
+  },
+  "Old Hickory Blvd @ Exit 209": {
+    "total_incidents": 30,
+    "avg_severity": 1.6333333333333333,
+    "risk_score": 49.0,
+    "best_hours": [
+      0,
+      2,
+      7
+    ],
+    "worst_hours": [
+      14,
+      16,
+      1
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 6
+  },
+  "8th Ave S @ Exit 52": {
+    "total_incidents": 27,
+    "avg_severity": 1.8148148148148149,
+    "risk_score": 49.0,
+    "best_hours": [
+      15,
+      17,
+      7
+    ],
+    "worst_hours": [
+      22,
+      16,
+      8
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 8
+  },
+  "Ellington Pkwy at Briley Pkwy": {
+    "total_incidents": 30,
+    "avg_severity": 1.6333333333333333,
+    "risk_score": 49.0,
+    "best_hours": [
+      1,
+      4,
+      8
+    ],
+    "worst_hours": [
+      3,
+      5,
+      7
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 11
+  },
+  "Gallatin Pike @ Charlotte Ave": {
+    "total_incidents": 27,
+    "avg_severity": 1.7777777777777777,
+    "risk_score": 48.0,
+    "best_hours": [
+      4,
+      14,
+      0
+    ],
+    "worst_hours": [
+      6,
+      8,
+      10
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 13
+  },
+  "Lebanon Pike near Spence Ln": {
+    "total_incidents": 31,
+    "avg_severity": 1.5483870967741935,
+    "risk_score": 48.0,
+    "best_hours": [
+      0,
+      9,
+      12
+    ],
+    "worst_hours": [
+      6,
+      7,
+      19
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 8
+  },
+  "West End Ave at Briley Pkwy": {
+    "total_incidents": 28,
+    "avg_severity": 1.7142857142857142,
+    "risk_score": 48.0,
+    "best_hours": [
+      13,
+      15,
+      17
+    ],
+    "worst_hours": [
+      8,
+      7,
+      23
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 5
+  },
+  "21st Ave S near Old Hickory Blvd": {
+    "total_incidents": 29,
+    "avg_severity": 1.6551724137931034,
+    "risk_score": 48.0,
+    "best_hours": [
+      3,
+      8,
+      9
+    ],
+    "worst_hours": [
+      7,
+      1,
+      14
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 10
+  },
+  "Woodmont Blvd near Spence Ln": {
+    "total_incidents": 29,
+    "avg_severity": 1.6551724137931034,
+    "risk_score": 48.0,
+    "best_hours": [
+      14,
+      12,
+      13
+    ],
+    "worst_hours": [
+      8,
+      2,
+      4
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 8
+  },
+  "21st Ave S near 21st Ave S": {
+    "total_incidents": 27,
+    "avg_severity": 1.7777777777777777,
+    "risk_score": 48.0,
+    "best_hours": [
+      7,
+      13,
+      20
+    ],
+    "worst_hours": [
+      0,
+      19,
+      18
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 8
+  },
+  "Murfreesboro Pike near Broadway": {
+    "total_incidents": 27,
+    "avg_severity": 1.7777777777777777,
+    "risk_score": 48.0,
+    "best_hours": [
+      1,
+      6,
+      15
+    ],
+    "worst_hours": [
+      7,
+      20,
+      22
+    ],
+    "best_day": "Monday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 9
+  },
+  "Briley Pkwy near Old Hickory Blvd": {
+    "total_incidents": 29,
+    "avg_severity": 1.6551724137931034,
+    "risk_score": 48.0,
+    "best_hours": [
+      6,
+      8,
+      9
+    ],
+    "worst_hours": [
+      5,
+      21,
+      19
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 8
+  },
+  "Nolensville Pike near Spence Ln": {
+    "total_incidents": 29,
+    "avg_severity": 1.6206896551724137,
+    "risk_score": 47.0,
+    "best_hours": [
+      8,
+      14,
+      15
+    ],
+    "worst_hours": [
+      2,
+      5,
+      0
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 6
+  },
+  "Charlotte Ave near Broadway": {
+    "total_incidents": 27,
+    "avg_severity": 1.7407407407407407,
+    "risk_score": 47.0,
+    "best_hours": [
+      1,
+      3,
+      12
+    ],
+    "worst_hours": [
+      8,
+      15,
+      16
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 5
+  },
+  "Gallatin Pike @ Exit 52": {
+    "total_incidents": 29,
+    "avg_severity": 1.6206896551724137,
+    "risk_score": 47.0,
+    "best_hours": [
+      5,
+      9,
+      20
+    ],
+    "worst_hours": [
+      14,
+      19,
+      11
+    ],
+    "best_day": "Monday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 8
+  },
+  "Ellington Pkwy @ Exit 209": {
+    "total_incidents": 33,
+    "avg_severity": 1.4242424242424243,
+    "risk_score": 47.0,
+    "best_hours": [
+      1,
+      11,
+      13
+    ],
+    "worst_hours": [
+      4,
+      19,
+      20
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 10
+  },
+  "Lebanon Pike @ Charlotte Ave": {
+    "total_incidents": 30,
+    "avg_severity": 1.5666666666666667,
+    "risk_score": 47.0,
+    "best_hours": [
+      2,
+      21,
+      23
+    ],
+    "worst_hours": [
+      0,
+      20,
+      10
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 11
+  },
+  "Murfreesboro Pike @ Exit 209": {
+    "total_incidents": 31,
+    "avg_severity": 1.5161290322580645,
+    "risk_score": 47.0,
+    "best_hours": [
+      2,
+      4,
+      13
+    ],
+    "worst_hours": [
+      5,
+      0,
+      6
+    ],
+    "best_day": "Friday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 9
+  },
+  "Woodmont Blvd near Demonbreun": {
+    "total_incidents": 29,
+    "avg_severity": 1.6206896551724137,
+    "risk_score": 47.0,
+    "best_hours": [
+      2,
+      3,
+      11
+    ],
+    "worst_hours": [
+      7,
+      4,
+      5
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 4
+  },
+  "Charlotte Ave near Demonbreun": {
+    "total_incidents": 29,
+    "avg_severity": 1.6206896551724137,
+    "risk_score": 47.0,
+    "best_hours": [
+      2,
+      7,
+      16
+    ],
+    "worst_hours": [
+      15,
+      9,
+      4
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 7
+  },
+  "I-24 @ Exit 52": {
+    "total_incidents": 30,
+    "avg_severity": 1.5666666666666667,
+    "risk_score": 47.0,
+    "best_hours": [
+      0,
+      5,
+      6
+    ],
+    "worst_hours": [
+      2,
+      1,
+      3
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 7
+  },
+  "I-440 @ Exit 52": {
+    "total_incidents": 25,
+    "avg_severity": 1.84,
+    "risk_score": 46.0,
+    "best_hours": [
+      2,
+      4,
+      6
+    ],
+    "worst_hours": [
+      9,
+      1,
+      5
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 8
+  },
+  "Briley Pkwy near Demonbreun": {
+    "total_incidents": 30,
+    "avg_severity": 1.5333333333333334,
+    "risk_score": 46.0,
+    "best_hours": [
+      0,
+      3,
+      13
+    ],
+    "worst_hours": [
+      19,
+      21,
+      8
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 11,
+    "weekend_incidents": 7
+  },
+  "Woodmont Blvd near Broadway": {
+    "total_incidents": 27,
+    "avg_severity": 1.6666666666666667,
+    "risk_score": 45.0,
+    "best_hours": [
+      0,
+      10,
+      12
+    ],
+    "worst_hours": [
+      5,
+      11,
+      1
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Sunday",
     "rush_hour_incidents": 3,
+    "weekend_incidents": 15
+  },
+  "Ellington Pkwy @ Charlotte Ave": {
+    "total_incidents": 27,
+    "avg_severity": 1.6666666666666667,
+    "risk_score": 45.0,
+    "best_hours": [
+      3,
+      19,
+      1
+    ],
+    "worst_hours": [
+      12,
+      14,
+      4
+    ],
+    "best_day": "Monday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 9
+  },
+  "Woodmont Blvd @ Exit 209": {
+    "total_incidents": 31,
+    "avg_severity": 1.4516129032258065,
+    "risk_score": 45.0,
+    "best_hours": [
+      7,
+      18,
+      22
+    ],
+    "worst_hours": [
+      17,
+      14,
+      13
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 7
+  },
+  "I-65 near Old Hickory Blvd": {
+    "total_incidents": 28,
+    "avg_severity": 1.5714285714285714,
+    "risk_score": 44.0,
+    "best_hours": [
+      14,
+      16,
+      18
+    ],
+    "worst_hours": [
+      21,
+      11,
+      7
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 11
+  },
+  "West End Ave near Broadway": {
+    "total_incidents": 30,
+    "avg_severity": 1.4666666666666666,
+    "risk_score": 44.0,
+    "best_hours": [
+      3,
+      6,
+      9
+    ],
+    "worst_hours": [
+      19,
+      5,
+      4
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 8
+  },
+  "Briley Pkwy @ Wedgewood": {
+    "total_incidents": 30,
+    "avg_severity": 1.4666666666666666,
+    "risk_score": 44.0,
+    "best_hours": [
+      1,
+      4,
+      6
+    ],
+    "worst_hours": [
+      19,
+      23,
+      13
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 7
+  },
+  "I-40 @ Charlotte Ave": {
+    "total_incidents": 25,
+    "avg_severity": 1.76,
+    "risk_score": 44.0,
+    "best_hours": [
+      1,
+      7,
+      11
+    ],
+    "worst_hours": [
+      8,
+      4,
+      6
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 5
+  },
+  "Charlotte Ave @ Charlotte Ave": {
+    "total_incidents": 31,
+    "avg_severity": 1.3870967741935485,
+    "risk_score": 43.0,
+    "best_hours": [
+      1,
+      4,
+      5
+    ],
+    "worst_hours": [
+      7,
+      13,
+      23
+    ],
+    "best_day": "Monday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 7
+  },
+  "Murfreesboro Pike at Briley Pkwy": {
+    "total_incidents": 23,
+    "avg_severity": 1.8695652173913044,
+    "risk_score": 43.0,
+    "best_hours": [
+      14,
+      9,
+      11
+    ],
+    "worst_hours": [
+      23,
+      4,
+      6
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 6
+  },
+  "West End Ave @ Exit 52": {
+    "total_incidents": 31,
+    "avg_severity": 1.3548387096774193,
+    "risk_score": 42.0,
+    "best_hours": [
+      0,
+      4,
+      5
+    ],
+    "worst_hours": [
+      20,
+      16,
+      19
+    ],
+    "best_day": "Friday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 14
+  },
+  "Ellington Pkwy near 21st Ave S": {
+    "total_incidents": 29,
+    "avg_severity": 1.4482758620689655,
+    "risk_score": 42.0,
+    "best_hours": [
+      5,
+      7,
+      10
+    ],
+    "worst_hours": [
+      3,
+      12,
+      22
+    ],
+    "best_day": "Monday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 12
+  },
+  "8th Ave S at Briley Pkwy": {
+    "total_incidents": 24,
+    "avg_severity": 1.7083333333333333,
+    "risk_score": 41.0,
+    "best_hours": [
+      0,
+      2,
+      11
+    ],
+    "worst_hours": [
+      12,
+      20,
+      7
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 5
+  },
+  "Harding Pl near Old Hickory Blvd": {
+    "total_incidents": 26,
+    "avg_severity": 1.5769230769230769,
+    "risk_score": 41.0,
+    "best_hours": [
+      4,
+      13,
+      3
+    ],
+    "worst_hours": [
+      6,
+      23,
+      1
+    ],
+    "best_day": "Monday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 6
+  },
+  "Gallatin Pike near Broadway": {
+    "total_incidents": 26,
+    "avg_severity": 1.5769230769230769,
+    "risk_score": 41.0,
+    "best_hours": [
+      9,
+      15,
+      19
+    ],
+    "worst_hours": [
+      18,
+      11,
+      7
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 13,
+    "weekend_incidents": 5
+  },
+  "I-440 near Old Hickory Blvd": {
+    "total_incidents": 23,
+    "avg_severity": 1.7826086956521738,
+    "risk_score": 41.0,
+    "best_hours": [
+      11,
+      21,
+      22
+    ],
+    "worst_hours": [
+      14,
+      9,
+      2
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 10,
+    "weekend_incidents": 8
+  },
+  "21st Ave S @ Exit 52": {
+    "total_incidents": 28,
+    "avg_severity": 1.4642857142857142,
+    "risk_score": 41.0,
+    "best_hours": [
+      1,
+      5,
+      7
+    ],
+    "worst_hours": [
+      15,
+      2,
+      10
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 3,
+    "weekend_incidents": 13
+  },
+  "I-24 at Briley Pkwy": {
+    "total_incidents": 27,
+    "avg_severity": 1.5185185185185186,
+    "risk_score": 41.0,
+    "best_hours": [
+      0,
+      2,
+      3
+    ],
+    "worst_hours": [
+      16,
+      10,
+      6
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 11
+  },
+  "Harding Pl at Briley Pkwy": {
+    "total_incidents": 27,
+    "avg_severity": 1.4814814814814814,
+    "risk_score": 40.0,
+    "best_hours": [
+      2,
+      3,
+      13
+    ],
+    "worst_hours": [
+      23,
+      6,
+      4
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 3,
+    "weekend_incidents": 5
+  },
+  "Murfreesboro Pike near 21st Ave S": {
+    "total_incidents": 27,
+    "avg_severity": 1.4814814814814814,
+    "risk_score": 40.0,
+    "best_hours": [
+      1,
+      2,
+      16
+    ],
+    "worst_hours": [
+      19,
+      7,
+      12
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 8
+  },
+  "Charlotte Ave @ Exit 52": {
+    "total_incidents": 25,
+    "avg_severity": 1.6,
+    "risk_score": 40.0,
+    "best_hours": [
+      9,
+      10,
+      17
+    ],
+    "worst_hours": [
+      5,
+      13,
+      23
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 7,
     "weekend_incidents": 4
   },
   "8th Ave S near Demonbreun": {
-    "total_incidents": 10,
-    "avg_severity": 1.9,
-    "best_hours": [
-      16,
-      21,
-      22
-    ],
-    "worst_hours": [
-      19,
-      12,
-      17
-    ],
-    "best_day": "Monday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 6
-  },
-  "21st Ave S near Old Hickory Blvd": {
-    "total_incidents": 10,
-    "avg_severity": 1.6,
-    "best_hours": [
-      11,
-      13,
-      15
-    ],
-    "worst_hours": [
-      14,
-      8,
-      3
-    ],
-    "best_day": "Monday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 5
-  },
-  "Broadway @ Charlotte Ave": {
-    "total_incidents": 10,
-    "avg_severity": 1.5,
-    "best_hours": [
-      17,
-      12,
-      20
-    ],
-    "worst_hours": [
-      18,
-      12,
-      20
-    ],
-    "best_day": "Friday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 3
-  },
-  "Harding Pl near 21st Ave S": {
-    "total_incidents": 10,
-    "avg_severity": 1.9,
-    "best_hours": [
-      16,
-      20,
-      21
-    ],
-    "worst_hours": [
-      4,
-      7,
-      15
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 6
-  },
-  "Briley Pkwy @ Wedgewood": {
-    "total_incidents": 10,
-    "avg_severity": 1.5,
-    "best_hours": [
-      1,
-      6,
-      12
-    ],
-    "worst_hours": [
-      2,
-      8,
-      15
-    ],
-    "best_day": "Monday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 4
-  },
-  "8th Ave S at Briley Pkwy": {
-    "total_incidents": 10,
-    "avg_severity": 1.7,
-    "best_hours": [
-      2,
-      17,
-      19
-    ],
-    "worst_hours": [
-      3,
-      4,
-      6
-    ],
-    "best_day": "Friday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Broadway at Briley Pkwy": {
-    "total_incidents": 10,
-    "avg_severity": 1.4,
-    "best_hours": [
-      5,
-      8,
-      13
-    ],
-    "worst_hours": [
-      3,
-      2,
-      19
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 4
-  },
-  "8th Ave S near 21st Ave S": {
-    "total_incidents": 9,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      2,
-      9,
-      17
-    ],
-    "worst_hours": [
-      0,
-      11,
-      13
-    ],
-    "best_day": "Monday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "8th Ave S @ Exit 209": {
-    "total_incidents": 9,
-    "avg_severity": 1.8888888888888888,
-    "best_hours": [
-      18,
-      5,
-      6
-    ],
-    "worst_hours": [
-      16,
-      9,
-      15
-    ],
-    "best_day": "Monday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 2
-  },
-  "Gallatin Pike near Demonbreun": {
-    "total_incidents": 9,
-    "avg_severity": 1.5555555555555556,
-    "best_hours": [
-      5,
-      6,
-      8
-    ],
-    "worst_hours": [
-      1,
-      21,
-      12
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "Nolensville Pike @ Charlotte Ave": {
-    "total_incidents": 9,
-    "avg_severity": 1.4444444444444444,
-    "best_hours": [
-      11,
-      13,
-      15
-    ],
-    "worst_hours": [
-      19,
-      4,
-      1
-    ],
-    "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "Woodmont Blvd @ Exit 209": {
-    "total_incidents": 9,
-    "avg_severity": 1.4444444444444444,
-    "best_hours": [
-      3,
-      5,
-      10
-    ],
-    "worst_hours": [
-      21,
-      4,
-      7
-    ],
-    "best_day": "Friday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 5
-  },
-  "Old Hickory Blvd near Broadway": {
-    "total_incidents": 9,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      10,
-      18,
-      4
-    ],
-    "worst_hours": [
-      20,
-      1,
-      4
-    ],
-    "best_day": "Monday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
-  },
-  "Nolensville Pike @ Wedgewood": {
-    "total_incidents": 9,
-    "avg_severity": 1.7777777777777777,
-    "best_hours": [
-      8,
-      12,
-      7
-    ],
-    "worst_hours": [
-      11,
-      18,
-      22
-    ],
-    "best_day": "Monday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 1
-  },
-  "Briley Pkwy @ Charlotte Ave": {
-    "total_incidents": 9,
-    "avg_severity": 1.5555555555555556,
-    "best_hours": [
-      4,
-      5,
-      6
-    ],
-    "worst_hours": [
-      17,
-      7,
-      14
-    ],
-    "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 0
-  },
-  "Old Hickory Blvd near Demonbreun": {
-    "total_incidents": 9,
-    "avg_severity": 1.7777777777777777,
-    "best_hours": [
-      2,
-      4,
-      12
-    ],
-    "worst_hours": [
-      22,
-      0,
-      5
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 3
-  },
-  "Murfreesboro Pike near Broadway": {
-    "total_incidents": 9,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      4,
-      6,
-      16
-    ],
-    "worst_hours": [
-      2,
-      19,
-      4
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "Broadway near 21st Ave S": {
-    "total_incidents": 9,
-    "avg_severity": 1.5555555555555556,
-    "best_hours": [
-      7,
-      17,
-      19
-    ],
-    "worst_hours": [
-      0,
-      1,
-      5
-    ],
-    "best_day": "Monday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 5
-  },
-  "Nolensville Pike near Demonbreun": {
-    "total_incidents": 9,
-    "avg_severity": 1.8888888888888888,
-    "best_hours": [
-      7,
-      13,
-      20
-    ],
-    "worst_hours": [
-      17,
-      10,
-      16
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 4
-  },
-  "Murfreesboro Pike near 21st Ave S": {
-    "total_incidents": 9,
-    "avg_severity": 1.4444444444444444,
-    "best_hours": [
-      1,
-      8,
-      15
-    ],
-    "worst_hours": [
-      4,
-      10,
-      21
-    ],
-    "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Nolensville Pike near Spence Ln": {
-    "total_incidents": 9,
-    "avg_severity": 1.5555555555555556,
-    "best_hours": [
-      7,
-      8,
-      10
-    ],
-    "worst_hours": [
-      3,
-      6,
-      9
-    ],
-    "best_day": "Monday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 3
-  },
-  "Murfreesboro Pike near Demonbreun": {
-    "total_incidents": 9,
-    "avg_severity": 1.7777777777777777,
-    "best_hours": [
-      21,
-      22,
-      1
-    ],
-    "worst_hours": [
-      9,
-      10,
-      1
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 4
-  },
-  "Nolensville Pike at Briley Pkwy": {
-    "total_incidents": 9,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      4,
-      5,
-      10
-    ],
-    "worst_hours": [
-      17,
-      20,
-      3
-    ],
-    "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 3
-  },
-  "I-24 @ Charlotte Ave": {
-    "total_incidents": 9,
-    "avg_severity": 1.8888888888888888,
-    "best_hours": [
-      3,
-      8,
-      10
-    ],
-    "worst_hours": [
-      1,
-      7,
-      18
-    ],
-    "best_day": "Friday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 2
-  },
-  "Nolensville Pike near Broadway": {
-    "total_incidents": 9,
-    "avg_severity": 1.4444444444444444,
-    "best_hours": [
-      3,
-      4,
-      8
-    ],
-    "worst_hours": [
-      0,
-      15,
-      1
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 4
-  },
-  "Gallatin Pike @ Wedgewood": {
-    "total_incidents": 9,
-    "avg_severity": 1.3333333333333333,
-    "best_hours": [
-      3,
-      16,
-      18
-    ],
-    "worst_hours": [
-      5,
-      7,
-      22
-    ],
-    "best_day": "Saturday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 1
-  },
-  "Old Hickory Blvd @ Charlotte Ave": {
-    "total_incidents": 9,
-    "avg_severity": 1.4444444444444444,
-    "best_hours": [
-      4,
-      8,
-      12
-    ],
-    "worst_hours": [
-      3,
-      5,
-      7
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
-  },
-  "West End Ave near 21st Ave S": {
-    "total_incidents": 8,
-    "avg_severity": 2.0,
-    "best_hours": [
-      23,
-      3,
-      5
-    ],
-    "worst_hours": [
-      4,
-      3,
-      5
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "Nolensville Pike near 21st Ave S": {
-    "total_incidents": 8,
-    "avg_severity": 1.875,
-    "best_hours": [
-      3,
-      16,
-      21
-    ],
-    "worst_hours": [
-      2,
-      17,
-      22
-    ],
-    "best_day": "Saturday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "I-40 near 21st Ave S": {
-    "total_incidents": 8,
-    "avg_severity": 1.75,
-    "best_hours": [
-      8,
-      9,
-      14
-    ],
-    "worst_hours": [
-      10,
-      7,
-      15
-    ],
-    "best_day": "Monday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 3
-  },
-  "Ellington Pkwy near Broadway": {
-    "total_incidents": 8,
-    "avg_severity": 1.875,
-    "best_hours": [
-      2,
-      9,
-      21
-    ],
-    "worst_hours": [
-      3,
-      12,
-      17
-    ],
-    "best_day": "Saturday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Ellington Pkwy @ Exit 52": {
-    "total_incidents": 8,
-    "avg_severity": 1.375,
-    "best_hours": [
-      9,
-      16,
-      20
-    ],
-    "worst_hours": [
-      11,
-      18,
-      22
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 5
-  },
-  "I-440 at Briley Pkwy": {
-    "total_incidents": 8,
+    "total_incidents": 24,
     "avg_severity": 1.625,
+    "risk_score": 39.0,
     "best_hours": [
-      2,
       3,
-      17
+      5,
+      20
     ],
     "worst_hours": [
-      7,
-      1,
-      17
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 5
-  },
-  "8th Ave S @ Charlotte Ave": {
-    "total_incidents": 8,
-    "avg_severity": 2.0,
-    "best_hours": [
-      0,
-      19,
-      3
-    ],
-    "worst_hours": [
-      7,
-      16,
+      17,
+      6,
       11
     ],
     "best_day": "Wednesday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 5
+    "worst_day": "Monday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 8
   },
-  "21st Ave S near Spence Ln": {
-    "total_incidents": 8,
-    "avg_severity": 1.375,
+  "Broadway @ Exit 52": {
+    "total_incidents": 23,
+    "avg_severity": 1.6956521739130435,
+    "risk_score": 39.0,
     "best_hours": [
-      1,
-      7,
+      3,
+      5,
       8
     ],
     "worst_hours": [
-      0,
-      6,
-      9
-    ],
-    "best_day": "Sunday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 3
-  },
-  "Charlotte Ave at Briley Pkwy": {
-    "total_incidents": 8,
-    "avg_severity": 1.625,
-    "best_hours": [
-      10,
-      11,
-      20
-    ],
-    "worst_hours": [
-      7,
-      0,
-      8
-    ],
-    "best_day": "Friday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "West End Ave near Old Hickory Blvd": {
-    "total_incidents": 8,
-    "avg_severity": 1.5,
-    "best_hours": [
-      0,
-      1,
-      10
-    ],
-    "worst_hours": [
-      3,
       9,
-      17
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "I-24 at Briley Pkwy": {
-    "total_incidents": 8,
-    "avg_severity": 1.625,
-    "best_hours": [
-      0,
       6,
-      18
-    ],
-    "worst_hours": [
-      15,
-      4,
-      5
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Woodmont Blvd at Briley Pkwy": {
-    "total_incidents": 8,
-    "avg_severity": 1.875,
-    "best_hours": [
-      12,
-      6,
-      22
-    ],
-    "worst_hours": [
-      8,
-      17,
-      6
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 2
-  },
-  "Broadway near Spence Ln": {
-    "total_incidents": 8,
-    "avg_severity": 1.25,
-    "best_hours": [
-      8,
-      11,
-      22
-    ],
-    "worst_hours": [
-      14,
-      7,
-      17
-    ],
-    "best_day": "Monday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 1
-  },
-  "Lebanon Pike near Broadway": {
-    "total_incidents": 8,
-    "avg_severity": 1.875,
-    "best_hours": [
-      5,
-      15,
-      3
-    ],
-    "worst_hours": [
-      10,
-      2,
       7
     ],
     "best_day": "Friday",
     "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "Lebanon Pike @ Exit 52": {
-    "total_incidents": 8,
-    "avg_severity": 1.25,
-    "best_hours": [
-      2,
-      7,
-      19
-    ],
-    "worst_hours": [
-      5,
-      17,
-      2
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 1
-  },
-  "Old Hickory Blvd near 21st Ave S": {
-    "total_incidents": 8,
-    "avg_severity": 1.875,
-    "best_hours": [
-      1,
-      2,
-      8
-    ],
-    "worst_hours": [
-      21,
-      4,
-      18
-    ],
-    "best_day": "Monday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
-  },
-  "West End Ave @ Wedgewood": {
-    "total_incidents": 8,
-    "avg_severity": 1.75,
-    "best_hours": [
-      2,
-      3,
-      11
-    ],
-    "worst_hours": [
-      7,
-      22,
-      16
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 0
-  },
-  "Briley Pkwy near 21st Ave S": {
-    "total_incidents": 8,
-    "avg_severity": 2.5,
-    "best_hours": [
-      3,
-      5,
-      13
-    ],
-    "worst_hours": [
-      6,
-      7,
-      17
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
-  },
-  "Woodmont Blvd near Spence Ln": {
-    "total_incidents": 8,
-    "avg_severity": 1.375,
-    "best_hours": [
-      5,
-      6,
-      10
-    ],
-    "worst_hours": [
-      0,
-      2,
-      5
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 0
-  },
-  "Nolensville Pike @ Exit 209": {
-    "total_incidents": 8,
-    "avg_severity": 1.375,
-    "best_hours": [
-      5,
-      13,
-      0
-    ],
-    "worst_hours": [
-      18,
-      0,
-      6
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 3
-  },
-  "I-65 near Broadway": {
-    "total_incidents": 8,
-    "avg_severity": 1.875,
-    "best_hours": [
-      9,
-      13,
-      20
-    ],
-    "worst_hours": [
-      0,
-      12,
-      14
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "I-40 @ Wedgewood": {
-    "total_incidents": 8,
-    "avg_severity": 1.5,
-    "best_hours": [
-      3,
-      7,
-      15
-    ],
-    "worst_hours": [
-      22,
-      2,
-      8
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "I-40 near Spence Ln": {
-    "total_incidents": 8,
-    "avg_severity": 1.375,
-    "best_hours": [
-      14,
-      19,
-      22
-    ],
-    "worst_hours": [
-      20,
-      23,
-      0
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 7
-  },
-  "Lebanon Pike near Old Hickory Blvd": {
-    "total_incidents": 8,
-    "avg_severity": 1.75,
-    "best_hours": [
-      5,
-      7,
-      12
-    ],
-    "worst_hours": [
-      2,
-      4,
-      9
-    ],
-    "best_day": "Monday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Harding Pl @ Exit 209": {
-    "total_incidents": 8,
-    "avg_severity": 2.0,
-    "best_hours": [
-      8,
-      9,
-      0
-    ],
-    "worst_hours": [
-      19,
-      0,
-      6
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "Lebanon Pike at Briley Pkwy": {
-    "total_incidents": 8,
-    "avg_severity": 1.75,
-    "best_hours": [
-      1,
-      14,
-      15
-    ],
-    "worst_hours": [
-      21,
-      6,
-      3
-    ],
-    "best_day": "Sunday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 4
-  },
-  "Charlotte Ave near Old Hickory Blvd": {
-    "total_incidents": 8,
-    "avg_severity": 1.625,
-    "best_hours": [
-      4,
-      9,
-      13
-    ],
-    "worst_hours": [
-      11,
-      21,
-      9
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "Harding Pl near Broadway": {
-    "total_incidents": 8,
-    "avg_severity": 1.75,
-    "best_hours": [
-      6,
-      11,
-      13
-    ],
-    "worst_hours": [
-      0,
-      1,
-      18
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "Woodmont Blvd near Old Hickory Blvd": {
-    "total_incidents": 8,
-    "avg_severity": 1.125,
-    "best_hours": [
-      2,
-      3,
-      4
-    ],
-    "worst_hours": [
-      5,
-      2,
-      3
-    ],
-    "best_day": "Friday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 3
-  },
-  "West End Ave near Broadway": {
-    "total_incidents": 8,
-    "avg_severity": 2.0,
-    "best_hours": [
-      9,
-      21,
-      0
-    ],
-    "worst_hours": [
-      23,
-      0,
-      17
-    ],
-    "best_day": "Monday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "I-40 at Briley Pkwy": {
-    "total_incidents": 8,
-    "avg_severity": 2.125,
-    "best_hours": [
-      10,
-      0,
-      3
-    ],
-    "worst_hours": [
-      16,
-      17,
-      0
-    ],
-    "best_day": "Monday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Briley Pkwy near Demonbreun": {
-    "total_incidents": 8,
-    "avg_severity": 1.625,
-    "best_hours": [
-      1,
-      17,
-      7
-    ],
-    "worst_hours": [
-      9,
-      7,
-      18
-    ],
-    "best_day": "Monday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 5,
-    "weekend_incidents": 3
-  },
-  "I-65 at Briley Pkwy": {
-    "total_incidents": 7,
-    "avg_severity": 1.8571428571428572,
-    "best_hours": [
-      1,
-      8,
-      4
-    ],
-    "worst_hours": [
-      0,
-      4,
-      7
-    ],
-    "best_day": "Friday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "Old Hickory Blvd @ Exit 52": {
-    "total_incidents": 7,
-    "avg_severity": 2.0,
-    "best_hours": [
-      3,
-      22,
-      2
-    ],
-    "worst_hours": [
-      17,
-      18,
-      2
-    ],
-    "best_day": "Monday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 1
-  },
-  "Briley Pkwy near Old Hickory Blvd": {
-    "total_incidents": 7,
-    "avg_severity": 1.5714285714285714,
-    "best_hours": [
-      1,
-      3,
-      6
-    ],
-    "worst_hours": [
-      0,
-      8,
-      1
-    ],
-    "best_day": "Monday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Ellington Pkwy at Briley Pkwy": {
-    "total_incidents": 7,
-    "avg_severity": 1.7142857142857142,
-    "best_hours": [
-      15,
-      16,
-      7
-    ],
-    "worst_hours": [
-      12,
-      7,
-      10
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 0
-  },
-  "21st Ave S near Demonbreun": {
-    "total_incidents": 7,
-    "avg_severity": 1.4285714285714286,
-    "best_hours": [
-      1,
-      3,
-      19
-    ],
-    "worst_hours": [
-      21,
-      0,
-      1
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 2
-  },
-  "I-24 near Broadway": {
-    "total_incidents": 7,
-    "avg_severity": 1.4285714285714286,
-    "best_hours": [
-      2,
-      15,
-      22
-    ],
-    "worst_hours": [
-      14,
-      17,
-      18
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 1
-  },
-  "Gallatin Pike near Old Hickory Blvd": {
-    "total_incidents": 7,
-    "avg_severity": 1.0,
-    "best_hours": [
-      0,
-      6,
-      7
-    ],
-    "worst_hours": [
-      0,
-      6,
-      7
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "West End Ave @ Exit 52": {
-    "total_incidents": 7,
-    "avg_severity": 1.7142857142857142,
-    "best_hours": [
-      0,
-      5,
-      14
-    ],
-    "worst_hours": [
-      8,
-      10,
-      12
-    ],
-    "best_day": "Monday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 0
-  },
-  "Gallatin Pike near 21st Ave S": {
-    "total_incidents": 7,
-    "avg_severity": 1.5714285714285714,
-    "best_hours": [
-      11,
-      14,
-      20
-    ],
-    "worst_hours": [
-      2,
-      3,
-      9
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 3
-  },
-  "West End Ave at Briley Pkwy": {
-    "total_incidents": 7,
-    "avg_severity": 1.4285714285714286,
-    "best_hours": [
-      4,
-      13,
-      1
-    ],
-    "worst_hours": [
-      1,
-      5,
-      4
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 2
-  },
-  "8th Ave S near Old Hickory Blvd": {
-    "total_incidents": 7,
-    "avg_severity": 1.7142857142857142,
-    "best_hours": [
-      3,
-      7,
-      13
-    ],
-    "worst_hours": [
-      12,
-      1,
-      15
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "Nolensville Pike @ Exit 52": {
-    "total_incidents": 7,
-    "avg_severity": 2.142857142857143,
-    "best_hours": [
-      17,
-      19,
-      2
-    ],
-    "worst_hours": [
-      16,
-      6,
-      2
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "Broadway near Old Hickory Blvd": {
-    "total_incidents": 7,
-    "avg_severity": 1.4285714285714286,
-    "best_hours": [
-      10,
-      19,
-      14
-    ],
-    "worst_hours": [
-      5,
-      14,
-      15
-    ],
-    "best_day": "Monday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 3
-  },
-  "I-440 near Spence Ln": {
-    "total_incidents": 7,
-    "avg_severity": 1.8571428571428572,
-    "best_hours": [
-      5,
-      22,
-      9
-    ],
-    "worst_hours": [
-      13,
-      9,
-      18
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "I-24 @ Exit 52": {
-    "total_incidents": 7,
-    "avg_severity": 1.7142857142857142,
-    "best_hours": [
-      6,
-      12,
-      21
-    ],
-    "worst_hours": [
-      22,
-      0,
-      13
-    ],
-    "best_day": "Monday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "I-440 near Demonbreun": {
-    "total_incidents": 7,
-    "avg_severity": 1.7142857142857142,
-    "best_hours": [
-      4,
-      10,
-      17
-    ],
-    "worst_hours": [
-      21,
-      20,
-      19
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 0
-  },
-  "I-24 @ Wedgewood": {
-    "total_incidents": 7,
-    "avg_severity": 1.5714285714285714,
-    "best_hours": [
-      7,
-      9,
-      16
-    ],
-    "worst_hours": [
-      4,
-      19,
-      15
-    ],
-    "best_day": "Friday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "21st Ave S @ Exit 209": {
-    "total_incidents": 7,
-    "avg_severity": 1.8571428571428572,
-    "best_hours": [
-      11,
-      12,
-      14
-    ],
-    "worst_hours": [
-      3,
-      7,
-      13
-    ],
-    "best_day": "Monday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
-  },
-  "Old Hickory Blvd near Spence Ln": {
-    "total_incidents": 7,
-    "avg_severity": 1.5714285714285714,
-    "best_hours": [
-      9,
-      11,
-      18
-    ],
-    "worst_hours": [
-      6,
-      16,
-      17
-    ],
-    "best_day": "Monday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 4,
-    "weekend_incidents": 3
-  },
-  "Harding Pl at Briley Pkwy": {
-    "total_incidents": 7,
-    "avg_severity": 1.5714285714285714,
-    "best_hours": [
-      3,
-      5,
-      9
-    ],
-    "worst_hours": [
-      15,
-      9,
-      20
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
-  },
-  "Old Hickory Blvd at Briley Pkwy": {
-    "total_incidents": 7,
-    "avg_severity": 1.7142857142857142,
-    "best_hours": [
-      0,
-      1,
-      2
-    ],
-    "worst_hours": [
-      15,
-      1,
-      2
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 2
-  },
-  "Murfreesboro Pike @ Charlotte Ave": {
-    "total_incidents": 7,
-    "avg_severity": 1.7142857142857142,
-    "best_hours": [
-      2,
-      10,
-      6
-    ],
-    "worst_hours": [
-      22,
-      6,
-      7
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 3
-  },
-  "I-440 near 21st Ave S": {
-    "total_incidents": 7,
-    "avg_severity": 2.2857142857142856,
-    "best_hours": [
-      11,
-      16,
-      5
-    ],
-    "worst_hours": [
-      8,
-      2,
-      19
-    ],
-    "best_day": "Monday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 4
-  },
-  "Gallatin Pike near Broadway": {
-    "total_incidents": 7,
-    "avg_severity": 1.0,
-    "best_hours": [
-      4,
-      5,
-      12
-    ],
-    "worst_hours": [
-      20,
-      4,
-      5
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 1
-  },
-  "Briley Pkwy at Briley Pkwy": {
-    "total_incidents": 6,
-    "avg_severity": 1.8333333333333333,
-    "best_hours": [
-      7,
-      18,
-      19
-    ],
-    "worst_hours": [
-      20,
-      22,
-      17
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 2
-  },
-  "I-440 near Old Hickory Blvd": {
-    "total_incidents": 6,
-    "avg_severity": 2.0,
-    "best_hours": [
-      6,
-      1,
-      2
-    ],
-    "worst_hours": [
-      8,
-      1,
-      2
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 3
-  },
-  "Charlotte Ave @ Charlotte Ave": {
-    "total_incidents": 6,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      5,
-      11,
-      0
-    ],
-    "worst_hours": [
-      0,
-      6,
-      16
-    ],
-    "best_day": "Monday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 8
   },
   "Ellington Pkwy near Demonbreun": {
-    "total_incidents": 6,
-    "avg_severity": 1.3333333333333333,
+    "total_incidents": 23,
+    "avg_severity": 1.6956521739130435,
+    "risk_score": 39.0,
     "best_hours": [
-      14,
-      16,
-      18
-    ],
-    "worst_hours": [
-      3,
-      15,
+      1,
+      5,
       14
     ],
-    "best_day": "Monday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Murfreesboro Pike @ Wedgewood": {
-    "total_incidents": 6,
-    "avg_severity": 1.5,
-    "best_hours": [
+    "worst_hours": [
       2,
-      13,
+      8,
+      9
+    ],
+    "best_day": "Friday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 0
+  },
+  "Charlotte Ave near Spence Ln": {
+    "total_incidents": 24,
+    "avg_severity": 1.625,
+    "risk_score": 39.0,
+    "best_hours": [
+      6,
+      7,
+      13
+    ],
+    "worst_hours": [
+      9,
+      11,
+      1
+    ],
+    "best_day": "Monday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 9,
+    "weekend_incidents": 5
+  },
+  "Charlotte Ave near 21st Ave S": {
+    "total_incidents": 26,
+    "avg_severity": 1.4615384615384615,
+    "risk_score": 38.0,
+    "best_hours": [
+      0,
+      3,
+      6
+    ],
+    "worst_hours": [
+      9,
+      11,
       16
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 8,
+    "weekend_incidents": 11
+  },
+  "21st Ave S near Broadway": {
+    "total_incidents": 26,
+    "avg_severity": 1.4230769230769231,
+    "risk_score": 37.0,
+    "best_hours": [
+      1,
+      5,
+      6
+    ],
+    "worst_hours": [
+      11,
+      18,
+      0
+    ],
+    "best_day": "Monday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 7,
+    "weekend_incidents": 8
+  },
+  "Broadway near 21st Ave S": {
+    "total_incidents": 24,
+    "avg_severity": 1.5416666666666667,
+    "risk_score": 37.0,
+    "best_hours": [
+      1,
+      2,
+      6
     ],
     "worst_hours": [
       7,
-      17,
+      15,
+      19
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 7
+  },
+  "I-440 @ Wedgewood": {
+    "total_incidents": 24,
+    "avg_severity": 1.5416666666666667,
+    "risk_score": 37.0,
+    "best_hours": [
+      0,
+      1,
+      5
+    ],
+    "worst_hours": [
+      3,
+      4,
+      16
+    ],
+    "best_day": "Monday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 7
+  },
+  "I-440 near Demonbreun": {
+    "total_incidents": 24,
+    "avg_severity": 1.5416666666666667,
+    "risk_score": 37.0,
+    "best_hours": [
+      3,
+      10,
       18
+    ],
+    "worst_hours": [
+      4,
+      19,
+      5
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 6
+  },
+  "I-40 near Spence Ln": {
+    "total_incidents": 22,
+    "avg_severity": 1.6363636363636365,
+    "risk_score": 36.0,
+    "best_hours": [
+      6,
+      7,
+      18
+    ],
+    "worst_hours": [
+      10,
+      2,
+      3
     ],
     "best_day": "Wednesday",
     "worst_day": "Monday",
     "rush_hour_incidents": 4,
-    "weekend_incidents": 1
+    "weekend_incidents": 5
   },
-  "I-24 near Spence Ln": {
-    "total_incidents": 6,
-    "avg_severity": 1.8333333333333333,
-    "best_hours": [
-      14,
-      19,
-      0
-    ],
-    "worst_hours": [
-      1,
-      0,
-      2
-    ],
-    "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "Lebanon Pike near 21st Ave S": {
-    "total_incidents": 6,
-    "avg_severity": 2.0,
-    "best_hours": [
-      0,
-      20,
-      7
-    ],
-    "worst_hours": [
-      3,
-      16,
-      7
-    ],
-    "best_day": "Monday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 1
-  },
-  "Old Hickory Blvd @ Exit 209": {
-    "total_incidents": 6,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      20,
-      0,
-      4
-    ],
-    "worst_hours": [
-      10,
-      0,
-      4
-    ],
-    "best_day": "Monday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 2
-  },
-  "Charlotte Ave near Broadway": {
-    "total_incidents": 6,
-    "avg_severity": 1.8333333333333333,
-    "best_hours": [
-      7,
-      12,
-      0
-    ],
-    "worst_hours": [
-      11,
-      0,
-      1
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "I-440 @ Exit 209": {
-    "total_incidents": 6,
-    "avg_severity": 1.8333333333333333,
-    "best_hours": [
-      11,
-      18,
-      21
-    ],
-    "worst_hours": [
-      16,
-      18,
-      21
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 3,
-    "weekend_incidents": 3
-  },
-  "I-24 near 21st Ave S": {
-    "total_incidents": 6,
-    "avg_severity": 1.3333333333333333,
-    "best_hours": [
-      1,
-      9,
-      11
-    ],
-    "worst_hours": [
-      15,
-      1,
-      9
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "Ellington Pkwy @ Charlotte Ave": {
-    "total_incidents": 6,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      4,
-      10,
-      15
-    ],
-    "worst_hours": [
-      5,
-      2,
-      16
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "Woodmont Blvd @ Exit 52": {
-    "total_incidents": 6,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      6,
-      9,
-      10
-    ],
-    "worst_hours": [
-      3,
-      13,
-      18
-    ],
-    "best_day": "Monday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 2
-  },
-  "Charlotte Ave near 21st Ave S": {
-    "total_incidents": 6,
+  "West End Ave @ Exit 209": {
+    "total_incidents": 24,
     "avg_severity": 1.5,
+    "risk_score": 36.0,
     "best_hours": [
-      0,
-      3,
-      6
-    ],
-    "worst_hours": [
-      4,
-      15,
-      23
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 2
-  },
-  "Briley Pkwy near Spence Ln": {
-    "total_incidents": 6,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      20,
-      21,
-      4
-    ],
-    "worst_hours": [
-      4,
-      5,
-      20
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 2
-  },
-  "I-40 near Demonbreun": {
-    "total_incidents": 6,
-    "avg_severity": 1.3333333333333333,
-    "best_hours": [
-      7,
-      10,
-      19
-    ],
-    "worst_hours": [
-      5,
-      7,
-      10
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "I-65 near Spence Ln": {
-    "total_incidents": 6,
-    "avg_severity": 2.0,
-    "best_hours": [
+      1,
       12,
-      20,
-      9
+      13
     ],
     "worst_hours": [
       0,
-      10,
-      9
-    ],
-    "best_day": "Saturday",
-    "worst_day": "Thursday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 3
-  },
-  "Briley Pkwy @ Exit 52": {
-    "total_incidents": 6,
-    "avg_severity": 2.1666666666666665,
-    "best_hours": [
-      3,
-      4,
-      11
-    ],
-    "worst_hours": [
-      5,
-      11,
-      15
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 2
-  },
-  "21st Ave S near 21st Ave S": {
-    "total_incidents": 6,
-    "avg_severity": 1.8333333333333333,
-    "best_hours": [
-      4,
-      7,
-      18
-    ],
-    "worst_hours": [
-      19,
-      20,
-      3
-    ],
-    "best_day": "Monday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "Harding Pl @ Charlotte Ave": {
-    "total_incidents": 6,
-    "avg_severity": 1.5,
-    "best_hours": [
-      11,
-      13,
-      22
-    ],
-    "worst_hours": [
-      15,
-      1,
-      11
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 3
-  },
-  "Charlotte Ave @ Wedgewood": {
-    "total_incidents": 6,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      8,
-      11,
-      18
-    ],
-    "worst_hours": [
-      13,
-      3,
-      8
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "Charlotte Ave near Spence Ln": {
-    "total_incidents": 6,
-    "avg_severity": 1.6666666666666667,
-    "best_hours": [
-      14,
-      21,
-      1
-    ],
-    "worst_hours": [
-      1,
-      2,
-      9
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "Nolensville Pike near Old Hickory Blvd": {
-    "total_incidents": 6,
-    "avg_severity": 1.8333333333333333,
-    "best_hours": [
-      23,
-      12,
-      19
-    ],
-    "worst_hours": [
-      13,
-      17,
-      12
-    ],
-    "best_day": "Monday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 3
-  },
-  "I-40 near Broadway": {
-    "total_incidents": 5,
-    "avg_severity": 1.8,
-    "best_hours": [
-      8,
-      1,
-      6
-    ],
-    "worst_hours": [
-      1,
-      6,
-      10
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "I-440 near Broadway": {
-    "total_incidents": 5,
-    "avg_severity": 1.4,
-    "best_hours": [
-      5,
-      13,
-      22
-    ],
-    "worst_hours": [
-      15,
-      21,
-      5
+      22,
+      7
     ],
     "best_day": "Friday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 2
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 9
   },
-  "Lebanon Pike near Spence Ln": {
-    "total_incidents": 5,
-    "avg_severity": 1.8,
+  "8th Ave S near Spence Ln": {
+    "total_incidents": 19,
+    "avg_severity": 1.8421052631578947,
+    "risk_score": 35.0,
     "best_hours": [
-      14,
-      15,
-      18
+      2,
+      3,
+      6
     ],
     "worst_hours": [
-      8,
-      14,
-      15
+      23,
+      15,
+      22
     ],
-    "best_day": "Thursday",
-    "worst_day": "Saturday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
+    "best_day": "Monday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 7
   },
-  "Harding Pl near Old Hickory Blvd": {
-    "total_incidents": 5,
-    "avg_severity": 1.8,
+  "West End Ave near Spence Ln": {
+    "total_incidents": 23,
+    "avg_severity": 1.5217391304347827,
+    "risk_score": 35.0,
     "best_hours": [
       10,
-      2,
-      14
+      11,
+      13
     ],
     "worst_hours": [
-      2,
       14,
+      9,
       17
     ],
     "best_day": "Tuesday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 5,
+    "weekend_incidents": 6
+  },
+  "Harding Pl near Demonbreun": {
+    "total_incidents": 22,
+    "avg_severity": 1.5909090909090908,
+    "risk_score": 35.0,
+    "best_hours": [
+      0,
+      9,
+      11
+    ],
+    "worst_hours": [
+      2,
+      12,
+      17
+    ],
+    "best_day": "Saturday",
     "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 5
   },
-  "I-65 near Demonbreun": {
-    "total_incidents": 5,
-    "avg_severity": 1.6,
+  "Lebanon Pike near Demonbreun": {
+    "total_incidents": 25,
+    "avg_severity": 1.36,
+    "risk_score": 34.0,
     "best_hours": [
-      19,
+      0,
       2,
-      16
+      10
     ],
     "worst_hours": [
-      13,
-      2,
-      16
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 0
-  },
-  "Woodmont Blvd near 21st Ave S": {
-    "total_incidents": 5,
-    "avg_severity": 1.6,
-    "best_hours": [
-      5,
-      14,
-      23
-    ],
-    "worst_hours": [
-      7,
-      19,
-      5
+      23,
+      1,
+      4
     ],
     "best_day": "Sunday",
     "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
+    "rush_hour_incidents": 4,
+    "weekend_incidents": 5
   },
-  "I-440 @ Exit 52": {
-    "total_incidents": 5,
-    "avg_severity": 2.2,
+  "Broadway @ Wedgewood": {
+    "total_incidents": 21,
+    "avg_severity": 1.5714285714285714,
+    "risk_score": 33.0,
     "best_hours": [
-      17,
-      0,
-      23
-    ],
-    "worst_hours": [
-      9,
-      10,
-      0
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 0
-  },
-  "Lebanon Pike @ Exit 209": {
-    "total_incidents": 5,
-    "avg_severity": 2.2,
-    "best_hours": [
-      9,
-      1,
-      12
-    ],
-    "worst_hours": [
       6,
-      13,
-      1
+      15,
+      17
     ],
-    "best_day": "Monday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 0
+    "worst_hours": [
+      1,
+      2,
+      5
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 7
   },
-  "21st Ave S at Briley Pkwy": {
-    "total_incidents": 5,
-    "avg_severity": 1.6,
+  "Broadway near Spence Ln": {
+    "total_incidents": 22,
+    "avg_severity": 1.2727272727272727,
+    "risk_score": 28.0,
     "best_hours": [
-      19,
-      21,
-      4
+      0,
+      1,
+      7
     ],
     "worst_hours": [
       4,
-      7,
-      14
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "Harding Pl @ Wedgewood": {
-    "total_incidents": 5,
-    "avg_severity": 2.0,
-    "best_hours": [
       2,
-      6,
-      9
-    ],
-    "worst_hours": [
-      11,
-      6,
-      9
+      3
     ],
     "best_day": "Tuesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
+    "worst_day": "Monday",
+    "rush_hour_incidents": 6,
+    "weekend_incidents": 8
   },
-  "I-65 @ Exit 209": {
-    "total_incidents": 5,
-    "avg_severity": 1.8,
+  "At I-65/Exit 208": {
+    "total_incidents": 7,
+    "avg_severity": 1.0,
+    "risk_score": 7.0,
     "best_hours": [
       3,
-      15,
-      8
-    ],
-    "worst_hours": [
-      20,
-      8,
-      18
-    ],
-    "best_day": "Monday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
-  },
-  "Ellington Pkwy near Old Hickory Blvd": {
-    "total_incidents": 5,
-    "avg_severity": 1.6,
-    "best_hours": [
-      1,
-      9,
+      21,
       22
     ],
     "worst_hours": [
-      13,
-      4,
-      1
+      22,
+      3,
+      21
     ],
-    "best_day": "Monday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 1,
+    "best_day": "Sunday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
     "weekend_incidents": 2
   },
-  "Gallatin Pike @ Exit 209": {
-    "total_incidents": 5,
-    "avg_severity": 1.4,
+  "At US-431/21st Ave/Hillsboro/Exit 3": {
+    "total_incidents": 6,
+    "avg_severity": 1.0,
+    "risk_score": 6.0,
     "best_hours": [
-      12,
-      15,
-      18
+      21,
+      22
     ],
     "worst_hours": [
-      4,
-      14,
-      12
+      22,
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At 1st St/Exit 85": {
+    "total_incidents": 4,
+    "avg_severity": 1.0,
+    "risk_score": 4.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-70/TN-24/Charlotte/Exit 209": {
+    "total_incidents": 4,
+    "avg_severity": 1.0,
+    "risk_score": 4.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      22,
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At TN-155/Briley Pky/Exit 54": {
+    "total_incidents": 4,
+    "avg_severity": 1.0,
+    "risk_score": 4.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      21,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-440/Exit 80": {
+    "total_incidents": 4,
+    "avg_severity": 1.0,
+    "risk_score": 4.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      21,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-65/Exit 5": {
+    "total_incidents": 4,
+    "avg_severity": 1.0,
+    "risk_score": 4.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      22,
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-65/Exit 86": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      19,
+      21,
+      22
+    ],
+    "worst_hours": [
+      19,
+      21,
+      22
     ],
     "best_day": "Monday",
     "worst_day": "Friday",
-    "rush_hour_incidents": 1,
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-41A/8th/Metro Center/Exit 1": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      19,
+      21,
+      22
+    ],
+    "worst_hours": [
+      19,
+      21,
+      22
+    ],
+    "best_day": "Monday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At TN-155/Robertson Ave/Exit 204": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      3,
+      22
+    ],
+    "worst_hours": [
+      22,
+      3
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
     "weekend_incidents": 1
   },
-  "Old Hickory Blvd near Old Hickory Blvd": {
-    "total_incidents": 5,
-    "avg_severity": 1.8,
+  "At I-440/Exit 53": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
     "best_hours": [
-      1,
-      15,
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At N-386/Vietnam Veterans/Exit 95": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      20,
+      22
+    ],
+    "worst_hours": [
+      22,
+      20
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Armory Dr/Exit 79": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      20,
+      22
+    ],
+    "worst_hours": [
+      22,
+      20
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-24": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      22,
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-70/TN-1/Exit 196": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      22,
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Wedgewood Ave/Exit 81": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      22,
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Fairfield Ave/Exit 212": {
+    "total_incidents": 3,
+    "avg_severity": 1.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      22,
       21
     ],
     "worst_hours": [
       21,
-      1,
-      15
-    ],
-    "best_day": "Monday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 3
-  },
-  "8th Ave S near Spence Ln": {
-    "total_incidents": 5,
-    "avg_severity": 1.8,
-    "best_hours": [
-      7,
-      12,
-      6
-    ],
-    "worst_hours": [
-      10,
-      6,
-      7
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "Charlotte Ave near Demonbreun": {
-    "total_incidents": 5,
-    "avg_severity": 1.2,
-    "best_hours": [
-      6,
-      8,
-      9
-    ],
-    "worst_hours": [
-      1,
-      6,
-      8
-    ],
-    "best_day": "Thursday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "21st Ave S @ Exit 52": {
-    "total_incidents": 5,
-    "avg_severity": 1.0,
-    "best_hours": [
-      0,
-      4,
-      9
-    ],
-    "worst_hours": [
-      22,
-      0,
-      4
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
-  },
-  "Gallatin Pike @ Exit 52": {
-    "total_incidents": 4,
-    "avg_severity": 1.75,
-    "best_hours": [
-      10,
-      15,
-      6
-    ],
-    "worst_hours": [
-      0,
-      6,
-      10
-    ],
-    "best_day": "Wednesday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 1
-  },
-  "West End Ave near Demonbreun": {
-    "total_incidents": 4,
-    "avg_severity": 1.5,
-    "best_hours": [
-      11,
-      16,
-      0
-    ],
-    "worst_hours": [
-      0,
-      1,
-      11
+      22
     ],
     "best_day": "Friday",
-    "worst_day": "Wednesday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
   },
-  "I-440 @ Charlotte Ave": {
-    "total_incidents": 4,
+  "At TN-155/Briley Pky/Exit 90": {
+    "total_incidents": 3,
     "avg_severity": 1.0,
+    "risk_score": 3.0,
     "best_hours": [
-      2,
-      8,
-      9
-    ],
-    "worst_hours": [
-      2,
-      8,
-      9
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Tuesday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "Ellington Pkwy near Spence Ln": {
-    "total_incidents": 4,
-    "avg_severity": 1.5,
-    "best_hours": [
-      0,
-      6,
       22
     ],
     "worst_hours": [
-      22,
-      0,
-      6
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "Nashville - I-40 East": {
+    "total_incidents": 1,
+    "avg_severity": 3.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      12
+    ],
+    "worst_hours": [
+      12
     ],
     "best_day": "Monday",
     "worst_day": "Monday",
     "rush_hour_incidents": 0,
-    "weekend_incidents": 1
+    "weekend_incidents": 0
   },
-  "21st Ave S @ Wedgewood": {
-    "total_incidents": 4,
-    "avg_severity": 1.25,
+  "Clarksville - Hwy 41": {
+    "total_incidents": 1,
+    "avg_severity": 3.0,
+    "risk_score": 3.0,
     "best_hours": [
-      11,
-      7,
-      23
+      12
     ],
     "worst_hours": [
-      7,
-      23,
-      11
+      12
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "Antioch - Bell Rd": {
+    "total_incidents": 1,
+    "avg_severity": 3.0,
+    "risk_score": 3.0,
+    "best_hours": [
+      12
+    ],
+    "worst_hours": [
+      12
     ],
     "best_day": "Tuesday",
-    "worst_day": "Sunday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 2
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
   },
-  "Lebanon Pike @ Wedgewood": {
-    "total_incidents": 4,
-    "avg_severity": 1.75,
+  "Brentwood - Old Hickory Blvd": {
+    "total_incidents": 1,
+    "avg_severity": 3.0,
+    "risk_score": 3.0,
     "best_hours": [
-      2,
-      10,
-      3
+      12
     ],
     "worst_hours": [
-      15,
-      3,
-      2
+      12
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "At US-31A/US-41A/Nolensville/Exit 6": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      19,
+      22
+    ],
+    "worst_hours": [
+      19,
+      22
     ],
     "best_day": "Monday",
     "worst_day": "Monday",
     "rush_hour_incidents": 0,
-    "weekend_incidents": 1
+    "weekend_incidents": 0
   },
-  "Broadway near Demonbreun": {
-    "total_incidents": 4,
-    "avg_severity": 1.25,
+  "36.13048": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
     "best_hours": [
-      15,
-      19,
+      0,
+      17
+    ],
+    "worst_hours": [
+      0,
+      17
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.18859": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      16,
       20
     ],
     "worst_hours": [
-      18,
-      15,
+      16,
+      20
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 1
+  },
+  "At TN-155/Briley Pkwy": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      16,
+      20
+    ],
+    "worst_hours": [
+      16,
+      20
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 1
+  },
+  "36.16544": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      0,
+      2
+    ],
+    "worst_hours": [
+      0,
+      2
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.1762": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      2,
+      22
+    ],
+    "worst_hours": [
+      2,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.01784": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      4,
+      22
+    ],
+    "worst_hours": [
+      4,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.24116": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At TN-174/Long Hollow Pike/Exit 97": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      21,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.1158": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At 46th Ave/Exit 205": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Spence Ln/Exit 213": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Jefferson St/Exit 207": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      21,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Davidson/Sumner County Line": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At TN-49/Exit 24": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.14891": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Robertson Ave/Urbandale Ave": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      21,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.1412": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      21,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At TN-155/Briley Pky/Exit 43": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-31W/US-41/Dickerson/Exit 16": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-40/Exit 82": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      21,
+      22
+    ],
+    "worst_hours": [
+      21,
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At TN-45/Old Hickory Blvd/Exit 92": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-31/Dickerson Pike/Exit 90": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At TN-171/Mt Juliet Rd/Exit 226": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.30546": {
+    "total_incidents": 2,
+    "avg_severity": 1.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      9,
+      19
+    ],
+    "worst_hours": [
+      9,
       19
     ],
     "best_day": "Monday",
-    "worst_day": "Sunday",
+    "worst_day": "Monday",
     "rush_hour_incidents": 1,
-    "weekend_incidents": 2
+    "weekend_incidents": 0
   },
-  "21st Ave S @ Charlotte Ave": {
-    "total_incidents": 4,
-    "avg_severity": 1.75,
+  "Murfreesboro - Hwy 231": {
+    "total_incidents": 1,
+    "avg_severity": 2.0,
+    "risk_score": 2.0,
     "best_hours": [
-      7,
-      1,
-      4
+      12
     ],
     "worst_hours": [
-      1,
-      4,
-      17
+      12
     ],
-    "best_day": "Tuesday",
+    "best_day": "Sunday",
     "worst_day": "Sunday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 3
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
   },
-  "Woodmont Blvd near Broadway": {
-    "total_incidents": 4,
-    "avg_severity": 1.25,
+  "Nashville - Downtown Broadway": {
+    "total_incidents": 1,
+    "avg_severity": 2.0,
+    "risk_score": 2.0,
     "best_hours": [
-      13,
-      14,
+      12
+    ],
+    "worst_hours": [
+      12
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "Lebanon - I-40 West": {
+    "total_incidents": 1,
+    "avg_severity": 2.0,
+    "risk_score": 2.0,
+    "best_hours": [
+      12
+    ],
+    "worst_hours": [
+      12
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "Battery Ln": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      19
+    ],
+    "worst_hours": [
+      19
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At James Robertson Pky/Exit 85": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      19
+    ],
+    "worst_hours": [
+      19
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-24/I-65 Northern Split": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      19
+    ],
+    "worst_hours": [
+      19
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-24/Exit 88": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      19
+    ],
+    "worst_hours": [
+      19
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-65/Exit 44": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      19
+    ],
+    "worst_hours": [
+      19
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "Hillside Ave": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      19
+    ],
+    "worst_hours": [
+      19
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "General Hood Trl": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
       18
     ],
     "worst_hours": [
-      18,
-      13,
+      18
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "At Demonbreun St/Exit 209": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      18
+    ],
+    "worst_hours": [
+      18
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.18081": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      17
+    ],
+    "worst_hours": [
+      17
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.01823": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      14
+    ],
+    "worst_hours": [
       14
     ],
     "best_day": "Monday",
     "worst_day": "Monday",
-    "rush_hour_incidents": 2,
-    "weekend_incidents": 1
-  },
-  "Charlotte Ave @ Exit 209": {
-    "total_incidents": 4,
-    "avg_severity": 1.5,
-    "best_hours": [
-      19,
-      20,
-      4
-    ],
-    "worst_hours": [
-      4,
-      11,
-      19
-    ],
-    "best_day": "Monday",
-    "worst_day": "Saturday",
     "rush_hour_incidents": 0,
-    "weekend_incidents": 2
-  },
-  "I-40 @ Exit 52": {
-    "total_incidents": 4,
-    "avg_severity": 1.75,
-    "best_hours": [
-      2,
-      22,
-      7
-    ],
-    "worst_hours": [
-      15,
-      7,
-      2
-    ],
-    "best_day": "Tuesday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "Charlotte Ave @ Exit 52": {
-    "total_incidents": 4,
-    "avg_severity": 1.5,
-    "best_hours": [
-      17,
-      22,
-      8
-    ],
-    "worst_hours": [
-      8,
-      12,
-      17
-    ],
-    "best_day": "Monday",
-    "worst_day": "Friday",
-    "rush_hour_incidents": 2,
     "weekend_incidents": 0
   },
-  "Woodmont Blvd near Demonbreun": {
-    "total_incidents": 3,
-    "avg_severity": 1.3333333333333333,
+  "36.23235": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
     "best_hours": [
-      3,
-      14,
+      14
+    ],
+    "worst_hours": [
+      14
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.40004": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      14
+    ],
+    "worst_hours": [
+      14
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.36367": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      13
+    ],
+    "worst_hours": [
+      13
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.37402": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      13
+    ],
+    "worst_hours": [
+      13
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.10804": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
       1
     ],
     "worst_hours": [
-      1,
-      3,
-      14
+      1
     ],
     "best_day": "Monday",
     "worst_day": "Monday",
     "rush_hour_incidents": 0,
-    "weekend_incidents": 1
+    "weekend_incidents": 0
   },
-  "Gallatin Pike near Spence Ln": {
-    "total_incidents": 3,
-    "avg_severity": 1.3333333333333333,
+  "36.10693": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
     "best_hours": [
-      0,
-      10,
-      13
+      23
     ],
     "worst_hours": [
-      13,
-      0,
-      10
+      23
     ],
-    "best_day": "Tuesday",
-    "worst_day": "Tuesday",
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
     "rush_hour_incidents": 0,
     "weekend_incidents": 1
   },
-  "Lebanon Pike near Demonbreun": {
-    "total_incidents": 3,
-    "avg_severity": 2.0,
+  "36.31526": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
     "best_hours": [
-      1,
-      11,
-      13
+      3
     ],
     "worst_hours": [
-      1,
-      11,
-      13
+      3
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "At I-440/Exit 206": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      3
+    ],
+    "worst_hours": [
+      3
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.31248": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      3
+    ],
+    "worst_hours": [
+      3
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.30129": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      3
+    ],
+    "worst_hours": [
+      3
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.31232": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      2
+    ],
+    "worst_hours": [
+      2
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.38425": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      2
+    ],
+    "worst_hours": [
+      2
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.13143": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      1
+    ],
+    "worst_hours": [
+      1
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.38384": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      0
+    ],
+    "worst_hours": [
+      0
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.10659": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      0
+    ],
+    "worst_hours": [
+      0
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.12766": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      23
+    ],
+    "worst_hours": [
+      23
     ],
     "best_day": "Saturday",
-    "worst_day": "Tuesday",
+    "worst_day": "Saturday",
     "rush_hour_incidents": 0,
     "weekend_incidents": 1
   },
-  "Murfreesboro Pike near Spence Ln": {
-    "total_incidents": 3,
-    "avg_severity": 1.6666666666666667,
+  "36.14233": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
     "best_hours": [
-      0,
-      15,
-      17
+      23
     ],
     "worst_hours": [
-      17,
-      0,
+      23
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.10715": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      20
+    ],
+    "worst_hours": [
+      20
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.39248": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      19
+    ],
+    "worst_hours": [
+      19
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.30188": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      18
+    ],
+    "worst_hours": [
+      18
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 1
+  },
+  "36.32258": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
       15
     ],
-    "best_day": "Monday",
-    "worst_day": "Monday",
+    "worst_hours": [
+      15
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.00742": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      15
+    ],
+    "worst_hours": [
+      15
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.2684": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      14
+    ],
+    "worst_hours": [
+      14
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.3068": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      4
+    ],
+    "worst_hours": [
+      4
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.3413": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      1
+    ],
+    "worst_hours": [
+      1
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.16545": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      0
+    ],
+    "worst_hours": [
+      0
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "At Centennial Blvd/Exit 26": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-31W/Exit 98": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.12591": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Church St/Exit 209": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.23812": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Clarksville Pike/Metrocenter Blvd": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Hickory Hollow Pkwy/Blue Hole Rd": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-40/Exit 83": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.33012": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At 2nd Ave/Exit 210": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.23623": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-31E/Exit 3": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.31224": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-70/US-431/TN-24/TN-1/Exit 209": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-40": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.24087": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Center Point Rd/Exit 2": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.13309": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At TN-45/Old Hickory Blvd/Exit 40": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.24199": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.33166": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.16619": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Fesslers Ln/Exit 212": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.11033": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.18698": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.08773": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At US-70/TN-1/End Ave/Exit 1": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At I-65/Exit 210": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "At Terminal Acc/Exit 216": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.14427": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      21
+    ],
+    "worst_hours": [
+      21
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.10685": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      20
+    ],
+    "worst_hours": [
+      20
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.1927": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      18
+    ],
+    "worst_hours": [
+      18
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
     "rush_hour_incidents": 1,
     "weekend_incidents": 0
   },
-  "Murfreesboro Pike near Old Hickory Blvd": {
-    "total_incidents": 3,
-    "avg_severity": 1.6666666666666667,
+  "36.18647": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
     "best_hours": [
-      12,
-      5,
-      13
+      14
     ],
     "worst_hours": [
-      5,
-      13,
+      14
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.16525": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      2
+    ],
+    "worst_hours": [
+      2
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.34017": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      1
+    ],
+    "worst_hours": [
+      1
+    ],
+    "best_day": "Friday",
+    "worst_day": "Friday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.17207": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.08755": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      20
+    ],
+    "worst_hours": [
+      20
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.10716": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      20
+    ],
+    "worst_hours": [
+      20
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.16849": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      16
+    ],
+    "worst_hours": [
+      16
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.01643": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      16
+    ],
+    "worst_hours": [
+      16
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.18981": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      1
+    ],
+    "worst_hours": [
+      1
+    ],
+    "best_day": "Thursday",
+    "worst_day": "Thursday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.13352": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.1311": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      16
+    ],
+    "worst_hours": [
+      16
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.10743": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      12
+    ],
+    "worst_hours": [
       12
     ],
     "best_day": "Wednesday",
     "worst_day": "Wednesday",
     "rush_hour_incidents": 0,
-    "weekend_incidents": 1
+    "weekend_incidents": 0
   },
-  "8th Ave S near Broadway": {
-    "total_incidents": 3,
+  "36.18874": {
+    "total_incidents": 1,
     "avg_severity": 1.0,
+    "risk_score": 1.0,
     "best_hours": [
-      8,
-      9,
-      11
+      0
     ],
     "worst_hours": [
-      8,
-      9,
-      11
+      0
     ],
-    "best_day": "Monday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 2,
+    "best_day": "Wednesday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.18775": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      23
+    ],
+    "worst_hours": [
+      23
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.17486": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      23
+    ],
+    "worst_hours": [
+      23
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.17264": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      22
+    ],
+    "worst_hours": [
+      22
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "36.16343": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      18
+    ],
+    "worst_hours": [
+      18
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.16506": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      18
+    ],
+    "worst_hours": [
+      18
+    ],
+    "best_day": "Tuesday",
+    "worst_day": "Tuesday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "Franklin - I-65 South": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      12
+    ],
+    "worst_hours": [
+      12
+    ],
+    "best_day": "Saturday",
+    "worst_day": "Saturday",
+    "rush_hour_incidents": 0,
     "weekend_incidents": 1
   },
-  "Broadway @ Wedgewood": {
-    "total_incidents": 3,
-    "avg_severity": 1.3333333333333333,
+  "Smyrna - Nissan Blvd": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
     "best_hours": [
-      2,
-      9,
-      20
+      12
     ],
     "worst_hours": [
-      20,
-      2,
+      12
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 0
+  },
+  "Nashville - Charlotte Ave": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      12
+    ],
+    "worst_hours": [
+      12
+    ],
+    "best_day": "Sunday",
+    "worst_day": "Sunday",
+    "rush_hour_incidents": 0,
+    "weekend_incidents": 1
+  },
+  "36.14171": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      9
+    ],
+    "worst_hours": [
+      9
+    ],
+    "best_day": "Wednesday",
+    "worst_day": "Wednesday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.08344": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      9
+    ],
+    "worst_hours": [
       9
     ],
     "best_day": "Monday",
     "worst_day": "Monday",
     "rush_hour_incidents": 1,
-    "weekend_incidents": 1
-  },
-  "West End Ave @ Exit 209": {
-    "total_incidents": 3,
-    "avg_severity": 2.0,
-    "best_hours": [
-      13,
-      12,
-      23
-    ],
-    "worst_hours": [
-      23,
-      12,
-      13
-    ],
-    "best_day": "Monday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 0,
-    "weekend_incidents": 1
-  },
-  "West End Ave near Spence Ln": {
-    "total_incidents": 3,
-    "avg_severity": 2.0,
-    "best_hours": [
-      5,
-      2
-    ],
-    "worst_hours": [
-      2,
-      5
-    ],
-    "best_day": "Monday",
-    "worst_day": "Monday",
-    "rush_hour_incidents": 0,
     "weekend_incidents": 0
   },
-  "Harding Pl @ Exit 52": {
-    "total_incidents": 2,
-    "avg_severity": 1.5,
+  "36.07698": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
     "best_hours": [
-      2,
-      7
+      9
     ],
     "worst_hours": [
-      7,
-      2
+      9
     ],
-    "best_day": "Tuesday",
-    "worst_day": "Tuesday",
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.35417": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      9
+    ],
+    "worst_hours": [
+      9
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.15989": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      9
+    ],
+    "worst_hours": [
+      9
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
+    "rush_hour_incidents": 1,
+    "weekend_incidents": 0
+  },
+  "36.00955": {
+    "total_incidents": 1,
+    "avg_severity": 1.0,
+    "risk_score": 1.0,
+    "best_hours": [
+      9
+    ],
+    "worst_hours": [
+      9
+    ],
+    "best_day": "Monday",
+    "worst_day": "Monday",
     "rush_hour_incidents": 1,
     "weekend_incidents": 0
   }

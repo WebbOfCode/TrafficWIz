@@ -136,27 +136,33 @@ def api_traffic():
     try:
         conn = get_db_connection()
         cur = conn.cursor(dictionary=True)
-        cur.execute("SELECT id, date, description, severity, location FROM traffic_incidents ORDER BY id DESC LIMIT 100;")
+        
+        # Get limit from query parameter (default 100, max 1000)
+        limit = min(int(request.args.get('limit', 100)), 1000)
+        
+        cur.execute(f"SELECT id, date, description, severity, location FROM traffic_incidents ORDER BY id DESC LIMIT {limit};")
         rows = cur.fetchall()
-        # normalize severity number to string label for older frontend
+        
+        # Debug: Check what we're getting from database
+        if rows:
+            print(f"[DEBUG] Returning {len(rows)} incidents. Sample severity: {repr(rows[0].get('severity'))} (type: {type(rows[0].get('severity'))})")
+        
+        # The database returns severity as ENUM strings: 'Low', 'Medium', 'High'
+        # No normalization needed - just ensure it's a string
         for r in rows:
             sev = r.get("severity")
-            if isinstance(sev, int):
-                if sev >= 4:
-                    r["severity"] = "High"
-                elif sev == 3:
-                    r["severity"] = "Medium"
-                else:
-                    r["severity"] = "Low"
+            # Keep the severity as-is since database already has correct ENUM values
+            if sev is None:
+                r["severity"] = "Low"
             else:
                 r["severity"] = str(sev)
+        
         cur.close()
         conn.close()
         return jsonify(rows)
     except Exception as e:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
-
 
 @app.route("/api/traffic/<int:incident_id>", methods=["GET"])
 def api_traffic_incident(incident_id):
@@ -695,8 +701,21 @@ def calculate_here_route():
     
     try:
         data = request.get_json()
-        origin = f"{data['start']['lat']},{data['start']['lon']}"
-        destination = f"{data['end']['lat']},{data['end']['lon']}"
+        
+        # Handle both string coordinates and object format
+        start = data['start']
+        end = data['end']
+        
+        if isinstance(start, str):
+            origin = start
+        else:
+            origin = f"{start['lat']},{start['lon']}"
+            
+        if isinstance(end, str):
+            destination = end
+        else:
+            destination = f"{end['lat']},{end['lon']}"
+        
         departure_time = data.get('departure_time')
         
         route_data = here_service.calculate_route(origin, destination, departure_time)

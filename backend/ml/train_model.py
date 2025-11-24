@@ -135,6 +135,7 @@ def analyze_road_patterns(df):
             road_analysis[road] = {
                 'total_incidents': int(len(road_data)),
                 'avg_severity': float(road_data['severity_score'].mean()),
+                'risk_score': float(len(road_data) * road_data['severity_score'].mean()),  # Total incidents × avg severity
                 'best_hours': [int(h) for h in best_hours],
                 'worst_hours': [int(h) for h in worst_hours],
                 'best_day': best_day,
@@ -143,9 +144,9 @@ def analyze_road_patterns(df):
                 'weekend_incidents': int(road_data[road_data['is_weekend'] == 1].shape[0])
             }
     
-    # Sort by total incidents
+    # Sort by risk score (incidents × severity) for most dangerous roads
     road_analysis = dict(sorted(road_analysis.items(), 
-                                key=lambda x: x[1]['total_incidents'], 
+                                key=lambda x: x[1]['risk_score'], 
                                 reverse=True))
     
     print(f"✅ Analyzed {len(road_analysis)} roads")
@@ -253,7 +254,8 @@ def main():
     print(f"Model Accuracy: {metrics['accuracy']:.2%}")
     print(f"\nTop 3 Most Dangerous Roads:")
     for i, (road, data) in enumerate(list(road_analysis.items())[:3], 1):
-        print(f"  {i}. {road} - {data['total_incidents']} incidents")
+        print(f"  {i}. {road}")
+        print(f"      Risk Score: {data['risk_score']:.1f} ({data['total_incidents']} incidents × {data['avg_severity']:.2f} avg severity)")
     print("\n✅ Training complete!")
 
 if __name__ == "__main__":

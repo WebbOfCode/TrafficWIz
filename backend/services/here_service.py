@@ -140,7 +140,8 @@ class HereService:
             Route with distance, duration, and traffic delays
         """
         try:
-            url = f"{self.base_url}/v8/routes"
+            # Use correct HERE Routing API v8 endpoint
+            url = "https://router.hereapi.com/v8/routes"
             
             params = {
                 'apiKey': self.api_key,
@@ -157,7 +158,7 @@ class HereService:
             response.raise_for_status()
             data = response.json()
             
-            # Transform HERE route to match TomTom format
+            # Transform HERE route to match expected format
             if data.get('routes'):
                 route = data['routes'][0]
                 sections = route.get('sections', [])
@@ -167,7 +168,7 @@ class HereService:
                 total_delay = sum(s.get('travelSummary', {}).get('trafficDelay', 0) for s in sections)
                 
                 return {
-                    'routes': [{
+                    'route': {
                         'summary': {
                             'lengthInMeters': total_distance,
                             'travelTimeInSeconds': total_duration,
@@ -176,7 +177,7 @@ class HereService:
                         },
                         'legs': sections,
                         'sections': sections
-                    }]
+                    }
                 }
             
             return {'error': 'No routes found'}
@@ -195,7 +196,8 @@ class HereService:
             Geocoding results with coordinates
         """
         try:
-            url = f"{self.base_url}/v1/geocode"
+            # Use correct HERE Geocoding API endpoint (different domain from traffic API)
+            url = "https://geocode.search.hereapi.com/v1/geocode"
             
             params = {
                 'apiKey': self.api_key,
@@ -206,7 +208,7 @@ class HereService:
             response.raise_for_status()
             data = response.json()
             
-            # Transform HERE geocoding to match TomTom format
+            # Transform HERE geocoding to match expected format
             results = []
             for item in data.get('items', []):
                 position = item.get('position', {})
@@ -237,7 +239,8 @@ class HereService:
             Address information
         """
         try:
-            url = f"{self.base_url}/v1/revgeocode"
+            # Use correct HERE Reverse Geocoding API endpoint
+            url = "https://revgeocode.search.hereapi.com/v1/revgeocode"
             
             params = {
                 'apiKey': self.api_key,
@@ -246,16 +249,7 @@ class HereService:
             
             response = requests.get(url, params=params, timeout=10)
             response.raise_for_status()
-            data = response.json()
-            
-            if data.get('items'):
-                item = data['items'][0]
-                return {
-                    'address': item.get('address', {}),
-                    'position': item.get('position', {})
-                }
-            
-            return {'error': 'No address found'}
+            return response.json()
             
         except requests.exceptions.RequestException as e:
             return {'error': f'Failed to reverse geocode: {str(e)}'}

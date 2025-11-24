@@ -151,7 +151,7 @@ python export_training_data.py
 python train_model.py
 ```
 
-### Step 5: Use Predictions
+### Step 5: Use Predictions   
 
 The trained model can predict traffic risk for:
 - Specific roads at specific times
