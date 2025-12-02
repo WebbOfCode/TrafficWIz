@@ -1,8 +1,8 @@
 {
   "model_type": "RandomForestClassifier",
-  "accuracy": 0.5267489711934157,
-  "n_train": 4858,
-  "n_test": 1215,
+  "accuracy": 0.5304630381803412,
+  "n_train": 4921,
+  "n_test": 1231,
   "features": [
     "hour",
     "day_of_week",
@@ -18,44 +18,44 @@
   "top_features": [
     {
       "name": "hour",
-      "importance": 0.3240472303718217
+      "importance": 0.3331608553991524
     },
     {
       "name": "day_of_week",
-      "importance": 0.19534081719552043
-    },
-    {
-      "name": "is_rush_hour",
-      "importance": 0.05639324619915829
+      "importance": 0.18136247625743862
     },
     {
       "name": "is_weekend",
-      "importance": 0.05080167316024771
+      "importance": 0.051579117159029936
     },
     {
-      "name": "road_I-440 near Broadway",
-      "importance": 0.012726325285479739
+      "name": "is_rush_hour",
+      "importance": 0.05123932881176605
     },
     {
       "name": "road_Harding Pl @ Wedgewood",
-      "importance": 0.00976312764247624
+      "importance": 0.015130803769774024
     },
     {
       "name": "road_Broadway at Briley Pkwy",
-      "importance": 0.009330674088138622
+      "importance": 0.013920716307642491
     },
     {
-      "name": "road_I-65 at Briley Pkwy",
-      "importance": 0.008498499378182988
+      "name": "road_Old Hickory Blvd near Demonbreun",
+      "importance": 0.00860110905737687
     },
     {
-      "name": "road_21st Ave S near 21st Ave S",
-      "importance": 0.00775712802042209
+      "name": "road_Murfreesboro Pike near Old Hickory Blvd",
+      "importance": 0.00779221503089396
     },
     {
-      "name": "road_I-440 near 21st Ave S",
-      "importance": 0.007668563633336034
+      "name": "road_I-440 near Broadway",
+      "importance": 0.007231109229432178
+    },
+    {
+      "name": "road_I-440 @ Exit 52",
+      "importance": 0.006792173573500348
     }
   ],
-  "trained_at": "2025-11-24T17:39:45.565399"
+  "trained_at": "2025-12-02T11:13:02.050297"
 }
