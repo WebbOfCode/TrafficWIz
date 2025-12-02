@@ -7,11 +7,20 @@ echo.
 
 REM Check if virtual environment exists
 if not exist "backend\venv" (
-    echo ERROR: Virtual environment not found!
-    echo Please run: python -m venv backend\venv
-    echo Then install requirements: backend\venv\Scripts\pip install -r backend\requirements.txt
-    pause
-    exit /b 1
+    echo Virtual environment not found. Creating it now...
+    python -m venv backend\venv
+    echo Installing Python dependencies...
+    backend\venv\Scripts\pip install -r backend\requirements.txt
+    echo.
+)
+
+REM Check if frontend node_modules exists
+if not exist "frontend\node_modules" (
+    echo Frontend dependencies not found. Installing npm packages...
+    cd frontend
+    call npm install
+    cd ..
+    echo.
 )
 
 REM Setup Windows Task Scheduler for HERE data collection (first time only)
