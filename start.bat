@@ -9,16 +9,24 @@ REM Check if virtual environment exists
 if not exist "backend\venv" (
     echo Virtual environment not found. Creating it now...
     python -m venv backend\venv
-    echo Installing Python dependencies...
-    backend\venv\Scripts\pip install -r backend\requirements.txt
-    echo.
 )
+
+REM Always install/update Python dependencies to ensure all packages are present
+echo Verifying Python dependencies...
+backend\venv\Scripts\pip install -r backend\requirements.txt --quiet
+echo.
 
 REM Check if frontend node_modules exists
 if not exist "frontend\node_modules" (
     echo Frontend dependencies not found. Installing npm packages...
     cd frontend
     call npm install
+    cd ..
+    echo.
+) else (
+    echo Verifying npm dependencies...
+    cd frontend
+    call npm install --quiet
     cd ..
     echo.
 )
